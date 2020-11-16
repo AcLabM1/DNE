@@ -5,6 +5,9 @@ public class UeDTO {
     private int idUe;
     private String intitule;
 
+    public UeDTO(){
+        super();
+    }
     public UeDTO(int idUe, String intitule) {
         this.idUe = idUe;
         this.intitule = intitule;
