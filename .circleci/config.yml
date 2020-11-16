@@ -1,0 +1,39 @@
+version: 2.1
+workflows:
+  build_and_dock:
+    jobs:
+      - build
+
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:latest
+    working_directory: ~/dne
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dne-api-{{ checksum "pom.xml" }}
+      - run: mvn dependency:go-offline
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: dne-api-{{ checksum "pom.xml" }}
+      # package into a jar
+      - run: mvn clean install
+      - run: mvn clean package
+        # store raw contents of src code
+      - store_artifacts:
+          path: target/classes
+          destination: dne-api
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/test-results/junit/
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
+          when: always
+      - store_test_results:
+          path: ~/test-results
+      - store_artifacts:
+          path: ~/test-results/junit
