@@ -28,7 +28,7 @@ public class UeConverter {
      * @return
      */
     public List<UeDTO> entityToDto(List<Ue> ues){
-        return ues.stream().map(ue->entityToDto(ue)).collect(Collectors.toList());
+        return ues.stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
     /**
@@ -47,7 +47,7 @@ public class UeConverter {
      * @return
      */
     public List<Ue> dtoToEntity(List<UeDTO> ueDTOS){
-        return ueDTOS.stream().map(ueDTO -> dtoToEntity(ueDTO)).collect(Collectors.toList());
+        return ueDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 
 }
