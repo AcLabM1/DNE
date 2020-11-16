@@ -1,4 +1,4 @@
-package com.aclab.dne.Controllers;
+package com.aclab.dne.controllers;
 
 public class PersonneController {
     //comment

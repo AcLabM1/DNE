@@ -1,4 +1,4 @@
-package com.aclab.dne.Repositories;
+package com.aclab.dne.repositories;
 
 public interface PersonneRepository {
 }
