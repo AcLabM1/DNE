@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Entity
 @Data
 @Table
-public class Personne implements Serializable {
+public abstract class Personne implements Serializable {
 
     @Id
     @GeneratedValue
