@@ -3,11 +3,12 @@ package com.aclab.dne.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
 @Table
-public class Diplome {
+public class Diplome implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDiplome;
