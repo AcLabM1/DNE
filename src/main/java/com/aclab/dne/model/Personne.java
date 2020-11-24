@@ -2,19 +2,17 @@ package com.aclab.dne.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Data
 @Table
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Personne implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPersonne;
     private String nom;
     private String prenom;

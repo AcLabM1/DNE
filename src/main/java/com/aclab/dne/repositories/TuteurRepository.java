@@ -1,9 +1,10 @@
 package com.aclab.dne.repositories;
 
-import com.aclab.dne.model.Personne;
+
+import com.aclab.dne.model.Tuteur;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonneRepository extends CrudRepository<Personne,Long> {
+public interface TuteurRepository extends CrudRepository<Tuteur,Long> {
 }
