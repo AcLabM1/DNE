@@ -1,7 +1,6 @@
 package com.aclab.dne.dto;
 
-public class AdministratifDTO {
-
+public class EnseignantDTO {
     /* heritage de Personne */
     private Long idEmploye;
     private String nom;
@@ -12,13 +11,14 @@ public class AdministratifDTO {
     private String telephoneUniv;
     private String bureau;
 
-    private String fonction;
+    private boolean estVacataire;
+    private String telephone;
 
-    public AdministratifDTO(){
+    public EnseignantDTO(){
         super();
     }
 
-    public AdministratifDTO(Long idEmploye, String nom, String prenom, String email, String telephoneUniv, String bureau, String fonction) {
+    public EnseignantDTO(Long idEmploye, String nom, String prenom, String email, String telephoneUniv, String bureau, boolean estVacataire, String telephone) {
         super();
         this.idEmploye = idEmploye;
         this.nom = nom;
@@ -26,7 +26,8 @@ public class AdministratifDTO {
         this.email = email;
         this.telephoneUniv = telephoneUniv;
         this.bureau = bureau;
-        this.fonction = fonction;
+        this.estVacataire = estVacataire;
+        this.telephone = telephone;
     }
 
     public Long getIdEmploye() {
@@ -77,24 +78,34 @@ public class AdministratifDTO {
         this.bureau = bureau;
     }
 
-    public String getFonction() {
-        return fonction;
+    public boolean isEstVacataire() {
+        return estVacataire;
     }
 
-    public void setFonction(String fonction) {
-        this.fonction = fonction;
+    public void setEstVacataire(boolean estVacataire) {
+        this.estVacataire = estVacataire;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     @Override
     public String toString() {
-        return "AdministratifDTO{" +
+        return "EnseignantDTO{" +
                 "idEmploye=" + idEmploye +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", email='" + email + '\'' +
                 ", telephoneUniv='" + telephoneUniv + '\'' +
                 ", bureau='" + bureau + '\'' +
-                ", fonction='" + fonction + '\'' +
+                ", estVacataire=" + estVacataire +
+                ", telephone='" + telephone + '\'' +
                 '}';
     }
 }
+
