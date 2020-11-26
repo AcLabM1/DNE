@@ -5,11 +5,9 @@ import com.aclab.dne.dto.EmployeDTO;
 import com.aclab.dne.model.Employe;
 import com.aclab.dne.repositories.EmployeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 @RestController

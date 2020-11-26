@@ -42,10 +42,10 @@ public class PersonneConverter {
 
     /**
      * Passage List PersonneDTO en List Personne
-     * @param PersonneDTOS List Personne
+     * @param personneDTOS List Personne
      * @return
      */
-    public List<Personne> dtoToEntity(List<PersonneDTO> PersonneDTOS){
-        return PersonneDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
+    public List<Personne> dtoToEntity(List<PersonneDTO> personneDTOS){
+        return personneDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }
