@@ -6,11 +6,11 @@ import java.util.Objects;
 public class EtudiantDTO {
 
     private Long idEtudiant;
+    private Long iduniv;
     private String nom;
     private String prenom;
-    private Long iduniv;
-    private String emailUniv;
     private Date dateNaissance;
+    private String emailUniv;
     private String emailPersonnel;
     private String telephonePersonnel;
 
