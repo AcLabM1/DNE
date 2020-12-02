@@ -2,6 +2,7 @@ package com.aclab.dne.bootstrap;
 
 import com.aclab.dne.converter.*;
 import com.aclab.dne.dto.EtudiantDTO;
+import com.aclab.dne.dto.ResponsableFormationDTO;
 import com.aclab.dne.repositories.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,14 +24,28 @@ public class DataLoader implements CommandLineRunner {
 
     }
     private void loadData(){
-        EtudiantDTO julien = new EtudiantDTO();
-        julien.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
-        julien.setEmailPersonnel("julien.dudek@gmail.com");
-        julien.setEmailUniv("julien.dudek@lacatholille.fr");
-        julien.setNom("DUDEK");
-        julien.setPrenom("Julien");
-        julien.setTelephonePersonnel("0607084231");
-        etudiantRepository.save(etudiantConverter.dtoToEntity(julien));
+
+        ResponsableFormationDTO resp = new ResponsableFormationDTO();
+        resp.setNom("Gouvy");
+        resp.setPrenom("Nicolas");
+        resp.setEmailUniv("nicolas.gouvy@univ-catholille.fr");
+        resp.setTelephoneUniv("0320134195");
+        resp.setBureau("RZ2XX");
+        resp.setEstVacataire(false);;
+        resp.setPoste("Head of the Computer Science Master Degree ");
+        resp.setIdUniv(2014617345L);
+        responsableFormationRepository.save(responsableFormationConverter.dtoToEntity(resp));
+
+        EtudiantDTO user = new EtudiantDTO();
+        user.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
+        user.setEmailPersonnel("julien.dudek@gmail.com");
+        user.setEmailUniv("julien.dudek@lacatholille.fr");
+        user.setNom("DUDEK");
+        user.setPrenom("Julien");
+        user.setTelephonePersonnel("0607084231");
+        user.setIduniv(2020615893L);
+        etudiantRepository.save(etudiantConverter.dtoToEntity(user));
+
 
     }
 
