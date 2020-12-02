@@ -7,6 +7,10 @@ public class DiplomeDTO {
     private int totalEcts;
     private boolean estActif;
 
+    public DiplomeDTO(){
+        super();
+    }
+
     public DiplomeDTO(String intitule, int totalEcts) {
         this.intitule = intitule;
         this.totalEcts = totalEcts;
