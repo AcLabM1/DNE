@@ -7,13 +7,11 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table
-@AllArgsConstructor
-@Data
 @Getter
 @Setter
 @NoArgsConstructor
-@PrimaryKeyJoinColumn(name = "idPersonne")
+@AllArgsConstructor
+@PrimaryKeyJoinColumn(name = "IdEmploye")
 public class Administratif extends Employe {
 
     private String fonction;

@@ -1,21 +1,19 @@
 package com.aclab.dne.dto;
 
-
-import lombok.Data;
-
-@Data
 public class TuteurDTO {
 
-    private Long idPersonne;
+    private Long idTuteur;
     private String nom;
     private String prenom;
-
     private String emailPro;
     private String telephonePro;
     private String societe;
 
-    public TuteurDTO(Long idPersonne, String nom, String prenom, String emailPro, String telephonePro, String societe) {
-        this.idPersonne = idPersonne;
+    public TuteurDTO() {
+    }
+
+    public TuteurDTO(Long idTuteur, String nom, String prenom, String emailPro, String telephonePro, String societe) {
+        this.idTuteur = idTuteur;
         this.nom = nom;
         this.prenom = prenom;
         this.emailPro = emailPro;
@@ -23,12 +21,12 @@ public class TuteurDTO {
         this.societe = societe;
     }
 
-    public Long getIdPersonne() {
-        return idPersonne;
+    public Long getIdTuteur() {
+        return idTuteur;
     }
 
-    public void setIdPersonne(Long idPersonne) {
-        this.idPersonne = idPersonne;
+    public void setIdTuteur(Long idTuteur) {
+        this.idTuteur = idTuteur;
     }
 
     public String getNom() {
@@ -74,7 +72,7 @@ public class TuteurDTO {
     @Override
     public String toString() {
         return "TuteurDTO{" +
-                "idPersonne=" + idPersonne +
+                "idPersonne=" + idTuteur +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", emailPro='" + emailPro + '\'' +

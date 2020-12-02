@@ -4,18 +4,15 @@ public class DiplomeDTO {
 
     private int idDiplome;
     private String intitule;
-    private int totalects;
+    private int totalEcts;
     private boolean estActif;
 
-    public DiplomeDTO(){
-        super();
+    public DiplomeDTO(String intitule, int totalEcts) {
+        this.intitule = intitule;
+        this.totalEcts = totalEcts;
+        this.estActif = false;
     }
 
-    public DiplomeDTO(String intitule,int totalects){
-        this.intitule=intitule;
-        this.totalects=totalects;
-        this.estActif=false;
-    }
     public int getIdDiplome() {
         return idDiplome;
     }
@@ -32,12 +29,12 @@ public class DiplomeDTO {
         this.intitule = intitule;
     }
 
-    public int getTotalects() {
-        return totalects;
+    public int getTotalEcts() {
+        return totalEcts;
     }
 
-    public void setTotalects(int totalects) {
-        this.totalects = totalects;
+    public void setTotalEcts(int totalEcts) {
+        this.totalEcts = totalEcts;
     }
 
     public boolean isEstActif() {
@@ -53,7 +50,7 @@ public class DiplomeDTO {
         return "DiplomeDTO{" +
                 "idDiplome=" + idDiplome +
                 ", intitule='" + intitule + '\'' +
-                ", totalects=" + totalects +
+                ", totalects=" + totalEcts +
                 ", estActif=" + estActif +
                 '}';
     }

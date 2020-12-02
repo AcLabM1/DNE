@@ -1,41 +1,38 @@
 package com.aclab.dne.dto;
 
 public class EnseignantDTO {
-    /* heritage de Personne */
-    private Long idEmploye;
+
+    private Long idEnseignant;
+    private Long idUniv;
     private String nom;
     private String prenom;
-    /* heritage de InternUniv */
-    private String email;
-    /* heritage de Employe */
+    private String emailUniv;
     private String telephoneUniv;
     private String bureau;
-
     private boolean estVacataire;
     private String telephone;
 
-    public EnseignantDTO(){
-        super();
+    public EnseignantDTO() {
     }
 
-    public EnseignantDTO(Long idEmploye, String nom, String prenom, String email, String telephoneUniv, String bureau, boolean estVacataire, String telephone) {
-        super();
-        this.idEmploye = idEmploye;
+    public EnseignantDTO(Long idEnseignant, Long idUniv, String nom, String prenom, String emailUniv, String telephoneUniv, String bureau, boolean estVacataire, String telephone) {
+        this.idEnseignant = idEnseignant;
+        this.idUniv = idUniv;
         this.nom = nom;
         this.prenom = prenom;
-        this.email = email;
+        this.emailUniv = emailUniv;
         this.telephoneUniv = telephoneUniv;
         this.bureau = bureau;
         this.estVacataire = estVacataire;
         this.telephone = telephone;
     }
 
-    public Long getIdEmploye() {
-        return idEmploye;
+    public Long getIdEnseignant() {
+        return idEnseignant;
     }
 
-    public void setIdEmploye(Long idEmploye) {
-        this.idEmploye = idEmploye;
+    public void setIdEnseignant(Long idEnseignant) {
+        this.idEnseignant = idEnseignant;
     }
 
     public String getNom() {
@@ -54,12 +51,12 @@ public class EnseignantDTO {
         this.prenom = prenom;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailUniv() {
+        return emailUniv;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailUniv(String emailUniv) {
+        this.emailUniv = emailUniv;
     }
 
     public String getTelephoneUniv() {
@@ -94,13 +91,22 @@ public class EnseignantDTO {
         this.telephone = telephone;
     }
 
+    public Long getIdUniv() {
+        return idUniv;
+    }
+
+    public void setIdUniv(Long idUniv) {
+        this.idUniv = idUniv;
+    }
+
     @Override
     public String toString() {
         return "EnseignantDTO{" +
-                "idEmploye=" + idEmploye +
+                "idEnseignant=" + idEnseignant +
+                ", idUniv=" + idUniv +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", email='" + email + '\'' +
+                ", emailUniv='" + emailUniv + '\'' +
                 ", telephoneUniv='" + telephoneUniv + '\'' +
                 ", bureau='" + bureau + '\'' +
                 ", estVacataire=" + estVacataire +

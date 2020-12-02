@@ -11,21 +11,21 @@ import java.util.stream.Collectors;
 @Component
 public class ResponsableFormationConverter {
 
-    public ResponsableFormationDTO entityToDTO(ResponsableFormation responsableFormation){
+    public ResponsableFormationDTO entityToDTO(ResponsableFormation responsableFormation) {
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(responsableFormation,ResponsableFormationDTO.class);
+        return mapper.map(responsableFormation, ResponsableFormationDTO.class);
     }
 
-    public List<ResponsableFormationDTO> entityToDTO(List<ResponsableFormation> responsableFormations){
+    public List<ResponsableFormationDTO> entityToDTO(List<ResponsableFormation> responsableFormations) {
         return responsableFormations.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
-    public ResponsableFormation dtoToEntity(ResponsableFormationDTO responsableFormationDTO){
+    public ResponsableFormation dtoToEntity(ResponsableFormationDTO responsableFormationDTO) {
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(responsableFormationDTO,ResponsableFormation.class);
+        return mapper.map(responsableFormationDTO, ResponsableFormation.class);
     }
 
-    public List<ResponsableFormation> dtoToEntity(List<ResponsableFormationDTO> responsableFormationDTOS){
+    public List<ResponsableFormation> dtoToEntity(List<ResponsableFormationDTO> responsableFormationDTOS) {
         return responsableFormationDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }

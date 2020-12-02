@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@Table
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Personne implements Serializable {
 

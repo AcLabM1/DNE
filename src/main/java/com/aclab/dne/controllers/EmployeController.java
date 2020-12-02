@@ -6,25 +6,27 @@ import com.aclab.dne.model.Employe;
 import com.aclab.dne.repositories.EmployeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "/employes")
 public class EmployeController {
 
+    private final EmployeRepository employeRepository;
+    private final EmployeConverter employeConverter;
+
     @Autowired
-    EmployeRepository employeRepository;
-    @Autowired
-    EmployeConverter employeConverter;
+    public EmployeController(EmployeRepository employeRepository, EmployeConverter employeConverter) {
+        this.employeRepository = employeRepository;
+        this.employeConverter = employeConverter;
+    }
 
-
-
-
-
-    @GetMapping("/employe")
+    @GetMapping
     public List<EmployeDTO> findAll(){
-        EmployeDTO employeDTO = new EmployeDTO("nom", "prenom", "mail", "tel", "bureau");
+        EmployeDTO employeDTO = new EmployeDTO(1L,1L,"Doe", "John", "john.doe@lacatholille.fr", "0123456789", "1");
         employeRepository.save(employeConverter.dtoToEntity(employeDTO));
         return employeConverter.entityToDTO((List<Employe>) employeRepository.findAll());
     }

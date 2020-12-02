@@ -7,14 +7,13 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@Table
 public class Diplome implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDiplome;
 
     private String intitule;
-    private int totalects;
+    private int totalEcts;
     private boolean estActif;
 
 }
