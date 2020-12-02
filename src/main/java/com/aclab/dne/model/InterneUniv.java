@@ -14,11 +14,15 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @PrimaryKeyJoinColumn(name = "idPersonne")
 public class InterneUniv extends Personne {
 
-
-    private String email;
+    private Long idUniv;
+    private String emailUniv;
 
     public InterneUniv() {
         super();
+    }
+
+    public InterneUniv(String emailUniv) {
+        this.emailUniv = emailUniv;
     }
 
     @Override
