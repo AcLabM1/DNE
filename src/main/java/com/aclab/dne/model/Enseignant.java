@@ -7,16 +7,12 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table
-@AllArgsConstructor
-@Data
 @Getter
 @Setter
 @NoArgsConstructor
-@PrimaryKeyJoinColumn(name = "idPersonne")
+@PrimaryKeyJoinColumn(name = "IdEmploye")
 public class Enseignant extends Employe{
 
     private boolean estVacataire;
     private String telephone;
-
 }
