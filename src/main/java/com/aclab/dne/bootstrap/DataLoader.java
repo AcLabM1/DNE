@@ -50,8 +50,8 @@ public class DataLoader implements CommandLineRunner {
         MatiereDTO matiereDTO = new MatiereDTO();
         matiereDTO.setIntitule("ACLAB");
         matiereDTO.setCodeMatiere("GRPE001");
-        matiereDTO.setCreditECTS(4);
-        matiereDTO.setDescription("Travail de groupe visant à produire une plus value certaine.");
+        matiereDTO.setCreditECTS(2);
+        matiereDTO.setDescription("Travail de groupe visant à produire une plus-value technique.");
         matiereDTO.setSemestre(1);
         matiereDTO.setQuotaHeure(32);
         matiereRepository.save(matiereConverter.dtoToEntity(matiereDTO));
