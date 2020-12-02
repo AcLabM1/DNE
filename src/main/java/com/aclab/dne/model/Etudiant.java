@@ -5,7 +5,6 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import java.util.Date;
-import java.util.Objects;
 
 @Getter
 @Setter

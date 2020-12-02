@@ -1,11 +1,10 @@
 package com.aclab.dne.converter;
 
 import com.aclab.dne.dto.TuteurDTO;
-import com.aclab.dne.dto.UeDTO;
-import com.aclab.dne.model.Personne;
 import com.aclab.dne.model.Tuteur;
-import com.aclab.dne.model.Ue;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,6 +13,8 @@ import java.util.stream.Collectors;
 @Component
 public class TuteurConverter {
 
+    private static final Logger log = LoggerFactory.getLogger(TuteurConverter.class);
+
     /**
      * Passage de Tuteur en TuteurDTO
      *
@@ -21,6 +22,7 @@ public class TuteurConverter {
      * @return
      */
     public TuteurDTO entityToDto(Tuteur tuteur) {
+        log.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(tuteur, TuteurDTO.class);
     }
@@ -32,6 +34,7 @@ public class TuteurConverter {
      * @return
      */
     public List<TuteurDTO> entityToDto(List<Tuteur> tuteurs) {
+        log.debug("IN");
         return tuteurs.stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
@@ -42,6 +45,7 @@ public class TuteurConverter {
      * @return
      */
     public Tuteur dtoToEntity(TuteurDTO tuteurDTO) {
+        log.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(tuteurDTO, Tuteur.class);
     }
@@ -53,6 +57,7 @@ public class TuteurConverter {
      * @return
      */
     public List<Tuteur> dtoToEntity(List<TuteurDTO> tuteurDTOS) {
+        log.debug("IN");
         return tuteurDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 
