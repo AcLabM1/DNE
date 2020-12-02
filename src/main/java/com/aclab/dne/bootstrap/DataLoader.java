@@ -2,6 +2,7 @@ package com.aclab.dne.bootstrap;
 
 import com.aclab.dne.converter.*;
 import com.aclab.dne.dto.EtudiantDTO;
+import com.aclab.dne.dto.MatiereDTO;
 import com.aclab.dne.dto.ResponsableFormationDTO;
 import com.aclab.dne.repositories.*;
 import org.slf4j.Logger;
@@ -45,6 +46,15 @@ public class DataLoader implements CommandLineRunner {
         user.setTelephonePersonnel("0607084231");
         user.setIduniv(2020615893L);
         etudiantRepository.save(etudiantConverter.dtoToEntity(user));
+
+        MatiereDTO matiereDTO = new MatiereDTO();
+        matiereDTO.setIntitule("ACLAB");
+        matiereDTO.setCodeMatiere("GRPE001");
+        matiereDTO.setCreditECTS(4);
+        matiereDTO.setDescription("Travail de groupe visant à produire une plus value certaine.");
+        matiereDTO.setSemestre(1);
+        matiereDTO.setQuotaHeure(32);
+        matiereRepository.save(matiereConverter.dtoToEntity(matiereDTO));
 
 
     }
