@@ -11,21 +11,21 @@ import java.util.stream.Collectors;
 @Component
 public class SessionConverter {
 
-    public SessionDTO entityToDTO(Session session){
+    public SessionDTO entityToDTO(Session session) {
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(session,SessionDTO.class);
+        return mapper.map(session, SessionDTO.class);
     }
 
-    public List<SessionDTO> entityToDTO(List<Session> sessionList){
+    public List<SessionDTO> entityToDTO(List<Session> sessionList) {
         return sessionList.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
-    public Session dtoToEntity(SessionDTO sessionDTO){
+    public Session dtoToEntity(SessionDTO sessionDTO) {
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(sessionDTO,Session.class);
+        return mapper.map(sessionDTO, Session.class);
     }
 
-    public List<Session> dtoToEntity(List<SessionDTO> sessionList){
+    public List<Session> dtoToEntity(List<SessionDTO> sessionList) {
         return sessionList.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }

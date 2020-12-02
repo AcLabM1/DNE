@@ -13,39 +13,43 @@ public class EnseignantConverter {
 
     /**
      * Converti un enseignant en enseignantDTO
+     *
      * @param enseignant
      * @return
      */
-    public EnseignantDTO entityToDTO(Enseignant enseignant){
+    public EnseignantDTO entityToDTO(Enseignant enseignant) {
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(enseignant,EnseignantDTO.class);
+        return mapper.map(enseignant, EnseignantDTO.class);
     }
 
     /**
      * converti une List enseignant en List enseignantDTO
+     *
      * @param enseignants
      * @return
      */
-    public List<EnseignantDTO> entityToDTO(List<Enseignant> enseignants){
+    public List<EnseignantDTO> entityToDTO(List<Enseignant> enseignants) {
         return enseignants.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
     /**
      * Converti EnseignantDO en enseignant
+     *
      * @param enseignantDTO
      * @return
      */
-    public Enseignant dtoToEntity(EnseignantDTO enseignantDTO){
+    public Enseignant dtoToEntity(EnseignantDTO enseignantDTO) {
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(enseignantDTO,Enseignant.class);
+        return mapper.map(enseignantDTO, Enseignant.class);
     }
 
     /**
      * Converti une List EnseignantDTO en List Enseignant
+     *
      * @param enseignantDTOS
      * @return
      */
-    public List<Enseignant> dtoToEntity(List<EnseignantDTO> enseignantDTOS){
+    public List<Enseignant> dtoToEntity(List<EnseignantDTO> enseignantDTOS) {
         return enseignantDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 

@@ -11,21 +11,21 @@ import java.util.stream.Collectors;
 @Component
 public class InterneUnivConverter {
 
-    public InterneUnivDTO entityToDTO(InterneUniv interneUniv){
+    public InterneUnivDTO entityToDTO(InterneUniv interneUniv) {
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(interneUniv,InterneUnivDTO.class);
+        return mapper.map(interneUniv, InterneUnivDTO.class);
     }
 
-    public List<InterneUnivDTO> entityToDTO(List<InterneUniv> interneUnivList){
+    public List<InterneUnivDTO> entityToDTO(List<InterneUniv> interneUnivList) {
         return interneUnivList.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
-    public InterneUniv dtoToEntity(InterneUnivDTO interneUnivDTO){
+    public InterneUniv dtoToEntity(InterneUnivDTO interneUnivDTO) {
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(interneUnivDTO,InterneUniv.class);
+        return mapper.map(interneUnivDTO, InterneUniv.class);
     }
 
-    public List<InterneUniv> dtoToEntity(List<InterneUnivDTO> interneUnivList){
+    public List<InterneUniv> dtoToEntity(List<InterneUnivDTO> interneUnivList) {
         return interneUnivList.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }
