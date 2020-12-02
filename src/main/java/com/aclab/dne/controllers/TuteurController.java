@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping(path = "/tuteurs")
 public class TuteurController {
 
-    private static final Logger log = LoggerFactory.getLogger(TuteurController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TuteurController.class);
     private final TuteurConverter tuteurConverter;
     private final TuteurRepository tuteurRepository;
 
@@ -27,19 +27,19 @@ public class TuteurController {
 
     @GetMapping
     public List<TuteurDTO> findAll(){
-        log.debug("IN");
+        LOG.debug("IN");
         return tuteurConverter.entityToDto((List<Tuteur>) tuteurRepository.findAll());
     }
 
     @GetMapping("/{id}")
     public TuteurDTO findByID(@PathVariable Long id){
-        log.debug("IN");
+        LOG.debug("IN");
         return tuteurConverter.entityToDto(tuteurRepository.findById(id).orElseThrow());
     }
 
     @PostMapping
     public void createTuteur(@RequestBody TuteurDTO tuteurDTO){
-        log.debug("IN");
+        LOG.debug("IN");
         tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));
     }
 

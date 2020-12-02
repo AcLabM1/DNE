@@ -12,27 +12,27 @@ import java.util.stream.Collectors;
 
 @Component
 public class InterneUnivConverter {
-    private static final Logger log = LoggerFactory.getLogger(InterneUnivConverter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(InterneUnivConverter.class);
 
     public InterneUnivDTO entityToDTO(InterneUniv interneUniv) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(interneUniv, InterneUnivDTO.class);
     }
 
     public List<InterneUnivDTO> entityToDTO(List<InterneUniv> interneUnivList) {
-        log.debug("IN");
+        LOG.debug("IN");
         return interneUnivList.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
     public InterneUniv dtoToEntity(InterneUnivDTO interneUnivDTO) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(interneUnivDTO, InterneUniv.class);
     }
 
     public List<InterneUniv> dtoToEntity(List<InterneUnivDTO> interneUnivList) {
-        log.debug("IN");
+        LOG.debug("IN");
         return interneUnivList.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }

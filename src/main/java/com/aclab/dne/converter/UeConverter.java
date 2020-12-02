@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Component
 public class UeConverter {
 
-    private static final Logger log = LoggerFactory.getLogger(UeConverter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(UeConverter.class);
     /**
      * Passage de Ue en UeDTO
      *
@@ -22,7 +22,7 @@ public class UeConverter {
      * @return
      */
     public UeDTO entityToDto(Ue ue) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(ue, UeDTO.class);
     }
@@ -34,7 +34,7 @@ public class UeConverter {
      * @return
      */
     public List<UeDTO> entityToDto(List<Ue> ues) {
-        log.debug("IN");
+        LOG.debug("IN");
         return ues.stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
@@ -45,7 +45,7 @@ public class UeConverter {
      * @return
      */
     public Ue dtoToEntity(UeDTO ueDTO) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(ueDTO, Ue.class);
     }
@@ -57,7 +57,7 @@ public class UeConverter {
      * @return
      */
     public List<Ue> dtoToEntity(List<UeDTO> ueDTOS) {
-        log.debug("IN");
+        LOG.debug("IN");
         return ueDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 

@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Component
 public class EnseignantConverter {
-    private static final Logger log = LoggerFactory.getLogger(EnseignantConverter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EnseignantConverter.class);
     /**
      * Converti un enseignant en enseignantDTO
      *
@@ -20,7 +20,7 @@ public class EnseignantConverter {
      * @return
      */
     public EnseignantDTO entityToDTO(Enseignant enseignant) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(enseignant, EnseignantDTO.class);
     }
@@ -32,7 +32,7 @@ public class EnseignantConverter {
      * @return
      */
     public List<EnseignantDTO> entityToDTO(List<Enseignant> enseignants) {
-        log.debug("IN");
+        LOG.debug("IN");
         return enseignants.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
@@ -43,7 +43,7 @@ public class EnseignantConverter {
      * @return
      */
     public Enseignant dtoToEntity(EnseignantDTO enseignantDTO) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(enseignantDTO, Enseignant.class);
     }
@@ -55,7 +55,7 @@ public class EnseignantConverter {
      * @return
      */
     public List<Enseignant> dtoToEntity(List<EnseignantDTO> enseignantDTOS) {
-        log.debug("IN");
+        LOG.debug("IN");
         return enseignantDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/enseignants")
 public class EnseignantController {
-    private static final Logger log = LoggerFactory.getLogger(EnseignantController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EnseignantController.class);
     private final EnseignantConverter enseignantConverter;
     private final EnseignantRepository enseignantRepository;
 

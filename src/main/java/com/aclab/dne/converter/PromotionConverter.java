@@ -13,27 +13,27 @@ import java.util.stream.Collectors;
 @Component
 public class PromotionConverter {
 
-    private static final Logger log = LoggerFactory.getLogger(PromotionConverter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PromotionConverter.class);
 
     public PromotionDTO entityToDTO(Promotion promotion) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(promotion, PromotionDTO.class);
     }
 
     public List<PromotionDTO> entityToDTO(List<Promotion> promotionList) {
-        log.debug("IN");
+        LOG.debug("IN");
         return promotionList.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
     public Promotion dtoToEntity(PromotionDTO promotionDTO) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(promotionDTO, Promotion.class);
     }
 
     public List<Promotion> dtoToEntity(List<PromotionDTO> promotionList) {
-        log.debug("IN");
+        LOG.debug("IN");
         return promotionList.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }

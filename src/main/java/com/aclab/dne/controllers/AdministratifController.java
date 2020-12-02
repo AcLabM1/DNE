@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/administratifs")
 public class AdministratifController {
 
-    private static final Logger log = LoggerFactory.getLogger(AdministratifController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AdministratifController.class);
     private final AdministratifRepository administratifRepository;
     private final AdministratifConverter administratifConverter;
 

@@ -12,26 +12,26 @@ import java.util.stream.Collectors;
 
 @Component
 public class EtudiantConverter {
-    private static final Logger log = LoggerFactory.getLogger(EtudiantConverter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EtudiantConverter.class);
     public EtudiantDTO entityToDto(Etudiant etudiant) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(etudiant, EtudiantDTO.class);
     }
 
     public List<EtudiantDTO> entityToDto(List<Etudiant> etudiants) {
-        log.debug("IN");
+        LOG.debug("IN");
         return etudiants.stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
     public Etudiant dtoToEntity(EtudiantDTO etudiantDTO) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(etudiantDTO, Etudiant.class);
     }
 
     public List<Etudiant> dtoToEntity(List<EtudiantDTO> etudiantsDTO) {
-        log.debug("IN");
+        LOG.debug("IN");
         return etudiantsDTO.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }

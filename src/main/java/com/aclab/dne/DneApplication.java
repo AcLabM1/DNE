@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class DneApplication {
-    private static final Logger log = LoggerFactory.getLogger(DneApplication.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DneApplication.class);
     public static void main(String[] args) {
         SpringApplication.run(DneApplication.class, args);
-        log.info("Application initialisée avec succés.");
+        LOG.info("Application initialisée avec succés.");
     }
 
 }

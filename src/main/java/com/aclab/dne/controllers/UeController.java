@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping(path = "/unitesEnseignement")
 public class UeController {
 
-    private static final Logger log = LoggerFactory.getLogger(UeController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(UeController.class);
     private final UeConverter ueConverter;
     private final UeRepository ueRepository;
 
@@ -27,19 +27,19 @@ public class UeController {
 
     @GetMapping
     public List<UeDTO> findAll(){
-        log.debug("IN");
+        LOG.debug("IN");
         return ueConverter.entityToDto((List<Ue>) ueRepository.findAll());
     }
 
     @GetMapping("/{id}")
     public UeDTO findById(@PathVariable int id){
-        log.debug("IN");
+        LOG.debug("IN");
         return ueConverter.entityToDto(ueRepository.findById(id).orElseThrow());
     }
 
     @PostMapping
     public void createUe(@RequestBody UeDTO ueDTO){
-        log.debug("IN");
+        LOG.debug("IN");
         ueRepository.save(ueConverter.dtoToEntity(ueDTO));
     }
 }

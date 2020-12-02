@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/matieres")
 public class MatiereController {
 
-    private static final Logger log = LoggerFactory.getLogger(MatiereController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MatiereController.class);
     private final MatiereConverter matiereConverter;
     private final MatiereRepository matiereRepository;
 

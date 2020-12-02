@@ -13,27 +13,27 @@ import java.util.stream.Collectors;
 @Component
 public class SessionConverter {
 
-    private static final Logger log = LoggerFactory.getLogger(SessionConverter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SessionConverter.class);
 
     public SessionDTO entityToDTO(Session session) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(session, SessionDTO.class);
     }
 
     public List<SessionDTO> entityToDTO(List<Session> sessionList) {
-        log.debug("IN");
+        LOG.debug("IN");
         return sessionList.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
     public Session dtoToEntity(SessionDTO sessionDTO) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(sessionDTO, Session.class);
     }
 
     public List<Session> dtoToEntity(List<SessionDTO> sessionList) {
-        log.debug("IN");
+        LOG.debug("IN");
         return sessionList.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }
