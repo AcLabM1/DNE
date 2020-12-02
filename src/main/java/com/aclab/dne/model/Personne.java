@@ -18,4 +18,6 @@ public abstract class Personne implements Serializable {
     private String prenom;
 
 
+    public Personne(){
+    }
 }
