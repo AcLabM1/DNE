@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/sessions")
 public class SessionController {
 
-    private static final Logger log = LoggerFactory.getLogger(SessionController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SessionController.class);
     private final SessionRepository sessionRepository;
     private final SessionConverter sessionConverter;
 

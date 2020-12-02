@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping(path = "/notes")
 public class NoteController {
 
-    private static final Logger log = LoggerFactory.getLogger(NoteController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(NoteController.class);
     private final NoteConverter noteConverter;
     private final NoteRepository noteRepository;
 
@@ -29,7 +29,7 @@ public class NoteController {
 
     @GetMapping
     public List<NoteDTO> findAll(){
-        log.debug("IN");
+        LOG.debug("IN");
         return noteConverter.entityToDTO((List<Note>) noteRepository.findAll());
     }
 }

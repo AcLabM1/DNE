@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Component
 public class MatiereConverter {
-    private static final Logger log = LoggerFactory.getLogger(MatiereConverter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MatiereConverter.class);
 
     /**
      * Passe entity matiere a matiereDTO
@@ -21,7 +21,7 @@ public class MatiereConverter {
      * @return matiereDTO
      */
     public MatiereDTO entityToDTO(Matiere matiere) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(matiere, MatiereDTO.class);
     }
@@ -33,7 +33,7 @@ public class MatiereConverter {
      * @return List matiereDTO
      */
     public List<MatiereDTO> entityToDTO(List<Matiere> matieres) {
-        log.debug("IN");
+        LOG.debug("IN");
         return matieres.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
@@ -44,7 +44,7 @@ public class MatiereConverter {
      * @return matiere
      */
     public Matiere dtoToEntity(MatiereDTO matiereDTO) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(matiereDTO, Matiere.class);
     }
@@ -56,7 +56,7 @@ public class MatiereConverter {
      * @return List matiere
      */
     public List<Matiere> dtoToEntity(List<MatiereDTO> matiereDTOS) {
-        log.debug("IN");
+        LOG.debug("IN");
         return matiereDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 

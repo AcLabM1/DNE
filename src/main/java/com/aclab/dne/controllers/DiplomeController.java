@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/diplomes")
 public class DiplomeController {
 
-    private static final Logger log = LoggerFactory.getLogger(DiplomeController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DiplomeController.class);
     private final DiplomeConverter diplomeConverter;
     private final DiplomeRepository diplomeRepository;
 

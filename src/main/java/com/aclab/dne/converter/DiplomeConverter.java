@@ -12,14 +12,14 @@ import java.util.stream.Collectors;
 
 @Component
 public class DiplomeConverter {
-    private static final Logger log = LoggerFactory.getLogger(DiplomeConverter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DiplomeConverter.class);
     /**
      * Passage de Diplome en DiplomeDto
      * @param diplome
      * @return
      */
     public DiplomeDTO entityToDTO(Diplome diplome){
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(diplome,DiplomeDTO.class);
     }
@@ -30,7 +30,7 @@ public class DiplomeConverter {
      * @return
      */
     public List<DiplomeDTO> entityToDTO(List<Diplome> diplomes){
-        log.debug("IN");
+        LOG.debug("IN");
         return diplomes.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
@@ -40,7 +40,7 @@ public class DiplomeConverter {
      * @return
      */
     public Diplome dtoToEntity(DiplomeDTO diplomeDTO){
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(diplomeDTO,Diplome.class);
     }
@@ -51,7 +51,7 @@ public class DiplomeConverter {
      * @return
      */
     public List<Diplome> dtoToEntity(List<DiplomeDTO> diplomeDTOs){
-        log.debug("IN");
+        LOG.debug("IN");
         return diplomeDTOs.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 

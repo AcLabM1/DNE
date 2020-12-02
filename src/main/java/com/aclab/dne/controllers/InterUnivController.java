@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/internesUniversite")
 public class InterUnivController {
 
-    private static final Logger log = LoggerFactory.getLogger(InterUnivController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(InterUnivController.class);
     private final InterneUnivConverter interneUnivConverter;
     private final InterneUnivRepository interneUnivRepository;
 

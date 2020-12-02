@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping(path = "/employes")
 public class EmployeController {
 
-    private static final Logger log = LoggerFactory.getLogger(EmployeController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EmployeController.class);
     private final EmployeRepository employeRepository;
     private final EmployeConverter employeConverter;
 
@@ -29,7 +29,7 @@ public class EmployeController {
 
     @GetMapping
     public List<EmployeDTO> findAll(){
-        log.debug("IN");
+        LOG.debug("IN");
         EmployeDTO employeDTO = new EmployeDTO(1L,1L,"Doe", "John", "john.doe@lacatholille.fr", "0123456789", "1");
         employeRepository.save(employeConverter.dtoToEntity(employeDTO));
         return employeConverter.entityToDTO((List<Employe>) employeRepository.findAll());

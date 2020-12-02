@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/responsables")
 public class ResponsableFormationController {
 
-    private static final Logger log = LoggerFactory.getLogger(ResponsableFormationController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ResponsableFormationController.class);
     private final ResponsableFormationConverter responsableFormationConverter;
     private final ResponsableFormationRepository responsableFormationRepository;
 

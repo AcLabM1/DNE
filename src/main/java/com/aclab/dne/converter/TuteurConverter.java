@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Component
 public class TuteurConverter {
 
-    private static final Logger log = LoggerFactory.getLogger(TuteurConverter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TuteurConverter.class);
 
     /**
      * Passage de Tuteur en TuteurDTO
@@ -22,7 +22,7 @@ public class TuteurConverter {
      * @return
      */
     public TuteurDTO entityToDto(Tuteur tuteur) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(tuteur, TuteurDTO.class);
     }
@@ -34,7 +34,7 @@ public class TuteurConverter {
      * @return
      */
     public List<TuteurDTO> entityToDto(List<Tuteur> tuteurs) {
-        log.debug("IN");
+        LOG.debug("IN");
         return tuteurs.stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
@@ -45,7 +45,7 @@ public class TuteurConverter {
      * @return
      */
     public Tuteur dtoToEntity(TuteurDTO tuteurDTO) {
-        log.debug("IN");
+        LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(tuteurDTO, Tuteur.class);
     }
@@ -57,7 +57,7 @@ public class TuteurConverter {
      * @return
      */
     public List<Tuteur> dtoToEntity(List<TuteurDTO> tuteurDTOS) {
-        log.debug("IN");
+        LOG.debug("IN");
         return tuteurDTOS.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 
