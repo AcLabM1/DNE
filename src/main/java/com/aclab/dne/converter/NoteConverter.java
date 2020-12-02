@@ -18,46 +18,46 @@ public class NoteConverter {
     /**
      * Passage de Note en NoteDto
      *
-     * @param Note
+     * @param note
      * @return
      */
-    public NoteDTO entityToDTO(Note Note) {
+    public NoteDTO entityToDTO(Note note) {
         LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(Note, NoteDTO.class);
+        return mapper.map(note, NoteDTO.class);
     }
 
     /**
      * Passe une List Note en List NoteDTO
      *
-     * @param Notes List de Note
+     * @param notes List de Note
      * @return
      */
-    public List<NoteDTO> entityToDTO(List<Note> Notes) {
+    public List<NoteDTO> entityToDTO(List<Note> notes) {
         LOG.debug("IN");
-        return Notes.stream().map(this::entityToDTO).collect(Collectors.toList());
+        return notes.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
     /**
      * Passage NoteDTO en Note
      *
-     * @param NoteDTO
+     * @param noteDTO
      * @return
      */
-    public Note dtoToEntity(NoteDTO NoteDTO) {
+    public Note dtoToEntity(NoteDTO noteDTO) {
         LOG.debug("IN");
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(NoteDTO, Note.class);
+        return mapper.map(noteDTO, Note.class);
     }
 
     /**
      * Passage List NoteDTO en List Note
      *
-     * @param NoteDTOs
+     * @param noteDTOs
      * @return
      */
-    public List<Note> dtoToEntity(List<NoteDTO> NoteDTOs) {
+    public List<Note> dtoToEntity(List<NoteDTO> noteDTOs) {
         LOG.debug("IN");
-        return NoteDTOs.stream().map(this::dtoToEntity).collect(Collectors.toList());
+        return noteDTOs.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }
