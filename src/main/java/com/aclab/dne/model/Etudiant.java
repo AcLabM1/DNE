@@ -17,5 +17,5 @@ public class Etudiant extends InterneUniv {
 
     private Date dateNaissance;
     private String emailPersonnel;
-    private String telephonePeronnel;
+    private String telephonePersonnel;
 }
