@@ -18,6 +18,7 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args){
+        LOG.debug("IN");
         loadData();
     }
     private void loadData(){
