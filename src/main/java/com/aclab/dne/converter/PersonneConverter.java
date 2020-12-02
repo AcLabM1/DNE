@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 @Component
 public class PersonneConverter {
 
+    //should be empty because Personne is abstract
     /**
      * Passage de Personne en PersonneDTO
      * @param personne
