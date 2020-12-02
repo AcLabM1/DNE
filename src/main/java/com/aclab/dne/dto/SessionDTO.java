@@ -10,6 +10,13 @@ public class SessionDTO {
     private String salle;
 
     public SessionDTO() {
+        super();
+    }
+
+    public SessionDTO(Timestamp dateHeure, int duree, String salle) {
+        this.dateHeure = dateHeure;
+        this.duree = duree;
+        this.salle = salle;
     }
 
     public Long getIdSession() {

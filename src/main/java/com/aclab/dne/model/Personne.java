@@ -16,7 +16,4 @@ public abstract class Personne implements Serializable {
     private String nom;
     private String prenom;
 
-
-    public Personne(){
-    }
 }
