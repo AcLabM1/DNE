@@ -9,7 +9,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 @Component
@@ -39,11 +38,19 @@ public class DataLoader implements CommandLineRunner {
         user.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
         user.setEmailPersonnel("julien.dudek@gmail.com");
         user.setEmailUniv("julien.dudek@lacatholille.fr");
-        user.setNom("DUDEK");
+        user.setNom("Dudek");
         user.setPrenom("Julien");
         user.setTelephonePersonnel("0607084231");
         user.setIduniv(2020615893L);
         etudiantRepository.save(etudiantConverter.dtoToEntity(user));
+
+        TuteurDTO tuteurDTO = new TuteurDTO();
+        tuteurDTO.setNom("Lefebvre");
+        tuteurDTO.setPrenom("Pierre");
+        tuteurDTO.setEmailPro("pierre.2.lefebvre@worldline.com");
+        tuteurDTO.setSociete("Worldline");
+        tuteurDTO.setTelephonePro("0320608183");
+        tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));
 
         MatiereDTO matiereDTO = new MatiereDTO();
         matiereDTO.setIntitule("ACLAB M1 S1");
@@ -61,6 +68,10 @@ public class DataLoader implements CommandLineRunner {
         DiplomeDTO diplomeDTO = new DiplomeDTO("Master III",120);
         diplomeDTO.setEstActif(true);
         diplomeRepository.save(diplomeConverter.dtoToEntity(diplomeDTO));
+
+        PromotionDTO promotionDTO = new PromotionDTO();
+        promotionDTO.setAnnee(2020);
+        promotionRepository.save(promotionConverter.dtoToEntity(promotionDTO));
 
 
     }
