@@ -1,10 +1,7 @@
 package com.aclab.dne.bootstrap;
 
 import com.aclab.dne.converter.*;
-import com.aclab.dne.dto.EtudiantDTO;
-import com.aclab.dne.dto.MatiereDTO;
-import com.aclab.dne.dto.ResponsableFormationDTO;
-import com.aclab.dne.dto.UeDTO;
+import com.aclab.dne.dto.*;
 import com.aclab.dne.repositories.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,7 +46,7 @@ public class DataLoader implements CommandLineRunner {
         etudiantRepository.save(etudiantConverter.dtoToEntity(user));
 
         MatiereDTO matiereDTO = new MatiereDTO();
-        matiereDTO.setIntitule("ACLAB");
+        matiereDTO.setIntitule("ACLAB M1 S1");
         matiereDTO.setCodeMatiere("GRPE001");
         matiereDTO.setCreditECTS(2);
         matiereDTO.setDescription("Travail de groupe visant à produire une plus-value technique.");
@@ -60,6 +57,10 @@ public class DataLoader implements CommandLineRunner {
         UeDTO ueDTO = new UeDTO();
         ueDTO.setIntitule("Transversal 1");
         ueRepository.save(ueConverter.dtoToEntity(ueDTO));
+
+        DiplomeDTO diplomeDTO = new DiplomeDTO("Master III",120);
+        diplomeDTO.setEstActif(true);
+        diplomeRepository.save(diplomeConverter.dtoToEntity(diplomeDTO));
 
 
     }
