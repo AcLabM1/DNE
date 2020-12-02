@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class NoteController {
+public class NoteConverter {
 
     /**
      * Passage de Note en NoteDto
