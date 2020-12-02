@@ -4,6 +4,8 @@ import com.aclab.dne.converter.NoteConverter;
 import com.aclab.dne.dto.NoteDTO;
 import com.aclab.dne.model.Note;
 import com.aclab.dne.repositories.NoteRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,7 @@ import java.util.List;
 @RequestMapping(path = "/notes")
 public class NoteController {
 
+    private static final Logger log = LoggerFactory.getLogger(NoteController.class);
     private final NoteConverter noteConverter;
     private final NoteRepository noteRepository;
 
@@ -25,5 +28,8 @@ public class NoteController {
     }
 
     @GetMapping
-    public List<NoteDTO> findAll(){ return noteConverter.entityToDTO((List<Note>) noteRepository.findAll());}
+    public List<NoteDTO> findAll(){
+        log.debug("IN");
+        return noteConverter.entityToDTO((List<Note>) noteRepository.findAll());
+    }
 }

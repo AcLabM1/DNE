@@ -3,6 +3,8 @@ package com.aclab.dne.converter;
 import com.aclab.dne.dto.NoteDTO;
 import com.aclab.dne.model.Note;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.stream.Collectors;
 @Component
 public class NoteConverter {
 
+    private static final Logger log = LoggerFactory.getLogger(NoteConverter.class);
+
     /**
      * Passage de Note en NoteDto
      *
@@ -18,6 +22,7 @@ public class NoteConverter {
      * @return
      */
     public NoteDTO entityToDTO(Note Note) {
+        log.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(Note, NoteDTO.class);
     }
@@ -29,6 +34,7 @@ public class NoteConverter {
      * @return
      */
     public List<NoteDTO> entityToDTO(List<Note> Notes) {
+        log.debug("IN");
         return Notes.stream().map(this::entityToDTO).collect(Collectors.toList());
     }
 
@@ -39,6 +45,7 @@ public class NoteConverter {
      * @return
      */
     public Note dtoToEntity(NoteDTO NoteDTO) {
+        log.debug("IN");
         ModelMapper mapper = new ModelMapper();
         return mapper.map(NoteDTO, Note.class);
     }
@@ -50,6 +57,7 @@ public class NoteConverter {
      * @return
      */
     public List<Note> dtoToEntity(List<NoteDTO> NoteDTOs) {
+        log.debug("IN");
         return NoteDTOs.stream().map(this::dtoToEntity).collect(Collectors.toList());
     }
 }
