@@ -10,24 +10,29 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "/unitesEnseignement")
 public class UeController {
 
-    @Autowired
-    UeConverter ueConverter;
-    @Autowired
-    UeRepository ueRepository;
+    private final UeConverter ueConverter;
+    private final UeRepository ueRepository;
 
-    @GetMapping("/ue")
+    @Autowired
+    public UeController(UeConverter ueConverter, UeRepository ueRepository) {
+        this.ueConverter = ueConverter;
+        this.ueRepository = ueRepository;
+    }
+
+    @GetMapping
     public List<UeDTO> findAll(){
         return ueConverter.entityToDto((List<Ue>) ueRepository.findAll());
     }
 
-    @GetMapping("/ue/{id}")
+    @GetMapping("/{id}")
     public UeDTO findById(@PathVariable int id){
         return ueConverter.entityToDto(ueRepository.findById(id).orElseThrow());
     }
 
-    @PostMapping("/ue")
+    @PostMapping
     public void createUe(@RequestBody UeDTO ueDTO){
          ueRepository.save(ueConverter.dtoToEntity(ueDTO));
     }

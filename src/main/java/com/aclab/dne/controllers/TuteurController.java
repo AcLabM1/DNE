@@ -10,22 +10,27 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "/tuteurs")
 public class TuteurController {
 
-    @Autowired
-    TuteurConverter tuteurConverter;
-    @Autowired
-    TuteurRepository tuteurRepository;
+    private final TuteurConverter tuteurConverter;
+    private final TuteurRepository tuteurRepository;
 
-    @GetMapping("/tuteur")
+    @Autowired
+    public TuteurController(TuteurConverter tuteurConverter, TuteurRepository tuteurRepository) {
+        this.tuteurConverter = tuteurConverter;
+        this.tuteurRepository = tuteurRepository;
+    }
+
+    @GetMapping
     public List<TuteurDTO> findAll(){ return tuteurConverter.entityToDto((List<Tuteur>) tuteurRepository.findAll());}
 
-    @GetMapping("/tuteur/{id}")
+    @GetMapping("/{id}")
     public TuteurDTO findByID(@PathVariable Long id){
         return tuteurConverter.entityToDto(tuteurRepository.findById(id).orElseThrow());
     }
 
-    @PostMapping("/tuteur")
+    @PostMapping
     public void createTuteur(@RequestBody TuteurDTO tuteurDTO){ tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));}
 
 }
