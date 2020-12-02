@@ -9,7 +9,7 @@ public class NoteDTO {
     private Date date;
     private int coef;
     private String type;
-    
+
 
     public NoteDTO(Long idNote, Float note, Date date, int coef, String type) {
         this.idNote = idNote;
