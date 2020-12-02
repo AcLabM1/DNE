@@ -17,19 +17,18 @@ public class DataLoader implements CommandLineRunner {
     private static final Logger LOG = LoggerFactory.getLogger(DataLoader.class);
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args){
         loadData();
-
     }
     private void loadData(){
-
+        LOG.debug("IN");
         ResponsableFormationDTO resp = new ResponsableFormationDTO();
         resp.setNom("Gouvy");
         resp.setPrenom("Nicolas");
         resp.setEmailUniv("nicolas.gouvy@univ-catholille.fr");
         resp.setTelephoneUniv("0320134195");
         resp.setBureau("RZ2XX");
-        resp.setEstVacataire(false);;
+        resp.setEstVacataire(false);
         resp.setPoste("Head of the Computer Science Master Degree ");
         resp.setIdUniv(2014617345L);
         responsableFormationRepository.save(responsableFormationConverter.dtoToEntity(resp));
@@ -52,6 +51,15 @@ public class DataLoader implements CommandLineRunner {
         tuteurDTO.setTelephonePro("0320608183");
         tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));
 
+        AdministratifDTO administratifDTO = new AdministratifDTO();
+        administratifDTO.setNom("Bediez");
+        administratifDTO.setPrenom("Stéphanie");
+        administratifDTO.setEmailUniv("Stephanie.BEDIEZ@univ-catholille.fr");
+        administratifDTO.setFonction("Responsable Relations Entreprises FGES | ISEA");
+        administratifDTO.setTelephoneUniv("03.59.31.50.01");
+        administratifDTO.setBureau("non communiqué");
+        administratifRepository.save(administratifConverter.dtoToEntity(administratifDTO));
+
         MatiereDTO matiereDTO = new MatiereDTO();
         matiereDTO.setIntitule("ACLAB M1 S1");
         matiereDTO.setCodeMatiere("GRPE001");
@@ -73,6 +81,7 @@ public class DataLoader implements CommandLineRunner {
         promotionDTO.setAnnee(2020);
         promotionRepository.save(promotionConverter.dtoToEntity(promotionDTO));
 
+        LOG.info("Données chargées");
 
     }
 
