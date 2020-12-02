@@ -4,6 +4,7 @@ import com.aclab.dne.converter.*;
 import com.aclab.dne.dto.EtudiantDTO;
 import com.aclab.dne.dto.MatiereDTO;
 import com.aclab.dne.dto.ResponsableFormationDTO;
+import com.aclab.dne.dto.UeDTO;
 import com.aclab.dne.repositories.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,6 +56,10 @@ public class DataLoader implements CommandLineRunner {
         matiereDTO.setSemestre(1);
         matiereDTO.setQuotaHeure(32);
         matiereRepository.save(matiereConverter.dtoToEntity(matiereDTO));
+
+        UeDTO ueDTO = new UeDTO();
+        ueDTO.setIntitule("Transversal 1");
+        ueRepository.save(ueConverter.dtoToEntity(ueDTO));
 
 
     }
