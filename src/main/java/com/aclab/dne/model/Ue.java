@@ -19,4 +19,8 @@ public class Ue implements Serializable {
     @ManyToMany(mappedBy = "ues")
     @JsonIgnoreProperties("ues")
     private Set<Matiere> matieres;
+
+    @ManyToMany(mappedBy = "ues")
+    @JsonIgnoreProperties("ues")
+    private Set<Diplome> diplomes;
 }
