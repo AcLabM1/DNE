@@ -24,4 +24,8 @@ public class Diplome implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "id_ue"))
     @JsonIgnoreProperties("diplomes")
     private Set<Ue> ues;
+
+    @ManyToMany(mappedBy = "diplomes")
+    @JsonIgnoreProperties("diplomes")
+    private Set<Promotion> promotions;
 }
