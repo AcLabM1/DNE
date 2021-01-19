@@ -30,8 +30,6 @@ public class EmployeController {
     @GetMapping
     public List<EmployeDTO> findAll(){
         LOG.debug("IN");
-        EmployeDTO employeDTO = new EmployeDTO(1L,1L,"Doe", "John", "john.doe@lacatholille.fr", "0123456789", "1");
-        employeRepository.save(employeConverter.dtoToEntity(employeDTO));
         return employeConverter.entityToDTO((List<Employe>) employeRepository.findAll());
     }
 }
