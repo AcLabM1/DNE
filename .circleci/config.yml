@@ -4,8 +4,8 @@ workflows:
     jobs:
       - build
       - dock:
+          context: DNE
           requires:
-            - context: DNE
             - build
 
 
