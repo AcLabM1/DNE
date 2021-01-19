@@ -1,9 +1,12 @@
 package com.aclab.dne.controllers;
 
+import com.aclab.dne.configuration.SwaggerConfig;
 import com.aclab.dne.converter.UeConverter;
 import com.aclab.dne.dto.UeDTO;
 import com.aclab.dne.model.Ue;
 import com.aclab.dne.repositories.UeRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/unitesEnseignement")
+@Api(tags = { SwaggerConfig.UE })
 public class UeController {
 
     private static final Logger LOG = LoggerFactory.getLogger(UeController.class);
@@ -26,18 +30,21 @@ public class UeController {
     }
 
     @GetMapping
+    @ApiOperation(value = "Retourne la liste de toutes les UE")
     public List<UeDTO> findAll(){
         LOG.debug("IN");
         return ueConverter.entityToDto((List<Ue>) ueRepository.findAll());
     }
 
     @GetMapping("/{id}")
+    @ApiOperation(value = "Retourne l'Ue sélectionnée par l'ID passé en paramètre.")
     public UeDTO findById(@PathVariable int id){
         LOG.debug("IN");
         return ueConverter.entityToDto(ueRepository.findById(id).orElseThrow());
     }
 
     @PostMapping
+    @ApiOperation(value = "Création d'une UE")
     public void createUe(@RequestBody UeDTO ueDTO){
         LOG.debug("IN");
         ueRepository.save(ueConverter.dtoToEntity(ueDTO));

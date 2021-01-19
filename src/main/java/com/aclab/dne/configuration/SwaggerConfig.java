@@ -30,6 +30,7 @@ public class SwaggerConfig {
                 .tags(new Tag(EMPLOYE,"Opérations autour des employé(e)s."))
                 .tags(new Tag(ENSEIGNANT,"Opérations possibles avec le personnel Enseignant."))
                 .tags(new Tag(ETUDIANT,"Autour des étudiants."))
+                .tags(new Tag(INTERNEUNIV,"Les internes à l'université."))
                 .tags(new Tag(MATIERE,"Tout ce qui concerne les matières."))
                 .tags(new Tag(NOTE,"Les notes, bonnnes ou moins bonnes sont par ici."))
                 .tags(new Tag(PROMOTION,"Gestion des promotions ..les années passent."))
@@ -62,6 +63,7 @@ public class SwaggerConfig {
     public static final String EMPLOYE = "Employe Controller";
     public static final String ENSEIGNANT = "Enseignant Controller";
     public static final String ETUDIANT = "Etudiant Controller";
+    public static final String INTERNEUNIV = "Interne univ' Controller";
     public static final String MATIERE = "Matière Conroller";
     public static final String NOTE = "Note Controller";
     public static final String PROMOTION = "Promotion Controller";
