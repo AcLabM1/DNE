@@ -4,6 +4,10 @@ workflows:
     jobs:
       - build
       - dock:
+          filters:
+            branches:
+              only:
+                - main
           context: DNE
           requires:
             - build
