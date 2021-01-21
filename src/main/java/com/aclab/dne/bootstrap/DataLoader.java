@@ -37,6 +37,7 @@ public class DataLoader implements CommandLineRunner {
         resp.setEstVacataire(false);
         resp.setPoste("Head of the Computer Science Master Degree ");
         resp.setIdUniv(2014617345L);
+        resp.setUsername(resp.getEmailUniv());//TODO voir pour la structure de l'username.
         resp.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         responsableFormationRepository.save(responsableFormationConverter.dtoToEntity(resp));
 
@@ -48,6 +49,7 @@ public class DataLoader implements CommandLineRunner {
         user.setPrenom("Julien");
         user.setTelephonePersonnel("0607084231");
         user.setIduniv(2020615893L);
+        user.setUsername(user.getEmailUniv());//TODO voir pour la structure de l'username.
         user.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         etudiantRepository.save(etudiantConverter.dtoToEntity(user));
 
@@ -57,6 +59,7 @@ public class DataLoader implements CommandLineRunner {
         tuteurDTO.setEmailPro("pierre.2.lefebvre@worldline.com");
         tuteurDTO.setSociete("Worldline");
         tuteurDTO.setTelephonePro("0320608183");
+        tuteurDTO.setUsername(tuteurDTO.getEmailPro());//TODO voir pour la structure de l'username.
         tuteurDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));
 
@@ -67,6 +70,7 @@ public class DataLoader implements CommandLineRunner {
         administratifDTO.setFonction("Responsable Relations Entreprises FGES | ISEA");
         administratifDTO.setTelephoneUniv("03.59.31.50.01");
         administratifDTO.setBureau("non communiqué");
+        administratifDTO.setUsername(administratifDTO.getEmailUniv());//TODO voir pour la structure de l'username.
         administratifDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         administratifRepository.save(administratifConverter.dtoToEntity(administratifDTO));
 
