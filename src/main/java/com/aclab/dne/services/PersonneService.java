@@ -1,10 +1,16 @@
 package com.aclab.dne.services;
 
-import com.aclab.dne.repositories.PersonneRepository;
+import com.aclab.dne.converter.*;
+import com.aclab.dne.model.Personne;
+import com.aclab.dne.repositories.*;
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,8 +19,48 @@ import java.util.regex.Pattern;
 @Service
 public class PersonneService {
     private static final String PASS_RGEX="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[€@#$%^&+=])(?=\\S+$).{8,20}$";
+    private final PersonneRepository personneRepository;
+    private final TuteurRepository tuteurRepository;
+    private final TuteurConverter tuteurConverter;
+    private final AdministratifRepository administratifRepository;
+    private final AdministratifConverter administratifConverter;
+    private final EnseignantRepository enseignantRepository;
+    private final EnseignantConverter enseignantConverter;
+    private final EtudiantRepository etudiantRepository;
+    private final EtudiantConverter etudiantConverter;
+    private final ResponsableFormationRepository responsableFormationRepository;
+    private final ResponsableFormationConverter responsableFormationConverter;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    @Autowired
+    private ModelMapper modelMapper;
 
-    
+
+    public Object login(String username,String password){
+        Object obj = null;
+        Optional<Personne> p = personneRepository.findPersonneByUsername(username);
+        if (p.isPresent()&& passwordEncoder.matches(password, p.get().getPassword())){
+            Long id= p.get().getIdPersonne();
+            String status;
+            obj = findEntity(id);
+        }
+        return obj;
+    }
+    private Object findEntity(Long id){
+        if(tuteurRepository.findById(id).isPresent()){
+            return tuteurConverter.entityToDto(tuteurRepository.findById(id).get());
+        }else if(etudiantRepository.findById(id).isPresent()){
+            return etudiantConverter.entityToDto(etudiantRepository.findById(id).get());
+        }else if(responsableFormationRepository.findById(id).isPresent()){
+            return responsableFormationConverter.entityToDTO(responsableFormationRepository.findById(id).get());
+        }else if(enseignantRepository.findById(id).isPresent()){
+            return enseignantConverter.entityToDTO(enseignantRepository.findById(id).get());
+        }else if(administratifRepository.findById(id).isPresent()){
+            return administratifConverter.entityToDTO(administratifRepository.findById(id).get());
+        }else{
+            return null;
+        }
+    }
 
     /**
      * Methode utilitaire pour la creation d'un password

@@ -36,22 +36,34 @@ public class DataLoader implements CommandLineRunner {
         resp.setBureau("RZ2XX");
         resp.setEstVacataire(false);
         resp.setPoste("Head of the Computer Science Master Degree ");
-        resp.setIdUniv(2014617345L);
+        resp.setIdResponsableFormation(2014617345L);
         resp.setUsername(resp.getEmailUniv());//TODO voir pour la structure de l'username.
         resp.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         responsableFormationRepository.save(responsableFormationConverter.dtoToEntity(resp));
 
         EtudiantDTO user = new EtudiantDTO();
-        user.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
-        user.setEmailPersonnel("julien.dudek@gmail.com");
-        user.setEmailUniv("julien.dudek@lacatholille.fr");
-        user.setNom("Dudek");
-        user.setPrenom("Julien");
-        user.setTelephonePersonnel("0607084231");
-        user.setIduniv(2020615893L);
+        user.setDateNaissance(new GregorianCalendar(1990, Calendar.FEBRUARY, 12).getTime());
+        user.setEmailPersonnel("morgan.lombard@unmail.com");
+        user.setEmailUniv("morgan.lombard@lacatholille.fr");
+        user.setNom("Lombard");
+        user.setPrenom("Morgan");
+        user.setTelephonePersonnel("0607056561");
+        user.setIduniv(2020612223L);
         user.setUsername(user.getEmailUniv());//TODO voir pour la structure de l'username.
         user.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         etudiantRepository.save(etudiantConverter.dtoToEntity(user));
+
+        EtudiantDTO user2 = new EtudiantDTO();
+        user2.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
+        user2.setEmailPersonnel("julien.dudek@unmail.com");
+        user2.setEmailUniv("julien.dudek@lacatholille.fr");
+        user2.setNom("Dudek");
+        user2.setPrenom("Julien");
+        user2.setTelephonePersonnel("0609090231");
+        user2.setIduniv(2020615893L);
+        user2.setUsername(user2.getEmailUniv());//TODO voir pour la structure de l'username.
+        user2.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        etudiantRepository.save(etudiantConverter.dtoToEntity(user2));
 
         TuteurDTO tuteurDTO = new TuteurDTO();
         tuteurDTO.setNom("Lefebvre");
@@ -62,6 +74,18 @@ public class DataLoader implements CommandLineRunner {
         tuteurDTO.setUsername(tuteurDTO.getEmailPro());//TODO voir pour la structure de l'username.
         tuteurDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));
+
+        EtudiantDTO user3 = new EtudiantDTO();
+        user3.setDateNaissance(new GregorianCalendar(1990, Calendar.DECEMBER, 31).getTime());
+        user3.setEmailPersonnel("pierre.darcas@unmail.com");
+        user3.setEmailUniv("pierre.darcas@lacatholille.fr");
+        user3.setNom("Darcas");
+        user3.setPrenom("Pierre");
+        user3.setTelephonePersonnel("0601111161");
+        user3.setIduniv(2025465676L);
+        user3.setUsername(user3.getEmailUniv());//TODO voir pour la structure de l'username.
+        user3.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        etudiantRepository.save(etudiantConverter.dtoToEntity(user3));
 
         AdministratifDTO administratifDTO = new AdministratifDTO();
         administratifDTO.setNom("Bediez");
