@@ -32,8 +32,6 @@ public class PersonneService {
     private final ResponsableFormationConverter responsableFormationConverter;
     @Autowired
     private PasswordEncoder passwordEncoder;
-    @Autowired
-    private ModelMapper modelMapper;
 
 
     public Object login(String username,String password){
