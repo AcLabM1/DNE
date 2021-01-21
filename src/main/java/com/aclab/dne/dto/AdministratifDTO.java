@@ -10,6 +10,10 @@ public class AdministratifDTO {
     private String telephoneUniv;
     private String bureau;
     private String fonction;
+    private String password;
+
+
+    private String username;
 
     public AdministratifDTO() {
     }
@@ -87,6 +91,22 @@ public class AdministratifDTO {
 
     public void setIdUniv(Long idUniv) {
         this.idUniv = idUniv;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override

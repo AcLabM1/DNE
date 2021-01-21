@@ -5,6 +5,8 @@ public class InterneUnivDTO {
     private Long idInterneUniv;
     private Long idUniv;
     private String emailUniv;
+    private String password;
+    private String username;
 
     public InterneUnivDTO() {
     }
@@ -39,5 +41,19 @@ public class InterneUnivDTO {
         this.emailUniv = emailUniv;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }

@@ -11,6 +11,8 @@ public class EnseignantDTO {
     private String bureau;
     private boolean estVacataire;
     private String telephone;
+    private String password;
+    private String username;
 
     public EnseignantDTO() {
     }
@@ -97,6 +99,22 @@ public class EnseignantDTO {
 
     public void setIdUniv(Long idUniv) {
         this.idUniv = idUniv;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override

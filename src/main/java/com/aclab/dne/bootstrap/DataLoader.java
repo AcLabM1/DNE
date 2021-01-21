@@ -5,7 +5,9 @@ import com.aclab.dne.dto.*;
 import com.aclab.dne.repositories.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Calendar;
@@ -15,6 +17,9 @@ import java.util.GregorianCalendar;
 public class DataLoader implements CommandLineRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(DataLoader.class);
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public void run(String... args){
@@ -32,6 +37,7 @@ public class DataLoader implements CommandLineRunner {
         resp.setEstVacataire(false);
         resp.setPoste("Head of the Computer Science Master Degree ");
         resp.setIdUniv(2014617345L);
+        resp.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         responsableFormationRepository.save(responsableFormationConverter.dtoToEntity(resp));
 
         EtudiantDTO user = new EtudiantDTO();
@@ -42,6 +48,7 @@ public class DataLoader implements CommandLineRunner {
         user.setPrenom("Julien");
         user.setTelephonePersonnel("0607084231");
         user.setIduniv(2020615893L);
+        user.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         etudiantRepository.save(etudiantConverter.dtoToEntity(user));
 
         TuteurDTO tuteurDTO = new TuteurDTO();
@@ -50,6 +57,7 @@ public class DataLoader implements CommandLineRunner {
         tuteurDTO.setEmailPro("pierre.2.lefebvre@worldline.com");
         tuteurDTO.setSociete("Worldline");
         tuteurDTO.setTelephonePro("0320608183");
+        tuteurDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));
 
         AdministratifDTO administratifDTO = new AdministratifDTO();
@@ -59,6 +67,7 @@ public class DataLoader implements CommandLineRunner {
         administratifDTO.setFonction("Responsable Relations Entreprises FGES | ISEA");
         administratifDTO.setTelephoneUniv("03.59.31.50.01");
         administratifDTO.setBureau("non communiqué");
+        administratifDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         administratifRepository.save(administratifConverter.dtoToEntity(administratifDTO));
 
         MatiereDTO matiereDTO = new MatiereDTO();

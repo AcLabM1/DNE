@@ -8,6 +8,8 @@ public class TuteurDTO {
     private String emailPro;
     private String telephonePro;
     private String societe;
+    private String password;
+    private String username;
 
     public TuteurDTO() {
     }
@@ -67,6 +69,22 @@ public class TuteurDTO {
 
     public void setSociete(String societe) {
         this.societe = societe;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
