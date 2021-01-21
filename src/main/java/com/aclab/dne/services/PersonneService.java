@@ -4,7 +4,6 @@ import com.aclab.dne.converter.*;
 import com.aclab.dne.model.Personne;
 import com.aclab.dne.repositories.*;
 import lombok.AllArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
