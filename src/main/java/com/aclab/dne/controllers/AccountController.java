@@ -2,6 +2,8 @@ package com.aclab.dne.controllers;
 
 import com.aclab.dne.configuration.SwaggerConfig;
 import com.aclab.dne.services.PersonneService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -21,8 +23,8 @@ public class AccountController {
 
     @PostMapping("/login")
     @ApiOperation("Identification du compte")
-    public String login(@ApiParam("Password") @RequestParam String password, @ApiParam("Username") @RequestParam String username) {
-        return personneService.login(username,password).toString();
+    public ObjectNode login(@ApiParam("Password") @RequestParam String password, @ApiParam("Username") @RequestParam String username) throws JsonProcessingException {
+        return personneService.login(username,password);
 
     }
 }

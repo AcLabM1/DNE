@@ -1,8 +1,14 @@
 package com.aclab.dne.services;
 
 import com.aclab.dne.converter.*;
+import com.aclab.dne.dto.*;
 import com.aclab.dne.model.Personne;
 import com.aclab.dne.repositories.*;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -33,15 +39,37 @@ public class PersonneService {
     private PasswordEncoder passwordEncoder;
 
 
-    public Object login(String username,String password){
+    public ObjectNode login(String username,String password) throws JsonProcessingException {
+        ObjectNode res = null;
         Object obj = null;
         Optional<Personne> p = personneRepository.findPersonneByUsername(username);
         if (p.isPresent()&& passwordEncoder.matches(password, p.get().getPassword())){
             Long id= p.get().getIdPersonne();
             String status;
             obj = findEntity(id);
+            String type = new String();
+            if(obj instanceof TuteurDTO){
+                type= "Tuteur";
+            }else if(obj instanceof EtudiantDTO ){
+                type = "Etudiant";
+            }else if(obj instanceof ResponsableFormationDTO){
+                type = "Responsable";
+            }else if(obj instanceof EnseignantDTO){
+                type = "Enseignant";
+            }else if(obj instanceof AdministratifDTO){
+                type = "Administratif";
+            }else{
+                type ="Non reconnu";
+            }
+            JsonFactory factory = new JsonFactory();
+            ObjectMapper mapper = new ObjectMapper(factory);
+            ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+            String json = ow.writeValueAsString(obj);
+            ObjectNode node = (ObjectNode) mapper.readTree(json);
+            node.putPOJO("status",type);
+            res = node;
         }
-        return obj;
+        return res;
     }
     private Object findEntity(Long id){
         if(tuteurRepository.findById(id).isPresent()){
