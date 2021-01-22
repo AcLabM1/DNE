@@ -5,9 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -23,5 +21,7 @@ public class Inscription {
     @Id
     private Long idPromotion;
 
-    private Long idTuteur;
+    @ManyToOne
+    @JoinColumn(name = "id_tuteur")
+    private Tuteur tuteur;
 }
