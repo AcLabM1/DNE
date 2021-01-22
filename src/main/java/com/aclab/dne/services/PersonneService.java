@@ -41,12 +41,11 @@ public class PersonneService {
 
     public ObjectNode login(String username,String password) throws JsonProcessingException {
         ObjectNode res = null;
-        Object obj = null;
         Optional<Personne> p = personneRepository.findPersonneByUsername(username);
         if (p.isPresent()&& passwordEncoder.matches(password, p.get().getPassword())){
             Long id= p.get().getIdPersonne();
             String status;
-            obj = findEntity(id);
+            Object obj = findEntity(id);
             String type = new String();
             if(obj instanceof TuteurDTO){
                 type= "Tuteur";
