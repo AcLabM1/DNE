@@ -3,10 +3,12 @@ package com.aclab.dne.converter;
 import com.aclab.dne.dto.CommunicationDTO;
 import com.aclab.dne.model.Communication;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class CommunicationConverter {
 
     public CommunicationDTO entityToDTO(Communication communication){
