@@ -3,6 +3,14 @@ workflows:
   build_and_dock:
     jobs:
       - build
+      - dock:
+          filters:
+            branches:
+              only:
+                - main
+          context: DNE
+          requires:
+            - build
 
 
 jobs:
@@ -37,3 +45,15 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit
+  dock:
+    docker:
+      - image: circleci/openjdk:latest
+    working_directory: ~/dne
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dne-api-{{ checksum "pom.xml" }}
+      # build and push docker image to docker hub
+      - run: mvn compile jib:build -Djib.to.auth.username=$DOCKER_HUB_USER_ID -Djib.to.auth.password=$DOCKERHUB_PASSWORD
+
