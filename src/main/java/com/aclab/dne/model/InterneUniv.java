@@ -14,7 +14,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @PrimaryKeyJoinColumn(name = "idPersonne")
 public class InterneUniv extends Personne {
 
-    private Long idUniv;
+    private Long univId;
     private String emailUniv;
 
     public InterneUniv() {
