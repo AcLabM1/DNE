@@ -3,7 +3,7 @@ package com.aclab.dne.dto;
 public class EmployeDTO {
 
     private Long idEmploye;
-    private Long idUniv;
+    private String numInterneUniv;
     private String nom;
     private String prenom;
     private String emailUniv;
@@ -15,9 +15,9 @@ public class EmployeDTO {
     public EmployeDTO() {
     }
 
-    public EmployeDTO(Long idEmploye, Long idUniv, String nom, String prenom, String emailUniv, String telephoneUniv, String bureau) {
+    public EmployeDTO(Long idEmploye, String numInterneUniv, String nom, String prenom, String emailUniv, String telephoneUniv, String bureau) {
         this.idEmploye = idEmploye;
-        this.idUniv = idUniv;
+        this.numInterneUniv = numInterneUniv;
         this.nom = nom;
         this.prenom = prenom;
         this.emailUniv = emailUniv;
@@ -73,12 +73,12 @@ public class EmployeDTO {
         this.bureau = bureau;
     }
 
-    public Long getIdUniv() {
-        return idUniv;
+    public String getnumInterneUniv() {
+        return numInterneUniv;
     }
 
-    public void setIdUniv(Long idUniv) {
-        this.idUniv = idUniv;
+    public void setnumInterneUniv(String numInterneUniv) {
+        this.numInterneUniv = numInterneUniv;
     }
 
     public String getPassword() {
@@ -101,7 +101,7 @@ public class EmployeDTO {
     public String toString() {
         return "EmployeDTO{" +
                 "idEmploye=" + idEmploye +
-                ", idUniv=" + idUniv +
+                ", numInterneUniv=" + numInterneUniv +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", emailUniv='" + emailUniv + '\'' +

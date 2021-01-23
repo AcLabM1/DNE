@@ -12,15 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "/internesUniversite")
-@Api(tags = { SwaggerConfig.INTERNEUNIV })
-public class InterUnivController {
+public class InterneUnivController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(InterUnivController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(InterneUnivController.class);
     private final InterneUnivConverter interneUnivConverter;
     private final InterneUnivRepository interneUnivRepository;
 
     @Autowired
-    public InterUnivController(InterneUnivConverter interneUnivConverter, InterneUnivRepository interneUnivRepository) {
+    public InterneUnivController(InterneUnivConverter interneUnivConverter, InterneUnivRepository interneUnivRepository) {
         this.interneUnivConverter = interneUnivConverter;
         this.interneUnivRepository = interneUnivRepository;
     }

@@ -5,12 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -25,4 +23,14 @@ public class Session implements Serializable {
     private Timestamp dateHeure;
     private int duree;
     private String salle;
+
+    @ManyToMany(mappedBy = "sessions")
+    private Set<Enseignant> enseignants;
+
+    @ManyToOne
+    @JoinColumn(name = "id_promotion")
+    @JoinColumn(name = "id_diplome")
+    @JoinColumn(name = "id_ue")
+    @JoinColumn(name = "id_matiere")
+    private MetaMatiere metaMatiere;
 }

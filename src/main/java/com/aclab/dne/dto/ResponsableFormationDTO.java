@@ -4,7 +4,7 @@ package com.aclab.dne.dto;
 public class ResponsableFormationDTO {
 
     private Long idResponsableFormation;
-    private Long idUniv;
+    private String numInterneUniv;
     private String nom;
     private String prenom;
     private boolean estVacataire;
@@ -19,9 +19,9 @@ public class ResponsableFormationDTO {
     public ResponsableFormationDTO() {
     }
 
-    public ResponsableFormationDTO(Long idResponsableFormation, Long idUniv, String nom, String prenom, boolean estVacataire, String emailUniv, String telephoneUniv, String bureau, String telephone, String poste) {
+    public ResponsableFormationDTO(Long idResponsableFormation, String numInterneUniv, String nom, String prenom, boolean estVacataire, String emailUniv, String telephoneUniv, String bureau, String telephone, String poste) {
         this.idResponsableFormation = idResponsableFormation;
-        this.idUniv = idUniv;
+        this.numInterneUniv = numInterneUniv;
         this.nom = nom;
         this.prenom = prenom;
         this.estVacataire = estVacataire;
@@ -104,12 +104,12 @@ public class ResponsableFormationDTO {
         this.poste = poste;
     }
 
-    public Long getIdUniv() {
-        return idUniv;
+    public String getnumInterneUniv() {
+        return numInterneUniv;
     }
 
-    public void setIdUniv(Long idUniv) {
-        this.idUniv = idUniv;
+    public void setnumInterneUniv(String numInterneUniv) {
+        this.numInterneUniv = numInterneUniv;
     }
 
     public String getPassword() {
@@ -132,7 +132,7 @@ public class ResponsableFormationDTO {
     public String toString() {
         return "ResponsableFormationDTO{" +
                 "idResponsableFormation=" + idResponsableFormation +
-                ", idUniv=" + idUniv +
+                ", numInterneUniv=" + numInterneUniv +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", estVacataire=" + estVacataire +

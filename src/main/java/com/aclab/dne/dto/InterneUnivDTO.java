@@ -3,7 +3,7 @@ package com.aclab.dne.dto;
 public class InterneUnivDTO {
 
     private Long idInterneUniv;
-    private Long idUniv;
+    private String idUniv;
     private String emailUniv;
     private String password;
     private String username;
@@ -11,9 +11,9 @@ public class InterneUnivDTO {
     public InterneUnivDTO() {
     }
 
-    public InterneUnivDTO(Long idInterneUniv, Long idUniv, String emailUniv) {
+    public InterneUnivDTO(Long idInterneUniv, String numInterneUniv, String emailUniv) {
         this.idInterneUniv = idInterneUniv;
-        this.idUniv = idUniv;
+        this.idUniv = numInterneUniv;
         this.emailUniv = emailUniv;
     }
 
@@ -25,12 +25,12 @@ public class InterneUnivDTO {
         this.idInterneUniv = idInterneUniv;
     }
 
-    public Long getIdUniv() {
+    public String getnumInterneUniv() {
         return idUniv;
     }
 
-    public void setIdUniv(Long idUniv) {
-        this.idUniv = idUniv;
+    public void setnumInterneUniv(String numInterneUniv) {
+        this.idUniv = numInterneUniv;
     }
 
     public String getEmailUniv() {
@@ -40,7 +40,7 @@ public class InterneUnivDTO {
     public void setEmailUniv(String emailUniv) {
         this.emailUniv = emailUniv;
     }
-
+  
     public String getPassword() {
         return password;
     }
@@ -56,4 +56,5 @@ public class InterneUnivDTO {
     public void setUsername(String username) {
         this.username = username;
     }
+
 }
