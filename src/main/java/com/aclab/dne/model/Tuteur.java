@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Entity
 @Data
-@PrimaryKeyJoinColumn(name = "idPersonne")
+@PrimaryKeyJoinColumn(name = "idTuteur")
 public class Tuteur extends Personne {
 
     private String emailPro;

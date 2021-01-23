@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Entity
-@PrimaryKeyJoinColumn(name = "idInterneUniv")
+@PrimaryKeyJoinColumn(name = "idEtudiant")
 public class Etudiant extends InterneUniv {
 
     private Date dateNaissance;

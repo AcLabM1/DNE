@@ -13,7 +13,7 @@ import java.util.Set;
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-@PrimaryKeyJoinColumn(name = "IdEmploye")
+@PrimaryKeyJoinColumn(name = "idEnseignant")
 public class Enseignant extends Employe{
 
     private boolean estVacataire;
