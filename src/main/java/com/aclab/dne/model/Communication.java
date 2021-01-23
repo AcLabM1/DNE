@@ -27,6 +27,9 @@ public class Communication  implements Serializable {
     private Long idPromotion;
 
     @Id
+    private Long idDiplome;
+
+    @Id
     private Long idEmploye;
 
     @Id

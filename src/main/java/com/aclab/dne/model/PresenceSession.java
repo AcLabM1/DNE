@@ -22,9 +22,6 @@ public class PresenceSession implements Serializable {
     private Long idEtudiant;
 
     @Id
-    private Long idPromotion;
-
-    @Id
     private Long idSession;
 
     private boolean isPresent;

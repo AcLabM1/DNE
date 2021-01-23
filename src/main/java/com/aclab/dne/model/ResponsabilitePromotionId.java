@@ -9,11 +9,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class CommunicationId implements Serializable {
+public class ResponsabilitePromotionId implements Serializable {
 
-    private Long idEtudiant;
+    private Long idResponsableFormation;
     private Long idPromotion;
     private Long idDiplome;
-    private Long idEmploye;
-    private Long idCommunication;
 }

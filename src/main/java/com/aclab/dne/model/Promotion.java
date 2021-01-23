@@ -28,7 +28,4 @@ public class Promotion implements Serializable {
     inverseJoinColumns = @JoinColumn(name = "ud_diplome"))
     @JsonIgnoreProperties("promotions")
     private Set<Diplome> diplomes;
-
-    @ManyToOne
-    private ResponsableFormation responsableFormations;
 }

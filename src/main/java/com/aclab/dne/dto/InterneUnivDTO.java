@@ -38,6 +38,4 @@ public class InterneUnivDTO {
     public void setEmailUniv(String emailUniv) {
         this.emailUniv = emailUniv;
     }
-
-
 }

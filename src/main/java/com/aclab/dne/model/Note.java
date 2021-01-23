@@ -25,14 +25,15 @@ public class Note implements Serializable {
     @ManyToOne
     @JoinColumns(value = {
             @JoinColumn(name = "id_etudiant", referencedColumnName = "id_etudiant"),
-            @JoinColumn(name = "id_promotion", referencedColumnName = "id_promotion")
+            @JoinColumn(name = "id_promotion", referencedColumnName = "id_promotion"),
+            @JoinColumn(name = "id_diplome", referencedColumnName = "id_diplome")
     })
     private Inscription inscription;
 
     @ManyToOne
     @JoinColumnsOrFormulas(value = {
             @JoinColumnOrFormula(formula = @JoinFormula(value = "id_promotion", referencedColumnName = "id_promotion")),
-            @JoinColumnOrFormula(column = @JoinColumn(name = "id_diplome", referencedColumnName = "id_diplome")),
+            @JoinColumnOrFormula(formula = @JoinFormula(value = "id_diplome", referencedColumnName = "id_diplome")),
             @JoinColumnOrFormula(column = @JoinColumn(name = "id_ue", referencedColumnName = "id_ue")),
             @JoinColumnOrFormula(column = @JoinColumn(name = "id_matiere", referencedColumnName = "id_matiere"))
     })

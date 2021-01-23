@@ -11,6 +11,5 @@ import java.io.Serializable;
 @EqualsAndHashCode
 public class PresenceSessionId implements Serializable {
     private Long idEtudiant;
-    private Long idPromotion;
     private Long idSession;
 }
