@@ -35,4 +35,7 @@ public class MetaMatiere  implements Serializable {
 
     @ManyToMany(mappedBy = "matieres")
     private Set<Enseignant> enseignants;
+
+    @OneToMany(mappedBy = "metaMatiere")
+    private Set<Session> sessions;
 }

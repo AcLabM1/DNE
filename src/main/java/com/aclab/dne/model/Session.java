@@ -26,4 +26,11 @@ public class Session implements Serializable {
 
     @ManyToMany(mappedBy = "sessions")
     private Set<Enseignant> enseignants;
+
+    @ManyToOne
+    @JoinColumn(name = "id_promotion")
+    @JoinColumn(name = "id_diplome")
+    @JoinColumn(name = "id_ue")
+    @JoinColumn(name = "id_matiere")
+    private MetaMatiere metaMatiere;
 }
