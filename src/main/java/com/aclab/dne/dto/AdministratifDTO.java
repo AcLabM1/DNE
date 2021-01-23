@@ -11,8 +11,6 @@ public class AdministratifDTO {
     private String bureau;
     private String fonction;
     private String password;
-
-
     private String username;
 
     public AdministratifDTO() {
@@ -114,6 +112,7 @@ public class AdministratifDTO {
         return "AdministratifDTO{" +
                 "idAdministratif=" + idAdministratif +
                 ", numInterneUniv=" + numInterneUniv +
+                ", username='"+ username +'\'' +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", emailUniv='" + emailUniv + '\'' +
