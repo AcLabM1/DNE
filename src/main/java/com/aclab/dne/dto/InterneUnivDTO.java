@@ -3,15 +3,15 @@ package com.aclab.dne.dto;
 public class InterneUnivDTO {
 
     private Long idInterneUniv;
-    private Long idUniv;
+    private String numInterneUniv;
     private String emailUniv;
 
     public InterneUnivDTO() {
     }
 
-    public InterneUnivDTO(Long idInterneUniv, Long idUniv, String emailUniv) {
+    public InterneUnivDTO(Long idInterneUniv, String numInterneUniv, String emailUniv) {
         this.idInterneUniv = idInterneUniv;
-        this.idUniv = idUniv;
+        this.numInterneUniv = numInterneUniv;
         this.emailUniv = emailUniv;
     }
 
@@ -23,12 +23,12 @@ public class InterneUnivDTO {
         this.idInterneUniv = idInterneUniv;
     }
 
-    public Long getIdUniv() {
-        return idUniv;
+    public String getnumInterneUniv() {
+        return numInterneUniv;
     }
 
-    public void setIdUniv(Long idUniv) {
-        this.idUniv = idUniv;
+    public void setnumInterneUniv(String numInterneUniv) {
+        this.numInterneUniv = numInterneUniv;
     }
 
     public String getEmailUniv() {

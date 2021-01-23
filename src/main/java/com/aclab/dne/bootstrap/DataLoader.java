@@ -31,7 +31,7 @@ public class DataLoader implements CommandLineRunner {
         resp.setBureau("RZ2XX");
         resp.setEstVacataire(false);
         resp.setPoste("Head of the Computer Science Master Degree ");
-        resp.setIdUniv(2014617345L);
+        resp.setnumInterneUniv("2014617345L");
         responsableFormationRepository.save(responsableFormationConverter.dtoToEntity(resp));
 
         EtudiantDTO user = new EtudiantDTO();
@@ -41,7 +41,7 @@ public class DataLoader implements CommandLineRunner {
         user.setNom("Dudek");
         user.setPrenom("Julien");
         user.setTelephonePersonnel("0607084231");
-        user.setIduniv(2020615893L);
+        user.setNumInterneUniv("2020615893L");
         etudiantRepository.save(etudiantConverter.dtoToEntity(user));
 
         TuteurDTO tuteurDTO = new TuteurDTO();
