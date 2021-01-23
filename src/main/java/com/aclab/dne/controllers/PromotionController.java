@@ -9,9 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -36,6 +34,28 @@ public class PromotionController {
         try {
             return this.promotionService.findAllPromotions();
         }catch (NoSuchElementException e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/{promotionId}")
+    @ApiOperation(value = "Retourne la promotion sélectionnée par l'ID passé en paramètre.")
+    public PromotionDTO findByPromotionID(@PathVariable("promotionId") Long promotionId){
+        LOG.debug("IN");
+        try{
+            return this.promotionService.findPromotionByPromotionID(promotionId);
+        }catch (NoSuchElementException e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping
+    @ApiOperation(value = "Création d'un tuteur.")
+    public PromotionDTO createPromotion(@RequestBody PromotionDTO newPromotionDTO){
+        LOG.debug("IN");
+        try{
+            return this.promotionService.createPromotion(newPromotionDTO);
+        }catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }

@@ -2,7 +2,9 @@ package com.aclab.dne.services;
 
 import com.aclab.dne.converter.PromotionConverter;
 import com.aclab.dne.dto.PromotionDTO;
+import com.aclab.dne.dto.TuteurDTO;
 import com.aclab.dne.model.Promotion;
+import com.aclab.dne.model.Tuteur;
 import com.aclab.dne.repositories.PromotionRepository;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.IterableUtils;
@@ -11,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Transactional
 @AllArgsConstructor
@@ -27,6 +30,19 @@ public class PromotionService {
         } else {
             throw new NoSuchElementException("Pas de promotion");
         }
+    }
+
+    public PromotionDTO findPromotionByPromotionID(Long promotionId){
+        Optional<Promotion> promotion = this.promotionRepository.findById(promotionId);
+        if(promotion.isPresent()){
+            return this.promotionConverter.entityToDTO(promotion.get());
+        }else {
+            throw new NoSuchElementException("Pas de promotion");
+        }
+    }
+
+    public PromotionDTO createPromotion(PromotionDTO newPromotionDTO){
+        return promotionConverter.entityToDTO((promotionRepository.save(this.promotionConverter.dtoToEntity(newPromotionDTO))));
     }
 
 }
