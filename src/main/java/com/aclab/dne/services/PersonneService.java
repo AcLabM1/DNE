@@ -2,6 +2,7 @@ package com.aclab.dne.services;
 
 import com.aclab.dne.converter.*;
 import com.aclab.dne.dto.*;
+import com.aclab.dne.exception.CustomException;
 import com.aclab.dne.model.Personne;
 import com.aclab.dne.repositories.*;
 import com.fasterxml.jackson.core.JsonFactory;
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -68,6 +70,8 @@ public class PersonneService {
             node.putPOJO("status",type);
             node.remove("password");
             res = node;
+        }else{
+            throw new CustomException( "Erreur d'identification",HttpStatus.FORBIDDEN);
         }
         return res;
     }
