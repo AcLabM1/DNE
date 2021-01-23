@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -82,6 +83,12 @@ public class DataLoader implements CommandLineRunner {
         promotionDTO.setAnnee(2020);
         promotionRepository.save(promotionConverter.dtoToEntity(promotionDTO));
 
+        SessionDTO sessionDTO = new SessionDTO();
+        sessionDTO.setDateHeure( Timestamp.valueOf("2020-10-25 10:00:00.000"));
+        sessionDTO.setDuree(2);
+        sessionDTO.setSalle("RZ242");
+        sessionRepository.save(sessionConverter.dtoToEntity(sessionDTO));
+
         LOG.info("Données chargées");
 
     }
@@ -89,11 +96,11 @@ public class DataLoader implements CommandLineRunner {
     public DataLoader(AdministratifRepository administratifRepository, DiplomeRepository diplomeRepository,
                       EtudiantRepository etudiantRepository, MatiereRepository matiereRepository,
                       PromotionRepository promotionRepository,
-                      ResponsableFormationRepository responsableFormationRepository,TuteurRepository tuteurRepository,
-                      UeRepository ueRepository, AdministratifConverter administratifConverter, DiplomeConverter diplomeConverter,
+                      ResponsableFormationRepository responsableFormationRepository, TuteurRepository tuteurRepository,
+                      UeRepository ueRepository, SessionRepository sessionRepository, AdministratifConverter administratifConverter, DiplomeConverter diplomeConverter,
                       EtudiantConverter etudiantConverter, MatiereConverter matiereConverter, PromotionConverter promotionConverter,
                       ResponsableFormationConverter responsableFormationConverter, TuteurConverter tuteurConverter,
-                      UeConverter ueConverter) {
+                      UeConverter ueConverter, SessionConverter sessionConverter) {
 
         this.administratifRepository = administratifRepository;
         this.diplomeRepository = diplomeRepository;
@@ -103,6 +110,7 @@ public class DataLoader implements CommandLineRunner {
         this.responsableFormationRepository = responsableFormationRepository;
         this.tuteurRepository = tuteurRepository;
         this.ueRepository = ueRepository;
+        this.sessionRepository = sessionRepository;
         this.administratifConverter = administratifConverter;
         this.diplomeConverter = diplomeConverter;
         this.etudiantConverter = etudiantConverter;
@@ -111,6 +119,7 @@ public class DataLoader implements CommandLineRunner {
         this.responsableFormationConverter = responsableFormationConverter;
         this.tuteurConverter = tuteurConverter;
         this.ueConverter = ueConverter;
+        this.sessionConverter = sessionConverter;
     }
 
 
@@ -123,6 +132,7 @@ public class DataLoader implements CommandLineRunner {
     private final ResponsableFormationRepository responsableFormationRepository;
     private final TuteurRepository tuteurRepository;
     private final UeRepository ueRepository;
+    private final SessionRepository sessionRepository;
     //Converter
     private final AdministratifConverter administratifConverter;
     private final DiplomeConverter diplomeConverter;
@@ -132,4 +142,5 @@ public class DataLoader implements CommandLineRunner {
     private final ResponsableFormationConverter responsableFormationConverter;
     private final TuteurConverter tuteurConverter;
     private final UeConverter ueConverter;
+    private final SessionConverter sessionConverter;
 }
