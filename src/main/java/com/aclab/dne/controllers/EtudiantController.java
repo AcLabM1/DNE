@@ -29,6 +29,7 @@ public class EtudiantController {
 
     @GetMapping
     public List<EtudiantDTO> findAll() {
+        LOG.debug("IN");
         try {
             return this.etudiantService.findAllEtudiants();
         }catch (NoSuchElementException e){
