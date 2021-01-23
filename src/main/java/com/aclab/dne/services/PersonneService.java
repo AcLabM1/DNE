@@ -66,6 +66,7 @@ public class PersonneService {
             String json = ow.writeValueAsString(obj);
             ObjectNode node = (ObjectNode) mapper.readTree(json);
             node.putPOJO("status",type);
+            node.remove("password");
             res = node;
         }
         return res;
