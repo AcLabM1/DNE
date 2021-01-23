@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Lob;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Getter
@@ -17,7 +18,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @IdClass(CommunicationId.class)
-public class Communication {
+public class Communication  implements Serializable {
 
     @Id
     private Long idEtudiant;

@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -13,15 +15,20 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @IdClass(InscriptionId.class)
-public class Inscription {
+public class Inscription  implements Serializable {
 
     @Id
+    @Column(name = "id_etudiant")
     private Long idEtudiant;
 
     @Id
+    @Column(name = "id_promotion")
     private Long idPromotion;
 
     @ManyToOne
     @JoinColumn(name = "id_tuteur")
     private Tuteur tuteur;
+
+    @OneToMany(mappedBy = "inscription")
+    private Set<Note> notes;
 }
