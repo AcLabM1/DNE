@@ -15,5 +15,7 @@ public abstract class Personne implements Serializable {
     private Long idPersonne;
     private String nom;
     private String prenom;
+    private String password;
+    private String username;
 
 }

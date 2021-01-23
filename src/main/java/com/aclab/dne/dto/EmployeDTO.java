@@ -9,6 +9,8 @@ public class EmployeDTO {
     private String emailUniv;
     private String telephoneUniv;
     private String bureau;
+    private String password;
+    private String username;
 
     public EmployeDTO() {
     }
@@ -77,6 +79,22 @@ public class EmployeDTO {
 
     public void setnumInterneUniv(String numInterneUniv) {
         this.numInterneUniv = numInterneUniv;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override

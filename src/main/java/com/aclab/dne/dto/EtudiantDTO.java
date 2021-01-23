@@ -13,6 +13,8 @@ public class EtudiantDTO {
     private String emailUniv;
     private String emailPersonnel;
     private String telephonePersonnel;
+    private String password;
+    private String username;
 
     public EtudiantDTO() {
     }
@@ -90,6 +92,22 @@ public class EtudiantDTO {
 
     public void setTelephonePersonnel(String telephonePersonnel) {
         this.telephonePersonnel = telephonePersonnel;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override

@@ -5,10 +5,11 @@ import com.aclab.dne.dto.*;
 import com.aclab.dne.repositories.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -16,6 +17,9 @@ import java.util.GregorianCalendar;
 public class DataLoader implements CommandLineRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(DataLoader.class);
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public void run(String... args){
@@ -32,34 +36,66 @@ public class DataLoader implements CommandLineRunner {
         resp.setBureau("RZ2XX");
         resp.setEstVacataire(false);
         resp.setPoste("Head of the Computer Science Master Degree ");
-        resp.setnumInterneUniv("2014617345L");
+        resp.setIdResponsableFormation(2014617345L);
+        resp.setUsername(resp.getEmailUniv());//TODO voir pour la structure de l'username.
+        resp.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         responsableFormationRepository.save(responsableFormationConverter.dtoToEntity(resp));
 
         EtudiantDTO user = new EtudiantDTO();
-        user.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
-        user.setEmailPersonnel("julien.dudek@gmail.com");
-        user.setEmailUniv("julien.dudek@lacatholille.fr");
-        user.setNom("Dudek");
-        user.setPrenom("Julien");
-        user.setTelephonePersonnel("0607084231");
-        user.setNumInterneUniv("2020615893L");
+        user.setDateNaissance(new GregorianCalendar(1990, Calendar.FEBRUARY, 12).getTime());
+        user.setEmailPersonnel("morgan.lombard@unmail.com");
+        user.setEmailUniv("morgan.lombard@lacatholille.fr");
+        user.setNom("Lombard");
+        user.setPrenom("Morgan");
+        user.setTelephonePersonnel("0607056561");
+        user.setIduniv(2020612223L);
+        user.setUsername(user.getEmailUniv());//TODO voir pour la structure de l'username.
+        user.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         etudiantRepository.save(etudiantConverter.dtoToEntity(user));
 
+        EtudiantDTO user2 = new EtudiantDTO();
+        user2.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
+        user2.setEmailPersonnel("julien.dudek@unmail.com");
+        user2.setEmailUniv("julien.dudek@lacatholille.fr");
+        user2.setNom("Dudek");
+        user2.setPrenom("Julien");
+        user2.setTelephonePersonnel("0609090231");
+        user2.setIduniv(2020615893L);
+        user2.setUsername(user2.getEmailUniv());//TODO voir pour la structure de l'username.
+        user2.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        etudiantRepository.save(etudiantConverter.dtoToEntity(user2));
+
         TuteurDTO tuteurDTO = new TuteurDTO();
-        tuteurDTO.setNom("Lefebvre");
-        tuteurDTO.setPrenom("Pierre");
-        tuteurDTO.setEmailPro("pierre.2.lefebvre@worldline.com");
+        tuteurDTO.setNom("Lefebvreeeee");
+        tuteurDTO.setPrenom("Pierrrre");
+        tuteurDTO.setEmailPro("pierre.2.lefebvre@saboite.com");
         tuteurDTO.setSociete("Worldline");
-        tuteurDTO.setTelephonePro("0320608183");
+        tuteurDTO.setTelephonePro("0320000083");
+        tuteurDTO.setUsername(tuteurDTO.getEmailPro());//TODO voir pour la structure de l'username.
+        tuteurDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));
+
+        EtudiantDTO user3 = new EtudiantDTO();
+        user3.setDateNaissance(new GregorianCalendar(1990, Calendar.DECEMBER, 31).getTime());
+        user3.setEmailPersonnel("pierre.darcas@unmail.com");
+        user3.setEmailUniv("pierre.darcas@lacatholille.fr");
+        user3.setNom("Darcas");
+        user3.setPrenom("Pierre");
+        user3.setTelephonePersonnel("0601111161");
+        user3.setIduniv(2025465676L);
+        user3.setUsername(user3.getEmailUniv());//TODO voir pour la structure de l'username.
+        user3.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        etudiantRepository.save(etudiantConverter.dtoToEntity(user3));
 
         AdministratifDTO administratifDTO = new AdministratifDTO();
         administratifDTO.setNom("Bediez");
         administratifDTO.setPrenom("Stéphanie");
         administratifDTO.setEmailUniv("Stephanie.BEDIEZ@univ-catholille.fr");
         administratifDTO.setFonction("Responsable Relations Entreprises FGES | ISEA");
-        administratifDTO.setTelephoneUniv("03.59.31.50.01");
+        administratifDTO.setTelephoneUniv("0359315001");
         administratifDTO.setBureau("non communiqué");
+        administratifDTO.setUsername(administratifDTO.getEmailUniv());//TODO voir pour la structure de l'username.
+        administratifDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         administratifRepository.save(administratifConverter.dtoToEntity(administratifDTO));
 
         MatiereDTO matiereDTO = new MatiereDTO();
@@ -83,12 +119,6 @@ public class DataLoader implements CommandLineRunner {
         promotionDTO.setAnnee(2020);
         promotionRepository.save(promotionConverter.dtoToEntity(promotionDTO));
 
-        SessionDTO sessionDTO = new SessionDTO();
-        sessionDTO.setDateHeure( Timestamp.valueOf("2020-10-25 10:00:00.000"));
-        sessionDTO.setDuree(2);
-        sessionDTO.setSalle("RZ242");
-        sessionRepository.save(sessionConverter.dtoToEntity(sessionDTO));
-
         LOG.info("Données chargées");
 
     }
@@ -96,11 +126,11 @@ public class DataLoader implements CommandLineRunner {
     public DataLoader(AdministratifRepository administratifRepository, DiplomeRepository diplomeRepository,
                       EtudiantRepository etudiantRepository, MatiereRepository matiereRepository,
                       PromotionRepository promotionRepository,
-                      ResponsableFormationRepository responsableFormationRepository, TuteurRepository tuteurRepository,
-                      UeRepository ueRepository, SessionRepository sessionRepository, AdministratifConverter administratifConverter, DiplomeConverter diplomeConverter,
+                      ResponsableFormationRepository responsableFormationRepository,TuteurRepository tuteurRepository,
+                      UeRepository ueRepository, AdministratifConverter administratifConverter, DiplomeConverter diplomeConverter,
                       EtudiantConverter etudiantConverter, MatiereConverter matiereConverter, PromotionConverter promotionConverter,
                       ResponsableFormationConverter responsableFormationConverter, TuteurConverter tuteurConverter,
-                      UeConverter ueConverter, SessionConverter sessionConverter) {
+                      UeConverter ueConverter) {
 
         this.administratifRepository = administratifRepository;
         this.diplomeRepository = diplomeRepository;
@@ -110,7 +140,6 @@ public class DataLoader implements CommandLineRunner {
         this.responsableFormationRepository = responsableFormationRepository;
         this.tuteurRepository = tuteurRepository;
         this.ueRepository = ueRepository;
-        this.sessionRepository = sessionRepository;
         this.administratifConverter = administratifConverter;
         this.diplomeConverter = diplomeConverter;
         this.etudiantConverter = etudiantConverter;
@@ -119,7 +148,6 @@ public class DataLoader implements CommandLineRunner {
         this.responsableFormationConverter = responsableFormationConverter;
         this.tuteurConverter = tuteurConverter;
         this.ueConverter = ueConverter;
-        this.sessionConverter = sessionConverter;
     }
 
 
@@ -132,7 +160,6 @@ public class DataLoader implements CommandLineRunner {
     private final ResponsableFormationRepository responsableFormationRepository;
     private final TuteurRepository tuteurRepository;
     private final UeRepository ueRepository;
-    private final SessionRepository sessionRepository;
     //Converter
     private final AdministratifConverter administratifConverter;
     private final DiplomeConverter diplomeConverter;
@@ -142,5 +169,4 @@ public class DataLoader implements CommandLineRunner {
     private final ResponsableFormationConverter responsableFormationConverter;
     private final TuteurConverter tuteurConverter;
     private final UeConverter ueConverter;
-    private final SessionConverter sessionConverter;
 }
