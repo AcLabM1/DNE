@@ -2,8 +2,6 @@ package com.aclab.dne.controllers;
 
 import com.aclab.dne.configuration.SwaggerConfig;
 import com.aclab.dne.dto.DiplomeDTO;
-import com.aclab.dne.dto.PromotionDTO;
-import com.aclab.dne.dto.TuteurDTO;
 import com.aclab.dne.services.DiplomeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

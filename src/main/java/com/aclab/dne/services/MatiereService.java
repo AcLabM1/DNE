@@ -4,7 +4,6 @@ import com.aclab.dne.converter.MatiereConverter;
 import com.aclab.dne.dto.MatiereDTO;
 import com.aclab.dne.model.Matiere;
 import com.aclab.dne.repositories.MatiereRepository;
-import com.aclab.dne.repositories.TuteurRepository;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.IterableUtils;
 import org.springframework.stereotype.Service;

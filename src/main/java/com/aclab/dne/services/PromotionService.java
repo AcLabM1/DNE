@@ -2,9 +2,7 @@ package com.aclab.dne.services;
 
 import com.aclab.dne.converter.PromotionConverter;
 import com.aclab.dne.dto.PromotionDTO;
-import com.aclab.dne.dto.TuteurDTO;
 import com.aclab.dne.model.Promotion;
-import com.aclab.dne.model.Tuteur;
 import com.aclab.dne.repositories.PromotionRepository;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.IterableUtils;

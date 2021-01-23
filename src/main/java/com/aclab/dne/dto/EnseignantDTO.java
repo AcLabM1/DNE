@@ -101,7 +101,6 @@ public class EnseignantDTO {
         this.telephone = telephone;
     }
 
-
     public String getPassword() {
         return password;
     }
@@ -123,6 +122,7 @@ public class EnseignantDTO {
         return "EnseignantDTO{" +
                 "idEnseignant=" + idEnseignant +
                 ", numInterneUniv='" + numInterneUniv + '\'' +
+                ", username='"+ username +'\'' +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", emailUniv='" + emailUniv + '\'' +
