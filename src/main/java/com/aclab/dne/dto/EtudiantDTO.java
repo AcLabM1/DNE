@@ -6,7 +6,7 @@ import java.util.Objects;
 public class EtudiantDTO {
 
     private Long idEtudiant;
-    private Long iduniv;
+    private String numInterneUniv;
     private String nom;
     private String prenom;
     private Date dateNaissance;
@@ -17,13 +17,13 @@ public class EtudiantDTO {
     public EtudiantDTO() {
     }
 
-    public EtudiantDTO(Long idEtudiant, String nom, String prenom, Long iduniv, String emailUniv, Date dateNaissance, String emailPersonnel, String telephonePersonnel) {
+    public EtudiantDTO(Long idEtudiant, String numInterneUniv, String nom, String prenom, Date dateNaissance, String emailUniv, String emailPersonnel, String telephonePersonnel) {
         this.idEtudiant = idEtudiant;
+        this.numInterneUniv = numInterneUniv;
         this.nom = nom;
         this.prenom = prenom;
-        this.iduniv = iduniv;
-        this.emailUniv = emailUniv;
         this.dateNaissance = dateNaissance;
+        this.emailUniv = emailUniv;
         this.emailPersonnel = emailPersonnel;
         this.telephonePersonnel = telephonePersonnel;
     }
@@ -34,6 +34,14 @@ public class EtudiantDTO {
 
     public void setIdEtudiant(Long idEtudiant) {
         this.idEtudiant = idEtudiant;
+    }
+
+    public String getNumInterneUniv() {
+        return numInterneUniv;
+    }
+
+    public void setNumInterneUniv(String numInterneUniv) {
+        this.numInterneUniv = numInterneUniv;
     }
 
     public String getNom() {
@@ -52,12 +60,12 @@ public class EtudiantDTO {
         this.prenom = prenom;
     }
 
-    public Long getIduniv() {
-        return iduniv;
+    public Date getDateNaissance() {
+        return dateNaissance;
     }
 
-    public void setIduniv(Long iduniv) {
-        this.iduniv = iduniv;
+    public void setDateNaissance(Date dateNaissance) {
+        this.dateNaissance = dateNaissance;
     }
 
     public String getEmailUniv() {
@@ -66,14 +74,6 @@ public class EtudiantDTO {
 
     public void setEmailUniv(String emailUniv) {
         this.emailUniv = emailUniv;
-    }
-
-    public Date getDateNaissance() {
-        return dateNaissance;
-    }
-
-    public void setDateNaissance(Date dateNaissance) {
-        this.dateNaissance = dateNaissance;
     }
 
     public String getEmailPersonnel() {
@@ -93,34 +93,14 @@ public class EtudiantDTO {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof EtudiantDTO)) return false;
-        EtudiantDTO that = (EtudiantDTO) o;
-        return Objects.equals(getIdEtudiant(), that.getIdEtudiant()) &&
-                Objects.equals(getNom(), that.getNom()) &&
-                Objects.equals(getPrenom(), that.getPrenom()) &&
-                Objects.equals(getIduniv(), that.getIduniv()) &&
-                Objects.equals(getEmailUniv(), that.getEmailUniv()) &&
-                Objects.equals(getDateNaissance(), that.getDateNaissance()) &&
-                Objects.equals(getEmailPersonnel(), that.getEmailPersonnel()) &&
-                Objects.equals(getTelephonePersonnel(), that.getTelephonePersonnel());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getIdEtudiant(), getNom(), getPrenom(), getIduniv(), getEmailUniv(), getDateNaissance(), getEmailPersonnel(), getTelephonePersonnel());
-    }
-
-    @Override
     public String toString() {
         return "EtudiantDTO{" +
                 "idEtudiant=" + idEtudiant +
+                ", numInterneUniv='" + numInterneUniv + '\'' +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", iduniv=" + iduniv +
-                ", emailUniv='" + emailUniv + '\'' +
                 ", dateNaissance=" + dateNaissance +
+                ", emailUniv='" + emailUniv + '\'' +
                 ", emailPersonnel='" + emailPersonnel + '\'' +
                 ", telephonePersonnel='" + telephonePersonnel + '\'' +
                 '}';

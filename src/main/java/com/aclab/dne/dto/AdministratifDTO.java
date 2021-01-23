@@ -3,7 +3,7 @@ package com.aclab.dne.dto;
 public class AdministratifDTO {
 
     private Long idAdministratif;
-    private Long idUniv;
+    private String numInterneUniv;
     private String nom;
     private String prenom;
     private String emailUniv;
@@ -14,9 +14,9 @@ public class AdministratifDTO {
     public AdministratifDTO() {
     }
 
-    public AdministratifDTO(Long idAdministratif, Long idUniv, String nom, String prenom, String emailUniv, String telephoneUniv, String bureau, String fonction) {
+    public AdministratifDTO(Long idAdministratif, String numInterneUniv, String nom, String prenom, String emailUniv, String telephoneUniv, String bureau, String fonction) {
         this.idAdministratif = idAdministratif;
-        this.idUniv = idUniv;
+        this.numInterneUniv = numInterneUniv;
         this.nom = nom;
         this.prenom = prenom;
         this.emailUniv = emailUniv;
@@ -81,19 +81,19 @@ public class AdministratifDTO {
         this.fonction = fonction;
     }
 
-    public Long getIdUniv() {
-        return idUniv;
+    public String getnumInterneUniv() {
+        return numInterneUniv;
     }
 
-    public void setIdUniv(Long idUniv) {
-        this.idUniv = idUniv;
+    public void setnumInterneUniv(String numInterneUniv) {
+        this.numInterneUniv = numInterneUniv;
     }
 
     @Override
     public String toString() {
         return "AdministratifDTO{" +
                 "idAdministratif=" + idAdministratif +
-                ", idUniv=" + idUniv +
+                ", numInterneUniv=" + numInterneUniv +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", emailUniv='" + emailUniv + '\'' +
