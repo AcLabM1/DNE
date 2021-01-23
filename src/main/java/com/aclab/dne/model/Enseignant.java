@@ -1,5 +1,6 @@
 package com.aclab.dne.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "IdEmploye")
 public class Enseignant extends Employe{
@@ -27,4 +29,11 @@ public class Enseignant extends Employe{
              @JoinColumn(name = "id_ue"),
              @JoinColumn(name = "id_matiere")})
     private Set<MetaMatiere> matieres;
+
+    @ManyToMany
+    @JoinTable(
+            name = "ENSEIGNANT_SESSION",
+            joinColumns = @JoinColumn(name = "id_enseignant"),
+            inverseJoinColumns = @JoinColumn(name = "id_session"))
+    private Set<Session> sessions;
 }

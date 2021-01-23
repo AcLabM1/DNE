@@ -34,5 +34,5 @@ public class MetaMatiere  implements Serializable {
     private Long idMatiere;
 
     @ManyToMany(mappedBy = "matieres")
-    Set<Enseignant> enseignants;
+    private Set<Enseignant> enseignants;
 }
