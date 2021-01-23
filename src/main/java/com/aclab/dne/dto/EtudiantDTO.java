@@ -1,7 +1,6 @@
 package com.aclab.dne.dto;
 
 import java.util.Date;
-import java.util.Objects;
 
 public class EtudiantDTO {
 
