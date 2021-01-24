@@ -92,7 +92,7 @@ public class DataLoader implements CommandLineRunner {
         AdministratifDTO administratifDTO = new AdministratifDTO();
         administratifDTO.setNom("Bediez");
         administratifDTO.setPrenom("Stéphanie");
-        administratifDTO.setEmailUniv("Stephanie.BEDIEZ@univ-catholille.fr");
+        administratifDTO.setEmailUniv("stephanie.BEDIEZ@univ-catholille.fr");
         administratifDTO.setFonction("Responsable Relations Entreprises FGES | ISEA");
         administratifDTO.setTelephoneUniv("0359315001");
         administratifDTO.setBureau("non communiqué");
