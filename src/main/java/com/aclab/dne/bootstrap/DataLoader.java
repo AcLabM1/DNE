@@ -15,6 +15,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -90,154 +91,168 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadData(){
         LOG.debug("IN");
-        ResponsableFormationDTO responsableDTO = new ResponsableFormationDTO();
-        responsableDTO.setNom("Gouvy");
-        responsableDTO.setPrenom("Nicolas");
-        responsableDTO.setEmailUniv("nicolas.gouvy@univ-catholille.fr");
-        responsableDTO.setTelephoneUniv("0320134195");
-        responsableDTO.setBureau("RZ2XX");
-        responsableDTO.setEstVacataire(false);
-        responsableDTO.setPoste("Head of the Computer Science Master Degree ");
-        responsableDTO.setnumInterneUniv("2014617345L");
-        responsableDTO.setUsername(responsableDTO.getEmailUniv());//TODO voir pour la structure de l'username.
-        responsableDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
-        ResponsableFormation responsableSaved = responsableFormationRepository.save(responsableFormationConverter.dtoToEntity(responsableDTO));
+        ResponsableFormation responsable = new ResponsableFormation();
+        responsable.setNom("Gouvy");
+        responsable.setPrenom("Nicolas");
+        responsable.setEmailUniv("nicolas.gouvy@univ-catholille.fr");
+        responsable.setTelephoneUniv("0320134195");
+        responsable.setBureau("RZ2XX");
+        responsable.setEstVacataire(false);
+        responsable.setPoste("Head of the Computer Science Master Degree ");
+        responsable.setNumInterneUniv("2014617345L");
+        responsable.setUsername(responsable.getEmailUniv());//TODO voir pour la structure de l'username.
+        responsable.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        ResponsableFormation responsableSaved = responsableFormationRepository.save(responsable);
         LOG.debug("=================================================================================================================");
         LOG.debug(responsableSaved.toString());
         LOG.debug("=================================================================================================================");
 
-        EtudiantDTO etudiant1DTO = new EtudiantDTO();
-        etudiant1DTO.setDateNaissance(new GregorianCalendar(1990, Calendar.FEBRUARY, 12).getTime());
-        etudiant1DTO.setEmailPersonnel("morgan.lombard@unmail.com");
-        etudiant1DTO.setEmailUniv("morgan.lombard@lacatholille.fr");
-        etudiant1DTO.setNom("Lombard");
-        etudiant1DTO.setPrenom("Morgan");
-        etudiant1DTO.setTelephonePersonnel("0607056561");
-        etudiant1DTO.setNumInterneUniv("2020615893L");
-        etudiant1DTO.setUsername(etudiant1DTO.getEmailUniv());//TODO voir pour la structure de l'username.
-        etudiant1DTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
-        Etudiant etudiant1saved = etudiantRepository.save(etudiantConverter.dtoToEntity(etudiant1DTO));
+        Etudiant etudiant1 = new Etudiant();
+        etudiant1.setDateNaissance(new GregorianCalendar(1990, Calendar.FEBRUARY, 12).getTime());
+        etudiant1.setEmailPersonnel("morgan.lombard@unmail.com");
+        etudiant1.setEmailUniv("morgan.lombard@lacatholille.fr");
+        etudiant1.setNom("Lombard");
+        etudiant1.setPrenom("Morgan");
+        etudiant1.setTelephonePersonnel("0607056561");
+        etudiant1.setNumInterneUniv("2020615893L");
+        etudiant1.setUsername(etudiant1.getEmailUniv());//TODO voir pour la structure de l'username.
+        etudiant1.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        Etudiant etudiant1saved = etudiantRepository.save(etudiant1);
         LOG.debug("=================================================================================================================");
         LOG.debug(etudiant1saved.toString());
         LOG.debug("=================================================================================================================");
 
-        EtudiantDTO etudiant2DTO = new EtudiantDTO();
-        etudiant2DTO.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
-        etudiant2DTO.setEmailPersonnel("julien.dudek@unmail.com");
-        etudiant2DTO.setEmailUniv("julien.dudek@lacatholille.fr");
-        etudiant2DTO.setNom("Dudek");
-        etudiant2DTO.setPrenom("Julien");
-        etudiant2DTO.setTelephonePersonnel("0609090231");
-        etudiant2DTO.setNumInterneUniv("2020777893L");
-        etudiant2DTO.setUsername(etudiant2DTO.getEmailUniv());//TODO voir pour la structure de l'username.
-        etudiant2DTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
-        Etudiant etudiant2saved = etudiantRepository.save(etudiantConverter.dtoToEntity(etudiant2DTO));
+        Etudiant etudiant2 = new Etudiant();
+        etudiant2.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
+        etudiant2.setEmailPersonnel("julien.dudek@unmail.com");
+        etudiant2.setEmailUniv("julien.dudek@lacatholille.fr");
+        etudiant2.setNom("Dudek");
+        etudiant2.setPrenom("Julien");
+        etudiant2.setTelephonePersonnel("0609090231");
+        etudiant2.setNumInterneUniv("2020777893L");
+        etudiant2.setUsername(etudiant2.getEmailUniv());//TODO voir pour la structure de l'username.
+        etudiant2.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        Etudiant etudiant2saved = etudiantRepository.save(etudiant2);
         LOG.debug("=================================================================================================================");
         LOG.debug(etudiant2saved.toString());
         LOG.debug("=================================================================================================================");
 
-        EtudiantDTO etudiant3DTO = new EtudiantDTO();
-        etudiant3DTO.setDateNaissance(new GregorianCalendar(1990, Calendar.DECEMBER, 31).getTime());
-        etudiant3DTO.setEmailPersonnel("pierre.darcas@unmail.com");
-        etudiant3DTO.setEmailUniv("pierre.darcas@lacatholille.fr");
-        etudiant3DTO.setNom("Darcas");
-        etudiant3DTO.setPrenom("Pierre");
-        etudiant3DTO.setTelephonePersonnel("0601111161");
-        etudiant3DTO.setNumInterneUniv("2020610003L");
-        etudiant3DTO.setUsername(etudiant3DTO.getEmailUniv());//TODO voir pour la structure de l'username.
-        etudiant3DTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
-        Etudiant etudiant3saved = etudiantRepository.save(etudiantConverter.dtoToEntity(etudiant3DTO));
+        Etudiant etudiant3 = new Etudiant();
+        etudiant3.setDateNaissance(new GregorianCalendar(1990, Calendar.DECEMBER, 31).getTime());
+        etudiant3.setEmailPersonnel("pierre.darcas@unmail.com");
+        etudiant3.setEmailUniv("pierre.darcas@lacatholille.fr");
+        etudiant3.setNom("Darcas");
+        etudiant3.setPrenom("Pierre");
+        etudiant3.setTelephonePersonnel("0601111161");
+        etudiant3.setNumInterneUniv("2020610003L");
+        etudiant3.setUsername(etudiant3.getEmailUniv());//TODO voir pour la structure de l'username.
+        etudiant3.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        Etudiant etudiant3saved = etudiantRepository.save(etudiant3);
         LOG.debug("=================================================================================================================");
         LOG.debug(etudiant3saved.toString());
         LOG.debug("=================================================================================================================");
 
-        TuteurDTO tuteurDTO = new TuteurDTO();
-        tuteurDTO.setNom("Lefebvreeeee");
-        tuteurDTO.setPrenom("Pierrrre");
-        tuteurDTO.setEmailPro("pierre.2.lefebvre@saboite.com");
-        tuteurDTO.setSociete("Worldline");
-        tuteurDTO.setTelephonePro("0320000083");
-        tuteurDTO.setUsername(tuteurDTO.getEmailPro());//TODO voir pour la structure de l'username.
-        tuteurDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
-        Tuteur tuteurSaved = tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));
+        Tuteur tuteur = new Tuteur();
+        tuteur.setNom("Lefebvreeeee");
+        tuteur.setPrenom("Pierrrre");
+        tuteur.setEmailPro("pierre.2.lefebvre@saboite.com");
+        tuteur.setSociete("Worldline");
+        tuteur.setTelephonePro("0320000083");
+        tuteur.setUsername(tuteur.getEmailPro());//TODO voir pour la structure de l'username.
+        tuteur.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        Tuteur tuteurSaved = tuteurRepository.save(tuteur);
         LOG.debug("=================================================================================================================");
         LOG.debug(tuteurSaved.toString());
         LOG.debug("=================================================================================================================");
 
-        AdministratifDTO administratifDTO = new AdministratifDTO();
-        administratifDTO.setNom("Bediez");
-        administratifDTO.setPrenom("Stéphanie");
-        administratifDTO.setEmailUniv("Stephanie.BEDIEZ@univ-catholille.fr");
-        administratifDTO.setFonction("Responsable Relations Entreprises FGES | ISEA");
-        administratifDTO.setTelephoneUniv("0359315001");
-        administratifDTO.setBureau("non communiqué");
-        administratifDTO.setUsername(administratifDTO.getEmailUniv());//TODO voir pour la structure de l'username.
-        administratifDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
-        Administratif administratifSaved = administratifRepository.save(administratifConverter.dtoToEntity(administratifDTO));
+        Administratif administratif = new Administratif();
+        administratif.setNom("Bediez");
+        administratif.setPrenom("Stéphanie");
+        administratif.setEmailUniv("Stephanie.BEDIEZ@univ-catholille.fr");
+        administratif.setFonction("Responsable Relations Entreprises FGES | ISEA");
+        administratif.setTelephoneUniv("0359315001");
+        administratif.setBureau("non communiqué");
+        administratif.setUsername(administratif.getEmailUniv());//TODO voir pour la structure de l'username.
+        administratif.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        Administratif administratifSaved = administratifRepository.save(administratif);
         LOG.debug("=================================================================================================================");
         LOG.debug(administratifSaved.toString());
         LOG.debug("=================================================================================================================");
 
-        MatiereDTO matiereDTO = new MatiereDTO();
-        matiereDTO.setIntitule("ACLAB M1 S1");
-        matiereDTO.setCodeMatiere("GRPE001");
-        matiereDTO.setCreditECTS(2);
-        matiereDTO.setDescription("Travail de groupe visant à produire une plus-value technique.");
-        matiereDTO.setSemestre(1);
-        matiereDTO.setQuotaHeure(32);
-        Matiere matiereSaved = matiereRepository.save(matiereConverter.dtoToEntity(matiereDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(matiereSaved.toString());
-        LOG.debug("=================================================================================================================");
-
-        UeDTO ueDTO = new UeDTO();
-        ueDTO.setIntitule("Transversal 1");
-        Ue ueSaved = ueRepository.save(ueConverter.dtoToEntity(ueDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(ueSaved.toString());
-        LOG.debug("=================================================================================================================");
-
-
-        DiplomeDTO diplomeDTO = new DiplomeDTO("Master III",120);
-        diplomeDTO.setEstActif(true);
-        Diplome diplomeSaved = diplomeRepository.save(diplomeConverter.dtoToEntity(diplomeDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(diplomeSaved.toString());
-        LOG.debug("=================================================================================================================");
-
-        PromotionDTO promotionDTO = new PromotionDTO();
-        promotionDTO.setAnnee(2020);
-        Promotion promotionSaved = promotionRepository.save(promotionConverter.dtoToEntity(promotionDTO));
+        Promotion promotion = new Promotion();
+        promotion.setAnnee(2020);
+        Promotion promotionSaved = promotionRepository.save(promotion);
         LOG.debug("=================================================================================================================");
         LOG.debug(promotionSaved.toString());
         LOG.debug("=================================================================================================================");
 
-        SessionDTO sessionDTO = new SessionDTO();
-        sessionDTO.setDateHeure( Timestamp.valueOf("2020-10-25 10:00:00.000"));
-        sessionDTO.setDuree(2);
-        sessionDTO.setSalle("RZ242");
-        Session sessionSaved = sessionRepository.save(sessionConverter.dtoToEntity(sessionDTO));
+        Diplome diplome = new Diplome();
+        diplome.setIntitule("Master 1 III");
+        diplome.setTotalEcts(120);
+        diplome.setEstActif(true);
+        Diplome diplomeSaved = diplomeRepository.save(diplome);
+
+        promotionSaved.setDiplomes(new HashSet<>());
+        promotionSaved.getDiplomes().add(diplomeSaved);
+        promotionSaved = promotionRepository.save(promotionSaved);
+
+        LOG.debug("=================================================================================================================");
+        LOG.debug(diplomeSaved.toString());
+        LOG.debug("=================================================================================================================");
+
+        Ue ueTransversal = new Ue();
+        ueTransversal.setIntitule("Transversal 1");
+        Ue ueTransversalSaved = ueRepository.save(ueTransversal);
+
+        diplomeSaved.setUes(new HashSet<>());
+        diplomeSaved.getUes().add(ueTransversalSaved);
+        diplomeSaved = diplomeRepository.save(diplomeSaved);
+
+        LOG.debug("=================================================================================================================");
+        LOG.debug(ueTransversalSaved.toString());
+        LOG.debug("=================================================================================================================");
+
+        Matiere matiere = new Matiere();
+        matiere.setIntitule("ACLAB M1 S1");
+        matiere.setCodeMatiere("GRPE001");
+        matiere.setCreditECTS(2);
+        matiere.setDescription("Travail de groupe visant à produire une plus-value technique.");
+        matiere.setSemestre(1);
+        matiere.setQuotaHeure(32);
+        Matiere matiereSaved = matiereRepository.save(matiere);
+
+        matiereSaved.setUes(new HashSet<>());
+        matiereSaved.getUes().add(ueTransversalSaved);
+        matiereSaved = matiereRepository.save(matiereSaved);
+        LOG.debug("=================================================================================================================");
+        LOG.debug(matiereSaved.toString());
+        LOG.debug("=================================================================================================================");
+
+        Session session = new Session();
+        session.setDateHeure( Timestamp.valueOf("2020-10-25 10:00:00.000"));
+        session.setDuree(2);
+        session.setSalle("RZ242");
+        Session sessionSaved = sessionRepository.save(session);
         LOG.debug("=================================================================================================================");
         LOG.debug(sessionSaved.toString());
         LOG.debug("=================================================================================================================");
 
-        NoteDTO noteDTO = new NoteDTO();
-        noteDTO.setNote(15.0F);
-        noteDTO.setDate(Date.valueOf("2021-10-25"));
-        noteDTO.setCoef(2);
-        noteDTO.setType("QCM");
-        Note noteSaved = noteRepository.save(noteConverter.dtoToEntity(noteDTO));
+        Note note = new Note();
+        note.setNoteAttribuee(15.0F);
+        note.setDate(Date.valueOf("2021-10-25"));
+        note.setCoef(2);
+        note.setType("QCM");
+        Note noteSaved = noteRepository.save(note);
         LOG.debug("=================================================================================================================");
         LOG.debug(noteSaved.toString());
         LOG.debug("=================================================================================================================");
 
-
-        InscriptionDTO inscriptionDTO = new InscriptionDTO();
-        inscriptionDTO.setIdEtudiant(etudiant2saved.getIdPersonne());
-        inscriptionDTO.setIdPromotion(promotionSaved.getIdPromotion());
-        inscriptionDTO.setIdTuteur(tuteurSaved.getIdPersonne());
-        inscriptionDTO.setIdDiplome(diplomeSaved.getIdDiplome());
-        Inscription inscriptionSaved = inscriptionRepository.save(inscriptionConverter.dtoToEntity(inscriptionDTO));
+        Inscription inscription = new Inscription();
+        inscription.setIdEtudiant(etudiant2saved.getIdPersonne());
+        inscription.setIdPromotion(promotionSaved.getIdPromotion());
+        inscription.setIdTuteur(tuteurSaved.getIdPersonne());
+        inscription.setIdDiplome(diplomeSaved.getIdDiplome());
+        Inscription inscriptionSaved = inscriptionRepository.save(inscription);
         LOG.debug("=================================================================================================================");
         LOG.debug(inscriptionSaved.toString());
         LOG.debug("=================================================================================================================");
