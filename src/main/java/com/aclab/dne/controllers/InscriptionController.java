@@ -1,34 +1,52 @@
 package com.aclab.dne.controllers;
 
-import com.aclab.dne.converter.InscriptionConverter;
+import com.aclab.dne.dto.EtudiantDTO;
 import com.aclab.dne.dto.InscriptionDTO;
-import com.aclab.dne.model.Inscription;
-import com.aclab.dne.repositories.InscriptionRepository;
+import com.aclab.dne.services.InscriptionService;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(path = "/inscriptions")
 public class InscriptionController {
 
     private static final Logger LOG = LoggerFactory.getLogger(InscriptionController.class);
-    private final InscriptionRepository inscriptionRepository;
-    private final InscriptionConverter inscriptionConverter;
+    private final InscriptionService inscriptionService;
 
-    public InscriptionController(InscriptionRepository inscriptionRepository, InscriptionConverter inscriptionConverter) {
-        this.inscriptionRepository = inscriptionRepository;
-        this.inscriptionConverter = inscriptionConverter;
+    public InscriptionController(InscriptionService inscriptionService) {
+        this.inscriptionService = inscriptionService;
     }
+
 
     @GetMapping
-    public List<InscriptionDTO> findAll(){
-        return this.inscriptionConverter.entityToDTO((List<Inscription>) this.inscriptionRepository.findAll());
+    public List<InscriptionDTO> findAll() {
+        LOG.debug("IN");
+        try {
+            return this.inscriptionService.findAllInstription();
+        }catch (NoSuchElementException e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
     }
 
+    @GetMapping("/etudiant/{etudiantId}")
+    @ApiOperation(value = "Retourne l\'inscription sélectionnée par l'ID etudiant passé en paramètre.")
+    public InscriptionDTO findByEtudiantID(@PathVariable("etudiantId") Long etudiantId){
+        LOG.debug("IN");
+        try{
+            return this.inscriptionService.findInscriptionByEtudiantID(etudiantId);
+        }catch (NoSuchElementException e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
 
 }
