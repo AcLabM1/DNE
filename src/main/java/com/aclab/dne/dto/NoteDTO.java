@@ -19,6 +19,10 @@ public class NoteDTO {
         this.type = type;
     }
 
+    public NoteDTO() {
+
+    }
+
     public Long getIdNote() {
         return idNote;
     }
