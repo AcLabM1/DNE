@@ -102,9 +102,6 @@ public class DataLoader implements CommandLineRunner {
         responsableDTO.setUsername(responsableDTO.getEmailUniv());//TODO voir pour la structure de l'username.
         responsableDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         ResponsableFormation responsableSaved = responsableFormationRepository.save(responsableFormationConverter.dtoToEntity(responsableDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(responsableSaved.toString());
-        LOG.debug("=================================================================================================================");
 
         EtudiantDTO etudiant1DTO = new EtudiantDTO();
         etudiant1DTO.setDateNaissance(new GregorianCalendar(1990, Calendar.FEBRUARY, 12).getTime());
@@ -117,9 +114,6 @@ public class DataLoader implements CommandLineRunner {
         etudiant1DTO.setUsername(etudiant1DTO.getEmailUniv());//TODO voir pour la structure de l'username.
         etudiant1DTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Etudiant etudiant1saved = etudiantRepository.save(etudiantConverter.dtoToEntity(etudiant1DTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(etudiant1saved.toString());
-        LOG.debug("=================================================================================================================");
 
         EtudiantDTO etudiant2DTO = new EtudiantDTO();
         etudiant2DTO.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
@@ -132,9 +126,6 @@ public class DataLoader implements CommandLineRunner {
         etudiant2DTO.setUsername(etudiant2DTO.getEmailUniv());//TODO voir pour la structure de l'username.
         etudiant2DTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Etudiant etudiant2saved = etudiantRepository.save(etudiantConverter.dtoToEntity(etudiant2DTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(etudiant2saved.toString());
-        LOG.debug("=================================================================================================================");
 
         EtudiantDTO etudiant3DTO = new EtudiantDTO();
         etudiant3DTO.setDateNaissance(new GregorianCalendar(1990, Calendar.DECEMBER, 31).getTime());
@@ -147,9 +138,6 @@ public class DataLoader implements CommandLineRunner {
         etudiant3DTO.setUsername(etudiant3DTO.getEmailUniv());//TODO voir pour la structure de l'username.
         etudiant3DTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Etudiant etudiant3saved = etudiantRepository.save(etudiantConverter.dtoToEntity(etudiant3DTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(etudiant3saved.toString());
-        LOG.debug("=================================================================================================================");
 
         TuteurDTO tuteurDTO = new TuteurDTO();
         tuteurDTO.setNom("Lefebvreeeee");
@@ -160,9 +148,6 @@ public class DataLoader implements CommandLineRunner {
         tuteurDTO.setUsername(tuteurDTO.getEmailPro());//TODO voir pour la structure de l'username.
         tuteurDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Tuteur tuteurSaved = tuteurRepository.save(tuteurConverter.dtoToEntity(tuteurDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(tuteurSaved.toString());
-        LOG.debug("=================================================================================================================");
 
         AdministratifDTO administratifDTO = new AdministratifDTO();
         administratifDTO.setNom("Bediez");
@@ -174,9 +159,6 @@ public class DataLoader implements CommandLineRunner {
         administratifDTO.setUsername(administratifDTO.getEmailUniv());//TODO voir pour la structure de l'username.
         administratifDTO.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Administratif administratifSaved = administratifRepository.save(administratifConverter.dtoToEntity(administratifDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(administratifSaved.toString());
-        LOG.debug("=================================================================================================================");
 
         MatiereDTO matiereDTO = new MatiereDTO();
         matiereDTO.setIntitule("ACLAB M1 S1");
@@ -186,40 +168,25 @@ public class DataLoader implements CommandLineRunner {
         matiereDTO.setSemestre(1);
         matiereDTO.setQuotaHeure(32);
         Matiere matiereSaved = matiereRepository.save(matiereConverter.dtoToEntity(matiereDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(matiereSaved.toString());
-        LOG.debug("=================================================================================================================");
 
         UeDTO ueDTO = new UeDTO();
         ueDTO.setIntitule("Transversal 1");
         Ue ueSaved = ueRepository.save(ueConverter.dtoToEntity(ueDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(ueSaved.toString());
-        LOG.debug("=================================================================================================================");
 
 
         DiplomeDTO diplomeDTO = new DiplomeDTO("Master III",120);
         diplomeDTO.setEstActif(true);
         Diplome diplomeSaved = diplomeRepository.save(diplomeConverter.dtoToEntity(diplomeDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(diplomeSaved.toString());
-        LOG.debug("=================================================================================================================");
 
         PromotionDTO promotionDTO = new PromotionDTO();
         promotionDTO.setAnnee(2020);
         Promotion promotionSaved = promotionRepository.save(promotionConverter.dtoToEntity(promotionDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(promotionSaved.toString());
-        LOG.debug("=================================================================================================================");
 
         SessionDTO sessionDTO = new SessionDTO();
         sessionDTO.setDateHeure( Timestamp.valueOf("2020-10-25 10:00:00.000"));
         sessionDTO.setDuree(2);
         sessionDTO.setSalle("RZ242");
         Session sessionSaved = sessionRepository.save(sessionConverter.dtoToEntity(sessionDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(sessionSaved.toString());
-        LOG.debug("=================================================================================================================");
 
         NoteDTO noteDTO = new NoteDTO();
         noteDTO.setNote(15.0F);
@@ -227,9 +194,6 @@ public class DataLoader implements CommandLineRunner {
         noteDTO.setCoef(2);
         noteDTO.setType("QCM");
         Note noteSaved = noteRepository.save(noteConverter.dtoToEntity(noteDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(noteSaved.toString());
-        LOG.debug("=================================================================================================================");
 
 
         InscriptionDTO inscriptionDTO = new InscriptionDTO();
@@ -238,11 +202,6 @@ public class DataLoader implements CommandLineRunner {
         inscriptionDTO.setIdTuteur(tuteurSaved.getIdPersonne());
         inscriptionDTO.setIdDiplome(diplomeSaved.getIdDiplome());
         Inscription inscriptionSaved = inscriptionRepository.save(inscriptionConverter.dtoToEntity(inscriptionDTO));
-        LOG.debug("=================================================================================================================");
-        LOG.debug(inscriptionSaved.toString());
-        LOG.debug("=================================================================================================================");
-
-
 
         LOG.info("Données chargées");
     }
