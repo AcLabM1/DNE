@@ -11,8 +11,17 @@ https://app.conceptboard.com/board/di54-61k5-21gu-qpcr-4yik
 
 # Consigne
 
-# Instalation 
+# Installation
+## Via Docker
+- A chaque évenement sur la branche main une nouvelle image docker est pushée, afin de la récupérer et la lancer vous pouvez utiliser ceci : 
+
 `docker run -it -p 8080:8080  julienm1/aclab-m1s1-dne-back:latest`
+
+## En clonant le repo :
+`gh repo clone AcLabM1/DNE-API`
+En passant par votre IDE préféré
+
+`mvn spring-boot:run`
 
 # Utilisation
 
