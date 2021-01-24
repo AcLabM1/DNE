@@ -6,12 +6,12 @@ public class InscriptionDTO {
     private Long idEtudiant;
     private Long idPromotion;
     private Long idTuteur;
-    private Long idDiplome;
+    private int idDiplome;
 
     public InscriptionDTO() {
     }
 
-    public InscriptionDTO(Long idEtudiant, Long idPromotion, Long idTuteur, Long idDiplome) {
+    public InscriptionDTO(Long idEtudiant, Long idPromotion, Long idTuteur, int idDiplome) {
         this.idEtudiant = idEtudiant;
         this.idPromotion = idPromotion;
         this.idTuteur = idTuteur;
@@ -42,11 +42,11 @@ public class InscriptionDTO {
         this.idTuteur = idTuteur;
     }
 
-    public Long getIdDiplome() {
+    public int getIdDiplome() {
         return idDiplome;
     }
 
-    public void setIdDiplome(Long idDiplome) {
+    public void setIdDiplome(int idDiplome) {
         this.idDiplome = idDiplome;
     }
 

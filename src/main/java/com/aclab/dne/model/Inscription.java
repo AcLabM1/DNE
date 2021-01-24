@@ -1,9 +1,6 @@
 package com.aclab.dne.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,6 +10,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Entity
 @IdClass(InscriptionId.class)
 public class Inscription  implements Serializable {
@@ -27,12 +25,9 @@ public class Inscription  implements Serializable {
 
     @Id
     @Column(name = "id_diplome")
-    private Long idDiplome;
+    private int idDiplome;
 
-
-    @ManyToOne
-    @JoinColumn(name = "id_tuteur")
-    private Tuteur tuteur;
+    private Long idTuteur;
 
     @OneToMany(mappedBy = "inscription")
     private Set<Note> notes;
