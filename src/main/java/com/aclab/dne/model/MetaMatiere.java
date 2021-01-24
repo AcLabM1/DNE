@@ -23,7 +23,7 @@ public class MetaMatiere  implements Serializable {
 
     @Id
     @Column(name = "id_diplome")
-    private Long idDiplome;
+    private int idDiplome;
 
     @Id
     @Column(name = "id_ue")

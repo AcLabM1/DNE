@@ -9,7 +9,7 @@ import java.util.Set;
 public class MetaMatiereDTO {
 
     private Long idPromotion;
-    private Long idDiplome;
+    private int idDiplome;
     private Long idUe;
     private Long idMatiere;
     private Set<Enseignant> enseignants;
@@ -18,7 +18,7 @@ public class MetaMatiereDTO {
     public MetaMatiereDTO() {
     }
 
-    public MetaMatiereDTO(Long idPromotion, Long idDiplome, Long idUe, Long idMatiere, Set<Enseignant> enseignants, Set<Session> sessions) {
+    public MetaMatiereDTO(Long idPromotion, int idDiplome, Long idUe, Long idMatiere, Set<Enseignant> enseignants, Set<Session> sessions) {
         this.idPromotion = idPromotion;
         this.idDiplome = idDiplome;
         this.idUe = idUe;
@@ -35,11 +35,11 @@ public class MetaMatiereDTO {
         this.idPromotion = idPromotion;
     }
 
-    public Long getIdDiplome() {
+    public int getIdDiplome() {
         return idDiplome;
     }
 
-    public void setIdDiplome(Long idDiplome) {
+    public void setIdDiplome(int idDiplome) {
         this.idDiplome = idDiplome;
     }
 
@@ -78,9 +78,9 @@ public class MetaMatiereDTO {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof MetaMatiereDTO)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         MetaMatiereDTO that = (MetaMatiereDTO) o;
-        return getIdPromotion().equals(that.getIdPromotion()) && getIdDiplome().equals(that.getIdDiplome()) && getIdUe().equals(that.getIdUe()) && getIdMatiere().equals(that.getIdMatiere()) && Objects.equals(getEnseignants(), that.getEnseignants()) && Objects.equals(getSessions(), that.getSessions());
+        return idDiplome == that.idDiplome && Objects.equals(idPromotion, that.idPromotion) && Objects.equals(idUe, that.idUe) && Objects.equals(idMatiere, that.idMatiere) && Objects.equals(enseignants, that.enseignants) && Objects.equals(sessions, that.sessions);
     }
 
     @Override
