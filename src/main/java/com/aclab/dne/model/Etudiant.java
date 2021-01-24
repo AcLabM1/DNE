@@ -11,6 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
+@ToString
 @Entity
 @PrimaryKeyJoinColumn(name = "idEtudiant")
 public class Etudiant extends InterneUniv {
