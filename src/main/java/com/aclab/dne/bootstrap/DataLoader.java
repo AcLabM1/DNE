@@ -132,7 +132,14 @@ public class DataLoader implements CommandLineRunner {
         noteDTO.setDate(Date.valueOf("2021-10-25"));
         noteDTO.setCoef(2);
         noteDTO.setType("QCM");
+        noteRepository.save(noteConverter.dtoToEntity(noteDTO));
 
+        InscriptionDTO inscriptionDTO = new InscriptionDTO();
+        inscriptionDTO.setIdEtudiant(2L);
+        inscriptionDTO.setIdPromotion(1L);
+        inscriptionDTO.setIdTuteur(4L);
+        inscriptionDTO.setIdDiplome(1L);
+        inscriptionRepository.save(inscriptionConverter.dtoToEntity(inscriptionDTO));
 
         LOG.info("Données chargées");
 
@@ -142,10 +149,10 @@ public class DataLoader implements CommandLineRunner {
                       EtudiantRepository etudiantRepository, MatiereRepository matiereRepository,
                       PromotionRepository promotionRepository,
                       ResponsableFormationRepository responsableFormationRepository, TuteurRepository tuteurRepository,
-                      UeRepository ueRepository, SessionRepository sessionRepository, NoteRepository noteRepository, AdministratifConverter administratifConverter, DiplomeConverter diplomeConverter,
+                      UeRepository ueRepository, SessionRepository sessionRepository, NoteRepository noteRepository, InscriptionRepository inscriptionRepository, AdministratifConverter administratifConverter, DiplomeConverter diplomeConverter,
                       EtudiantConverter etudiantConverter, MatiereConverter matiereConverter, PromotionConverter promotionConverter,
                       ResponsableFormationConverter responsableFormationConverter, TuteurConverter tuteurConverter,
-                      UeConverter ueConverter, SessionConverter sessionConverter, NoteConverter noteConverter) {
+                      UeConverter ueConverter, SessionConverter sessionConverter, NoteConverter noteConverter, InscriptionConverter inscriptionConverter) {
 
         this.administratifRepository = administratifRepository;
         this.diplomeRepository = diplomeRepository;
@@ -157,6 +164,7 @@ public class DataLoader implements CommandLineRunner {
         this.ueRepository = ueRepository;
         this.sessionRepository = sessionRepository;
         this.noteRepository = noteRepository;
+        this.inscriptionRepository = inscriptionRepository;
         this.administratifConverter = administratifConverter;
         this.diplomeConverter = diplomeConverter;
         this.etudiantConverter = etudiantConverter;
@@ -167,6 +175,7 @@ public class DataLoader implements CommandLineRunner {
         this.ueConverter = ueConverter;
         this.sessionConverter = sessionConverter;
         this.noteConverter = noteConverter;
+        this.inscriptionConverter = inscriptionConverter;
     }
 
 
@@ -181,6 +190,7 @@ public class DataLoader implements CommandLineRunner {
     private final UeRepository ueRepository;
     private final SessionRepository sessionRepository;
     private final NoteRepository noteRepository;
+    private final InscriptionRepository inscriptionRepository;
     //Converter
     private final AdministratifConverter administratifConverter;
     private final DiplomeConverter diplomeConverter;
@@ -192,4 +202,5 @@ public class DataLoader implements CommandLineRunner {
     private final UeConverter ueConverter;
     private final SessionConverter sessionConverter;
     private final NoteConverter noteConverter;
+    private final InscriptionConverter inscriptionConverter;
 }

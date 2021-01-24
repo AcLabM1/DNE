@@ -6,14 +6,16 @@ public class InscriptionDTO {
     private Long idEtudiant;
     private Long idPromotion;
     private Long idTuteur;
+    private Long idDiplome;
 
     public InscriptionDTO() {
     }
 
-    public InscriptionDTO(Long idEtudiant, Long idPromotion, Long idTuteur) {
+    public InscriptionDTO(Long idEtudiant, Long idPromotion, Long idTuteur, Long idDiplome) {
         this.idEtudiant = idEtudiant;
         this.idPromotion = idPromotion;
         this.idTuteur = idTuteur;
+        this.idDiplome = idDiplome;
     }
 
     public Long getIdEtudiant() {
@@ -40,12 +42,21 @@ public class InscriptionDTO {
         this.idTuteur = idTuteur;
     }
 
+    public Long getIdDiplome() {
+        return idDiplome;
+    }
+
+    public void setIdDiplome(Long idDiplome) {
+        this.idDiplome = idDiplome;
+    }
+
     @Override
     public String toString() {
         return "InscriptionDTO{" +
                 "idEtudiant=" + idEtudiant +
                 ", idPromotion=" + idPromotion +
                 ", idTuteur=" + idTuteur +
+                ", idDiplome=" + idDiplome +
                 '}';
     }
 }
