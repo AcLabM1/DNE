@@ -14,4 +14,5 @@ public class InscriptionId implements Serializable {
     private Long idEtudiant;
     private Long idPromotion;
     private Long idDiplome;
+
 }
