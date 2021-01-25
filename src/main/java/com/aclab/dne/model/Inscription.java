@@ -1,5 +1,7 @@
 package com.aclab.dne.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -29,6 +31,8 @@ public class Inscription  implements Serializable {
 
     private Long idTuteur;
 
+
     @OneToMany(mappedBy = "inscription")
+    @JsonIgnore
     private Set<Note> notes;
 }
