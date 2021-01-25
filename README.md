@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AcLabM1_DNE-API&metric=alert_status)](https://sonarcloud.io/dashboard?id=AcLabM1_DNE-API)
+[![Circle](https://circleci.com/gh/AcLabM1/DNE-API.svg?style=shield)](https://app.circleci.com/pipelines/github/AcLabM1/DNE-API?branch=main)
 # DNE
 Projet Ac'Lab du Master 1 Semestre 1 III de la FGES
 
