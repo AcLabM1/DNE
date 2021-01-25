@@ -28,10 +28,6 @@ public class Enseignant extends Employe{
              @JoinColumn(name = "id_matiere")})
     private Set<MetaMatiere> matieres;
 
-    @ManyToMany
-    @JoinTable(
-            name = "ENSEIGNANT_SESSION",
-            joinColumns = @JoinColumn(name = "id_enseignant"),
-            inverseJoinColumns = @JoinColumn(name = "id_session"))
+    @ManyToMany(mappedBy = "enseignants")
     private Set<Session> sessions;
 }
