@@ -706,6 +706,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantCyberSecurite.setEmailUniv("loris.sierra@lacatholille.fr");
         enseignantCyberSecurite.setNumInterneUniv("123456789");
         enseignantCyberSecurite.setMatieres(new HashSet<>());
+        enseignantCyberSecurite.setUsername(enseignantCyberSecurite.getEmailUniv());
+        enseignantCyberSecurite.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         enseignantCyberSecurite.getMatieres().add(metaMatiereCyberSecuriteSaved);
         Enseignant enseignantCyberSecuriteSaved = enseignantRepository.save(enseignantCyberSecurite);
 
@@ -718,6 +720,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantIa.setNumInterneUniv("123456789");
         enseignantIa.setMatieres(new HashSet<>());
         enseignantIa.getMatieres().add(metaMatiereIaSaved);
+        enseignantIa.setUsername(enseignantIa.getEmailUniv());
+        enseignantIa.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Enseignant enseignantIaSaved = enseignantRepository.save(enseignantIa);
 
         Enseignant enseignantDevOps = new Enseignant();
@@ -729,6 +733,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantDevOps.setNumInterneUniv("123456789");
         enseignantDevOps.setMatieres(new HashSet<>());
         enseignantDevOps.getMatieres().add(metaMatiereDevOpsSaved);
+        enseignantDevOps.setUsername(enseignantDevOps.getEmailUniv());
+        enseignantDevOps.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Enseignant enseignantDevOpsSaved = enseignantRepository.save(enseignantDevOps);
 
         Enseignant enseignantGestionProjetAgile = new Enseignant();
@@ -740,6 +746,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantGestionProjetAgile.setNumInterneUniv("123456789");
         enseignantGestionProjetAgile.setMatieres(new HashSet<>());
         enseignantGestionProjetAgile.getMatieres().add(metaMatiereDroitDonneesSaved);
+        enseignantGestionProjetAgile.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        enseignantGestionProjetAgile.setUsername(enseignantGestionProjetAgile.getEmailUniv());
         Enseignant enseignantGestionProjetAgileSaved = enseignantRepository.save(enseignantGestionProjetAgile);
 
         Enseignant enseignantProgFonctionnelle = new Enseignant();
@@ -751,6 +759,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantProgFonctionnelle.setNumInterneUniv("123456789");
         enseignantProgFonctionnelle.setMatieres(new HashSet<>());
         enseignantProgFonctionnelle.getMatieres().add(metaMatiereProgFonctionnelleSaved);
+        enseignantProgFonctionnelle.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        enseignantProgFonctionnelle.setUsername(enseignantProgFonctionnelle.getEmailUniv());
         Enseignant enseignantProgFonctionnelleSaved = enseignantRepository.save(enseignantProgFonctionnelle);
 
         Enseignant enseignantProgParComposant = new Enseignant();
@@ -762,6 +772,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantProgParComposant.setNumInterneUniv("123456789");
         enseignantProgParComposant.setMatieres(new HashSet<>());
         enseignantProgParComposant.getMatieres().add(metaMatiereProgParComposantSaved);
+        enseignantProgParComposant.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        enseignantProgParComposant.setUsername(enseignantProgParComposant.getEmailUniv());
         Enseignant enseignantProgParComposantSaved = enseignantRepository.save(enseignantProgParComposant);
 
         Enseignant enseignantUxDesign = new Enseignant();
@@ -773,6 +785,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantUxDesign.setNumInterneUniv("123456789");
         enseignantUxDesign.setMatieres(new HashSet<>());
         enseignantUxDesign.getMatieres().add(metaMatiereUxDesignSaved);
+        enseignantUxDesign.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        enseignantUxDesign.setUsername(enseignantUxDesign.getEmailUniv());
         Enseignant enseignantUxDesignSaved = enseignantRepository.save(enseignantUxDesign);
 
         Enseignant enseignantDroitDonnees = new Enseignant();
@@ -784,6 +798,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantDroitDonnees.setNumInterneUniv("123456789");
         enseignantDroitDonnees.setMatieres(new HashSet<>());
         enseignantDroitDonnees.getMatieres().add(metaMatiereDroitDonneesSaved);
+        enseignantDroitDonnees.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        enseignantDroitDonnees.setUsername(enseignantDroitDonnees.getEmailUniv());
         Enseignant enseignantDroitDonneesSaved = enseignantRepository.save(enseignantDroitDonnees);
 
         Enseignant enseignantAnglais1 = new Enseignant();
@@ -795,6 +811,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantAnglais1.setNumInterneUniv("123456789");
         enseignantAnglais1.setMatieres(new HashSet<>());
         enseignantAnglais1.getMatieres().add(metaMatiereAnglaisSaved);
+        enseignantAnglais1.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        enseignantAnglais1.setUsername(enseignantAnglais1.getEmailUniv());
         Enseignant enseignantAnglais1Saved = enseignantRepository.save(enseignantAnglais1);
 
         Enseignant enseignantAnglais2 = new Enseignant();
@@ -806,6 +824,8 @@ public class DataLoader implements CommandLineRunner {
         enseignantAnglais2.setNumInterneUniv("123456789");
         enseignantAnglais2.setMatieres(new HashSet<>());
         enseignantAnglais2.getMatieres().add(metaMatiereAnglaisSaved);
+        enseignantAnglais2.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
+        enseignantAnglais2.setUsername(enseignantAnglais2.getEmailUniv());
         Enseignant enseignantAnglais2Saved = enseignantRepository.save(enseignantAnglais2);
 
         responsableSaved.setMatieres(new HashSet<>());
