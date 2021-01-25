@@ -13,6 +13,7 @@ public class MetaMatiereId implements Serializable {
 
     private Long idPromotion;
     private int idDiplome;
-    private Long idUe;
-    private Long idMatiere;
+    private int idUe;
+    private int idMatiere;
+
 }

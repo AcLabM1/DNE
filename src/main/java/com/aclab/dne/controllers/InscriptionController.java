@@ -36,6 +36,7 @@ public class InscriptionController {
         }catch (NoSuchElementException e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
+
     }
 
     @GetMapping("/etudiant/{etudiantId}")
@@ -48,7 +49,6 @@ public class InscriptionController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
-
 
 
 }

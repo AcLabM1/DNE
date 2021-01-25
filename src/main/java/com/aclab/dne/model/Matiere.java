@@ -21,10 +21,7 @@ public class Matiere implements Serializable {
     private String description;
     private int semestre;
 
-    @ManyToMany
-    @JoinTable(name = "matiere_ue",
-            joinColumns = @JoinColumn(name = "id_matiere"),
-            inverseJoinColumns = @JoinColumn(name = "id_ue"))
+    @ManyToMany(mappedBy = "matieres")
     @JsonIgnoreProperties("matieres")
     private Set<Ue> ues;
 }

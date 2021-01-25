@@ -16,7 +16,7 @@ class UeConverterTest {
     void entityToDto() {
         Ue ue = new Ue();
         ue.setIntitule("une Ue");
-        ue.setIdUE(10);
+        ue.setIdUe(10);
         UeConverter ueConverter = new UeConverter();
         UeDTO ueDTO = ueConverter.entityToDto(ue);
         assertThat(ueDTO.getIdUe()).isEqualTo(10);
@@ -29,7 +29,7 @@ class UeConverterTest {
         UeDTO ueDTO = new UeDTO(10,"une Ue");
         UeConverter ueConverter = new UeConverter();
         Ue ue = ueConverter.dtoToEntity(ueDTO);
-        assertThat(ue.getIdUE()).isEqualTo(10);
+        assertThat(ue.getIdUe()).isEqualTo(10);
         assertThat(ue.getIntitule()).isEqualTo("une Ue");
     }
 

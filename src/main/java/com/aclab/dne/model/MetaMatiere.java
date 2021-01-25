@@ -19,7 +19,7 @@ public class MetaMatiere  implements Serializable {
 
     @Id
     @Column(name = "id_promotion")
-    private Long idPromotion;
+    private long idPromotion;
 
     @Id
     @Column(name = "id_diplome")
@@ -27,11 +27,11 @@ public class MetaMatiere  implements Serializable {
 
     @Id
     @Column(name = "id_ue")
-    private Long idUe;
+    private int idUe;
 
     @Id
     @Column(name = "id_matiere")
-    private Long idMatiere;
+    private int idMatiere;
 
     @ManyToMany(mappedBy = "matieres")
     private Set<Enseignant> enseignants;
