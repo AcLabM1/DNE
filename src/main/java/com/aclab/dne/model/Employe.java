@@ -13,11 +13,9 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@PrimaryKeyJoinColumn(name = "idEmploye")
+@PrimaryKeyJoinColumn(name = "idInterneUniv")
 public class Employe extends InterneUniv {
 
     private String telephoneUniv;
     private String bureau;
-
-
 }

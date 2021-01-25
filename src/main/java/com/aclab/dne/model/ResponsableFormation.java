@@ -13,7 +13,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@PrimaryKeyJoinColumn(name = "idPersonne")
+@PrimaryKeyJoinColumn(name = "idResponsableFormation")
 public class ResponsableFormation extends Enseignant {
 
     private String poste;

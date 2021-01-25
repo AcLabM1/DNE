@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class MetaMatiereId implements Serializable {
 
     private Long idPromotion;
-    private Long idDiplome;
-    private Long idUe;
-    private Long idMatiere;
+    private int idDiplome;
+    private int idUe;
+    private int idMatiere;
 }
