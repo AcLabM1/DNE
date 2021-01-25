@@ -1,9 +1,6 @@
 package com.aclab.dne.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -13,6 +10,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @PrimaryKeyJoinColumn(name = "idInterneUniv")
 public class Employe extends InterneUniv {
 

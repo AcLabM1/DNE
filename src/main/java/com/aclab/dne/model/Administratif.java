@@ -10,6 +10,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @ToString
 @PrimaryKeyJoinColumn(name = "idAdministratif")
 public class Administratif extends Employe {
