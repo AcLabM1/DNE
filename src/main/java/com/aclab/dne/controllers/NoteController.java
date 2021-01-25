@@ -40,8 +40,8 @@ public class NoteController {
     }
 
     @GetMapping("/{noteId}")
-    @ApiOperation(value = "Retourne le tuteur sélectionné par l'ID passé en paramètre.")
-    public NoteDTO findByTuteurID(@PathVariable("noteId") int noteId){
+    @ApiOperation(value = "Retourne la note sélectionné par l'ID passé en paramètre.")
+    public NoteDTO findByNoteID(@PathVariable("noteId") int noteId){
         LOG.debug("IN");
         try{
             return this.noteService.findNoteByNoteID(noteId);
