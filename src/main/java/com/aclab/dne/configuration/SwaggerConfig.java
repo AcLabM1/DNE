@@ -48,13 +48,16 @@ public class SwaggerConfig {
         return new ApiInfoBuilder().title("Dossier Numérique Étudiant")
                 .description("<h2>ACLAB - M1 III - S1</h2>"+
                         "<h3>POC Application de gestion du Dossier Numérique Étudiant</h3>"+
-                        "<a href=\"mailto:julien.dudek@lacatholille.fr\">Julien Dudek</a></br>" +
-                        "<a href=\"mailto:pierre.darcas@lacatholille.fr\">Pierre Darcas</a></br>" +
+                        "<a href=\"mailto:pierre.darcas@lacatholille.fr\">Pierre Darcas</a>, " +
+                        "<a href=\"mailto:julien.dudek@lacatholille.fr\">Julien Dudek</a>, " +
                         "<a href=\"mailto:morgan.lombard@lacatholille.fr\">Morgan Lombard</a></br>"+
-                        "<div>Parie Front effectué par :</div>"+
+                        "<a href=\"https://github.com/AcLabM1/DNE-API\">Sources DNE-API</a></br>"+
+                        "<img src=\"https://github.com/AcLabM1/DNE-Documentation/blob/main/header-logo.png?raw=true\">"+
+                        "<div>Partie Front effectuée par :</div>"+
+                        "<a href=\"mailto:tristan.coussaert@lacatholille.fr\">Tristant Coussaert</a>, "+
+                        "<a href=\"mailto:gautier.couture@lacatholille.fr\">Gautier Couture</a>, "+
                         "<a href=\"mailto:gianni.giudice@lacatholille.fr\">Gianni Giudice</a></br>"+
-                        "<a href=\"mailto:gautier.couture@lacatholille.fr\">Gautier Couture</a></br>"+
-                        "<a href=\"mailto:tristan.coussaert@lacatholille.fr\">Tristant Coussaert</a></br>"
+                        "<a href=\"https://github.com/AcLabM1/DNE-Mobile\">Sources DNE-MOBILE</a></br>"
                         )
                 .version(version).build();
     }
