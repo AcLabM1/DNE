@@ -34,8 +34,8 @@ public class UeService {
         }
     }
 
-    public UeDTO findUeByUeID(int UeId){
-        Optional<Ue> ue = this.ueRepository.findById(UeId);
+    public UeDTO findUeByUeID(int ueId){
+        Optional<Ue> ue = this.ueRepository.findById(ueId);
         if(ue.isPresent()){
             return this.ueConverter.entityToDto(ue.get());
         }else {
