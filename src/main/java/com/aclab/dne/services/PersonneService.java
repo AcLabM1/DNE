@@ -43,7 +43,7 @@ public class PersonneService {
 
     public ObjectNode login(String username,String password) throws JsonProcessingException {
         ObjectNode res = null;
-        Optional<Personne> p = personneRepository.findPersonneByUsername(username);
+        Optional<Personne> p = personneRepository.findPersonneByUsername(username.toLowerCase());
         if (p.isPresent()&& passwordEncoder.matches(password, p.get().getPassword())){
             Long id= p.get().getIdPersonne();
             String status;

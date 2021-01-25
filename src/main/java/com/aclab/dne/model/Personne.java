@@ -18,4 +18,8 @@ public abstract class Personne implements Serializable {
     private String password;
     private String username;
 
+    public void setUsername(String username) {
+        this.username = username.toLowerCase();
+    }
+
 }

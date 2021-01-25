@@ -92,7 +92,7 @@ public class DataLoader implements CommandLineRunner {
         Etudiant etudiant2 = new Etudiant();
         etudiant2.setDateNaissance(new GregorianCalendar(1982, Calendar.MARCH, 26).getTime());
         etudiant2.setEmailPersonnel("julien.dudek@unmail.com");
-        etudiant2.setEmailUniv("julien.dudek@lacatholille.fr");
+        etudiant2.setEmailUniv("Julien.dudek@lacatholille.fr");
         etudiant2.setNom("Dudek");
         etudiant2.setPrenom("Julien");
         etudiant2.setTelephonePersonnel("0609090231");
