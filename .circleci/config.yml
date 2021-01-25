@@ -14,6 +14,7 @@ workflows:
       - sonar:
           requires:
             - build
+          context: SonarCloud
 
 
 jobs:
