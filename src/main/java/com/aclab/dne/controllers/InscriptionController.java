@@ -1,8 +1,10 @@
 package com.aclab.dne.controllers;
 
+import com.aclab.dne.configuration.SwaggerConfig;
 import com.aclab.dne.dto.EtudiantDTO;
 import com.aclab.dne.dto.InscriptionDTO;
 import com.aclab.dne.services.InscriptionService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +20,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(path = "/inscriptions")
+@Api(tags = { SwaggerConfig.INSCRIPTION })
 public class InscriptionController {
 
     private static final Logger LOG = LoggerFactory.getLogger(InscriptionController.class);
@@ -29,6 +32,7 @@ public class InscriptionController {
 
 
     @GetMapping
+    @ApiOperation(value = "Retourne la liste de toutes les inscriptions.")
     public List<InscriptionDTO> findAll() {
         LOG.debug("IN");
         try {

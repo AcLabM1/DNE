@@ -4,6 +4,7 @@ import com.aclab.dne.configuration.SwaggerConfig;
 import com.aclab.dne.dto.ResponsableFormationDTO;
 import com.aclab.dne.services.ResponsableFormationService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,7 @@ public class ResponsableFormationController {
     }
 
     @GetMapping
+    @ApiOperation(value = "Retourne la liste des responsables de formation.")
     public List<ResponsableFormationDTO> findAll(){
         try {
             return this.responsableFormationService.findAllResponsableFormations();

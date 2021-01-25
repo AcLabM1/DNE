@@ -27,6 +27,7 @@ public class EtudiantController {
     }
 
     @GetMapping
+    @ApiOperation(value = "Retourne la liste de tout les étudiants.")
     public List<EtudiantDTO> findAll() {
         LOG.debug("IN");
         try {

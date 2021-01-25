@@ -39,6 +39,8 @@ public class SwaggerConfig {
                 .tags(new Tag(TUTEUR,"Sans tuteur l'étudiant ne pourrait pas être alternant."))
                 .tags(new Tag(UE,"Les matières se regroupent en UE et les UE sont ici!"))
                 .tags(new Tag(ACCOUNT,"Identification, modification de compte c'est par ici"))
+                .tags(new Tag(METAMATIERE,"Les liens entre le diplome,les ues,les matières ..."))
+                .tags(new Tag(INSCRIPTION,"Gestion des inscriptions des étudiants."))
                 .apiInfo(apiInfo());
     }
 
@@ -73,4 +75,6 @@ public class SwaggerConfig {
     public static final String TUTEUR = "Tuteur Controller";
     public static final String UE = "UE Controller";
     public static final String ACCOUNT = "Account Controller";
+    public static final String METAMATIERE = "Méta Matière Controller";
+    public static final String INSCRIPTION = "Inscription Controller";
 }
