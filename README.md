@@ -39,6 +39,8 @@ En passant par votre IDE préféré
 
 - Afin de consulter la BDD vous pouvez vous rendre sur http://localhost:8080/h2-console/ `JDBC URL`: `jdbc:h2:mem:dne' ,'User Name` : `admin` , `Password`: `admin`.
 
+- Un [fichier Insomnia](https://github.com/AcLabM1/DNE-API/tree/main/insomnia) vous permettra de tester les différents services.
+
 # Architecture (Appli et BDD)
 
 ## MCD
