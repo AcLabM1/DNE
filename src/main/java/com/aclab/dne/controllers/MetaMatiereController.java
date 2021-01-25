@@ -21,6 +21,7 @@ public class MetaMatiereController {
     private static final Logger LOG = LoggerFactory.getLogger(MetaMatiereController.class);
     private final MetaMatiereService metaMatiereService;
 
+
     public MetaMatiereController(MetaMatiereService metaMatiereService) {
         this.metaMatiereService = metaMatiereService;
     }
@@ -29,12 +30,9 @@ public class MetaMatiereController {
     public List<MetaMatiereDTO> findAll() {
         LOG.debug("IN");
         try {
-            return this.metaMatiereService.findAllMetaMatiere();
+            return this.metaMatiereService.findAllMetaMatieres();
         }catch (NoSuchElementException e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
-
-
-
 }

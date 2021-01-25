@@ -1,5 +1,8 @@
 package com.aclab.dne.dto;
 
+import com.aclab.dne.model.Inscription;
+import com.aclab.dne.model.MetaMatiere;
+
 import java.sql.Date;
 
 public class NoteDTO {
@@ -9,18 +12,19 @@ public class NoteDTO {
     private Date date;
     private int coef;
     private String type;
+    private Inscription inscription;
+    private MetaMatiere metaMatiere;
 
+    public NoteDTO(){};
 
-    public NoteDTO(Long idNote, Float note, Date date, int coef, String type) {
+    public NoteDTO(Long idNote, Float note, Date date, int coef, String type, Inscription inscription, MetaMatiere metaMatiere) {
         this.idNote = idNote;
         this.note = note;
         this.date = date;
         this.coef = coef;
         this.type = type;
-    }
-
-    public NoteDTO() {
-
+        this.inscription = inscription;
+        this.metaMatiere = metaMatiere;
     }
 
     public Long getIdNote() {
@@ -61,6 +65,22 @@ public class NoteDTO {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Inscription getInscription() {
+        return inscription;
+    }
+
+    public void setInscription(Inscription inscription) {
+        this.inscription = inscription;
+    }
+
+    public MetaMatiere getMetaMatiere() {
+        return metaMatiere;
+    }
+
+    public void setMetaMatiere(MetaMatiere metaMatiere) {
+        this.metaMatiere = metaMatiere;
     }
 
     @Override

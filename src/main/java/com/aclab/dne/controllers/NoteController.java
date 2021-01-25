@@ -2,8 +2,6 @@ package com.aclab.dne.controllers;
 
 import com.aclab.dne.configuration.SwaggerConfig;
 import com.aclab.dne.dto.NoteDTO;
-import com.aclab.dne.dto.TuteurDTO;
-import com.aclab.dne.model.Note;
 import com.aclab.dne.services.NoteService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -39,23 +37,23 @@ public class NoteController {
         }
     }
 
-    @GetMapping("/etudiant/{etudiantId}")
-    @ApiOperation(value = "Retourne le tuteur sélectionné par l'ID passé en paramètre.")
-    public List<NoteDTO> findNotesByEtudiantId(@PathVariable("etudiantId") Long etudiantId){
+    @GetMapping("/{noteId}")
+    @ApiOperation(value = "Retourne la note sélectionné par l'ID passé en paramètre.")
+    public NoteDTO findByNoteID(@PathVariable("noteId") Long noteId){
         LOG.debug("IN");
-        try {
-            return this.noteService.findNotesByEtudiantID(etudiantId);
+        try{
+            return this.noteService.findNoteByNoteID(noteId);
         }catch (NoSuchElementException e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
 
-    @GetMapping("/{noteId}")
-    @ApiOperation(value = "Retourne la note sélectionné par l'ID passé en paramètre.")
-    public NoteDTO findByNoteID(@PathVariable("noteId") int noteId){
+    @GetMapping("/etudiant/{etudiantId}")
+    @ApiOperation(value = "Retourne la liste des notes d'un etudiant.")
+    public List<NoteDTO> findNotesByEtudiantId(@PathVariable("etudiantId") Long etudiantId){
         LOG.debug("IN");
-        try{
-            return this.noteService.findNoteByNoteID(noteId);
+        try {
+            return this.noteService.findNotesByEtudiantId(etudiantId);
         }catch (NoSuchElementException e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }

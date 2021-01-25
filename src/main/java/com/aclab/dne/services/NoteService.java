@@ -1,6 +1,5 @@
 package com.aclab.dne.services;
 
-import com.aclab.dne.converter.InscriptionConverter;
 import com.aclab.dne.converter.NoteConverter;
 import com.aclab.dne.converter.TuteurConverter;
 import com.aclab.dne.dto.NoteDTO;
@@ -24,7 +23,6 @@ public class NoteService {
     private final NoteRepository noteRepository;
     private final NoteConverter noteConverter;
     private final InscriptionRepository inscriptionRepository;
-    private final InscriptionConverter inscriptionConverter;
 
     public List<NoteDTO> findAllNotes(){
         Iterable<Note> notes = this.noteRepository.findAll();
@@ -35,7 +33,7 @@ public class NoteService {
         }
     }
 
-    public NoteDTO findNoteByNoteID(int noteId){
+    public NoteDTO findNoteByNoteID(Long noteId){
         Optional<Note> note = this.noteRepository.findById(noteId);
         if(note.isPresent()){
             return this.noteConverter.entityToDTO(note.get());
@@ -44,7 +42,7 @@ public class NoteService {
         }
     }
 
-    public List<NoteDTO> findNotesByEtudiantID(Long etudiantId){
+    public List<NoteDTO> findNotesByEtudiantId(Long etudiantId){
         Iterable<Note> notes = this.noteRepository.findNotesByInscription(this.inscriptionRepository.findByIdEtudiant(etudiantId).get());
         if(IterableUtils.size(notes) > 0 ){
             return this.noteConverter.entityToDTO(IterableUtils.toList(notes));
