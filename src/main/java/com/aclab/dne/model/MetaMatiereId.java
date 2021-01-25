@@ -15,4 +15,5 @@ public class MetaMatiereId implements Serializable {
     private int idDiplome;
     private int idUe;
     private int idMatiere;
+
 }
