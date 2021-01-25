@@ -1,5 +1,6 @@
 package com.aclab.dne.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,8 +35,10 @@ public class MetaMatiere  implements Serializable {
     private int idMatiere;
 
     @ManyToMany(mappedBy = "matieres")
+    @JsonIgnore
     private Set<Enseignant> enseignants;
 
     @OneToMany(mappedBy = "metaMatiere")
+    @JsonIgnore
     private Set<Session> sessions;
 }
