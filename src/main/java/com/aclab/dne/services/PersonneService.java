@@ -46,9 +46,8 @@ public class PersonneService {
         Optional<Personne> p = personneRepository.findPersonneByUsername(username.toLowerCase());
         if (p.isPresent()&& passwordEncoder.matches(password, p.get().getPassword())){
             Long id= p.get().getIdPersonne();
-            String status;
             Object obj = findEntity(id);
-            String type = new String();
+            String type;
             if(obj instanceof TuteurDTO){
                 type= "Tuteur";
             }else if(obj instanceof EtudiantDTO ){
