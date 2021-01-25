@@ -44,9 +44,9 @@ public class PresenceSessionService {
     public List<PresenceSessionDTO> findAbsenceSessionByEtudiantID(Long etudiantId){
         Iterable<PresenceSession> presenceSessions = this.presenceSessionRepository.findByIdEtudiant(etudiantId);
         if(IterableUtils.size(presenceSessions) > 0){
-            List<PresenceSession> absenceSessions = new ArrayList<PresenceSession>();
+            List<PresenceSession> absenceSessions = new ArrayList<>();
             for (PresenceSession session : presenceSessions) {
-                if (session.isPresent() == false){
+                if (!session.isPresent()){
                     absenceSessions.add(session);
                 }
             }
