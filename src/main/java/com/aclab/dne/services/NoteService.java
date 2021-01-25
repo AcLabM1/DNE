@@ -3,11 +3,14 @@ package com.aclab.dne.services;
 import com.aclab.dne.converter.NoteConverter;
 import com.aclab.dne.converter.TuteurConverter;
 import com.aclab.dne.dto.NoteDTO;
+import com.aclab.dne.exception.CustomException;
+import com.aclab.dne.model.Inscription;
 import com.aclab.dne.model.Note;
 import com.aclab.dne.repositories.InscriptionRepository;
 import com.aclab.dne.repositories.NoteRepository;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.IterableUtils;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -43,12 +46,19 @@ public class NoteService {
     }
 
     public List<NoteDTO> findNotesByEtudiantId(Long etudiantId){
-        Iterable<Note> notes = this.noteRepository.findNotesByInscription(this.inscriptionRepository.findByIdEtudiant(etudiantId).get());
-        if(IterableUtils.size(notes) > 0 ){
-            return this.noteConverter.entityToDTO(IterableUtils.toList(notes));
+        Optional<Inscription> ins = inscriptionRepository.findByIdEtudiant(etudiantId);
+        if(ins.isPresent()){
+            Iterable<Note> notes = this.noteRepository.findNotesByInscription(ins.get());
+            if(IterableUtils.size(notes) > 0 ){
+                return this.noteConverter.entityToDTO(IterableUtils.toList(notes));
+            }else{
+                throw new NoSuchElementException("pas de notes");
+            }
         }else{
-            throw new NoSuchElementException("pas de notes");
+            throw new CustomException("Etudiant non reconnu", HttpStatus.BAD_REQUEST);
         }
+
+
     }
 
     public NoteDTO createNote(NoteDTO newNoteDTO){
