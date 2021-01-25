@@ -1,8 +1,10 @@
 package com.aclab.dne.controllers;
 
+import com.aclab.dne.configuration.SwaggerConfig;
 import com.aclab.dne.dto.InscriptionDTO;
 import com.aclab.dne.dto.MetaMatiereDTO;
 import com.aclab.dne.services.MetaMatiereService;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(path = "/meta-matieres")
+@Api(tags = { SwaggerConfig.METAMATIERE })
 public class MetaMatiereController {
 
     private static final Logger LOG = LoggerFactory.getLogger(MetaMatiereController.class);
