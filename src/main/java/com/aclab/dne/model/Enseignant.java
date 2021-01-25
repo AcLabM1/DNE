@@ -1,5 +1,6 @@
 package com.aclab.dne.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -29,5 +30,6 @@ public class Enseignant extends Employe{
     private Set<MetaMatiere> matieres;
 
     @ManyToMany(mappedBy = "enseignants")
+    @JsonIgnore
     private Set<Session> sessions;
 }
