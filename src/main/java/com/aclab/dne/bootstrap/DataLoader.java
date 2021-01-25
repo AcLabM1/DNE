@@ -73,7 +73,7 @@ public class DataLoader implements CommandLineRunner {
         responsable.setEstVacataire(false);
         responsable.setPoste("Head of the Computer Science Master Degree ");
         responsable.setNumInterneUniv("2014617345L");
-        responsable.setUsername(responsable.getEmailUniv());//TODO voir pour la structure de l'username.
+        responsable.setUsername(responsable.getEmailUniv());
         responsable.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         ResponsableFormation responsableSaved = responsableFormationRepository.save(responsable);
 
@@ -85,7 +85,7 @@ public class DataLoader implements CommandLineRunner {
         etudiant1.setPrenom("Morgan");
         etudiant1.setTelephonePersonnel("0607056561");
         etudiant1.setNumInterneUniv("2020615893L");
-        etudiant1.setUsername(etudiant1.getEmailUniv());//TODO voir pour la structure de l'username.
+        etudiant1.setUsername(etudiant1.getEmailUniv());
         etudiant1.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Etudiant etudiant1saved = etudiantRepository.save(etudiant1);
 
@@ -97,7 +97,7 @@ public class DataLoader implements CommandLineRunner {
         etudiant2.setPrenom("Julien");
         etudiant2.setTelephonePersonnel("0609090231");
         etudiant2.setNumInterneUniv("2020777893L");
-        etudiant2.setUsername(etudiant2.getEmailUniv());//TODO voir pour la structure de l'username.
+        etudiant2.setUsername(etudiant2.getEmailUniv());
         etudiant2.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Etudiant etudiant2saved = etudiantRepository.save(etudiant2);
 
@@ -109,7 +109,7 @@ public class DataLoader implements CommandLineRunner {
         etudiant3.setPrenom("Pierre");
         etudiant3.setTelephonePersonnel("0601111161");
         etudiant3.setNumInterneUniv("2020610003L");
-        etudiant3.setUsername(etudiant3.getEmailUniv());//TODO voir pour la structure de l'username.
+        etudiant3.setUsername(etudiant3.getEmailUniv());
         etudiant3.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Etudiant etudiant3saved = etudiantRepository.save(etudiant3);
 
@@ -119,7 +119,7 @@ public class DataLoader implements CommandLineRunner {
         tuteur1.setEmailPro("pierre.2.lefebvre@saboite.com");
         tuteur1.setSociete("Worldline");
         tuteur1.setTelephonePro("0320000083");
-        tuteur1.setUsername(tuteur1.getEmailPro());//TODO voir pour la structure de l'username.
+        tuteur1.setUsername(tuteur1.getEmailPro());
         tuteur1.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Tuteur tuteur1Saved = tuteurRepository.save(tuteur1);
 
@@ -129,7 +129,7 @@ public class DataLoader implements CommandLineRunner {
         tuteur2.setEmailPro("john.doe@mail.com");
         tuteur2.setSociete("Worldline");
         tuteur2.setTelephonePro("0325698745");
-        tuteur2.setUsername(tuteur2.getEmailPro());//TODO voir pour la structure de l'username.
+        tuteur2.setUsername(tuteur2.getEmailPro());
         tuteur2.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         Tuteur tuteur2Saved = tuteurRepository.save(tuteur2);
 
@@ -140,9 +140,9 @@ public class DataLoader implements CommandLineRunner {
         administratif.setFonction("Responsable Relations Entreprises FGES | ISEA");
         administratif.setTelephoneUniv("0359315001");
         administratif.setBureau("non communiqué");
-        administratif.setUsername(administratif.getEmailUniv());//TODO voir pour la structure de l'username.
+        administratif.setUsername(administratif.getEmailUniv());
         administratif.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
-        Administratif administratifSaved = administratifRepository.save(administratif);
+        administratifRepository.save(administratif);
 
         Promotion promotion = new Promotion();
         promotion.setAnnee(2020);
@@ -408,7 +408,7 @@ public class DataLoader implements CommandLineRunner {
         noteCyberSecurite1.setType("QCM");
         noteCyberSecurite1.setInscription(inscriptionEtudiant1Saved);
         noteCyberSecurite1.setMetaMatiere(metaMatiereCyberSecuriteSaved);
-        Note noteCyberSecurite1Saved = noteRepository.save(noteCyberSecurite1);
+        noteRepository.save(noteCyberSecurite1);
 
         Note noteCyberSecurite2 = new Note();
         noteCyberSecurite2.setNoteAttribuee(16.0F);
@@ -417,7 +417,7 @@ public class DataLoader implements CommandLineRunner {
         noteCyberSecurite2.setType("QCM");
         noteCyberSecurite2.setInscription(inscriptionEtudiant2Saved);
         noteCyberSecurite2.setMetaMatiere(metaMatiereCyberSecuriteSaved);
-        Note noteCyberSecurite2Saved = noteRepository.save(noteCyberSecurite2);
+        noteRepository.save(noteCyberSecurite2);
 
         Note noteCyberSecurite3 = new Note();
         noteCyberSecurite3.setNoteAttribuee(13.5F);
@@ -426,7 +426,7 @@ public class DataLoader implements CommandLineRunner {
         noteCyberSecurite3.setType("PROJET");
         noteCyberSecurite3.setInscription(inscriptionEtudiant3Saved);
         noteCyberSecurite3.setMetaMatiere(metaMatiereCyberSecuriteSaved);
-        Note noteCyberSecurite3Saved = noteRepository.save(noteCyberSecurite3);
+        noteRepository.save(noteCyberSecurite3);
 
         Note noteIa1 = new Note();
         noteIa1.setNoteAttribuee(13.5F);
@@ -435,7 +435,7 @@ public class DataLoader implements CommandLineRunner {
         noteIa1.setType("PROJET");
         noteIa1.setInscription(inscriptionEtudiant1Saved);
         noteIa1.setMetaMatiere(metaMatiereIaSaved);
-        Note noteIa1Saved = noteRepository.save(noteIa1);
+        noteRepository.save(noteIa1);
 
         Note noteIa2 = new Note();
         noteIa2.setNoteAttribuee(14.5F);
@@ -444,7 +444,7 @@ public class DataLoader implements CommandLineRunner {
         noteIa2.setType("PROJET");
         noteIa2.setInscription(inscriptionEtudiant2Saved);
         noteIa2.setMetaMatiere(metaMatiereIaSaved);
-        Note noteIa2Saved = noteRepository.save(noteIa2);
+        noteRepository.save(noteIa2);
 
         Note noteIa3 = new Note();
         noteIa3.setNoteAttribuee(13.5F);
@@ -453,7 +453,7 @@ public class DataLoader implements CommandLineRunner {
         noteIa3.setType("PROJET");
         noteIa3.setInscription(inscriptionEtudiant3Saved);
         noteIa3.setMetaMatiere(metaMatiereIaSaved);
-        Note noteIa3Saved = noteRepository.save(noteIa3);
+        noteRepository.save(noteIa3);
 
         Note noteDevOps1 = new Note();
         noteDevOps1.setNoteAttribuee(13.5F);
@@ -462,7 +462,7 @@ public class DataLoader implements CommandLineRunner {
         noteDevOps1.setType("PROJET");
         noteDevOps1.setInscription(inscriptionEtudiant1Saved);
         noteDevOps1.setMetaMatiere(metaMatiereDevOpsSaved);
-        Note noteDevOps1Saved = noteRepository.save(noteDevOps1);
+        noteRepository.save(noteDevOps1);
 
         Note noteDevOps2 = new Note();
         noteDevOps2.setNoteAttribuee(14.5F);
@@ -471,7 +471,7 @@ public class DataLoader implements CommandLineRunner {
         noteDevOps2.setType("PROJET");
         noteDevOps2.setInscription(inscriptionEtudiant2Saved);
         noteDevOps2.setMetaMatiere(metaMatiereDevOpsSaved);
-        Note noteDevOps2Saved = noteRepository.save(noteDevOps2);
+        noteRepository.save(noteDevOps2);
 
         Note noteDevOps3 = new Note();
         noteDevOps3.setNoteAttribuee(13.5F);
@@ -480,7 +480,7 @@ public class DataLoader implements CommandLineRunner {
         noteDevOps3.setType("PROJET");
         noteDevOps3.setInscription(inscriptionEtudiant3Saved);
         noteDevOps3.setMetaMatiere(metaMatiereDevOpsSaved);
-        Note noteDevOps3Saved = noteRepository.save(noteDevOps3);
+        noteRepository.save(noteDevOps3);
 
         Note noteGestionProjetAgile1 = new Note();
         noteGestionProjetAgile1.setNoteAttribuee(15.5F);
@@ -489,7 +489,7 @@ public class DataLoader implements CommandLineRunner {
         noteGestionProjetAgile1.setType("EXPOSE");
         noteGestionProjetAgile1.setInscription(inscriptionEtudiant1Saved);
         noteGestionProjetAgile1.setMetaMatiere(metaMatiereGestionProjetAgileSaved);
-        Note noteGestionProjetAgile1Saved = noteRepository.save(noteGestionProjetAgile1);
+        noteRepository.save(noteGestionProjetAgile1);
 
         Note noteGestionProjetAgile2 = new Note();
         noteGestionProjetAgile2.setNoteAttribuee(12.5F);
@@ -498,7 +498,7 @@ public class DataLoader implements CommandLineRunner {
         noteGestionProjetAgile2.setType("EXPOSE");
         noteGestionProjetAgile2.setInscription(inscriptionEtudiant2Saved);
         noteGestionProjetAgile2.setMetaMatiere(metaMatiereGestionProjetAgileSaved);
-        Note noteGestionProjetAgile2Saved = noteRepository.save(noteGestionProjetAgile2);
+        noteRepository.save(noteGestionProjetAgile2);
 
         Note noteGestionProjetAgile3 = new Note();
         noteGestionProjetAgile3.setNoteAttribuee(17.0F);
@@ -507,7 +507,7 @@ public class DataLoader implements CommandLineRunner {
         noteGestionProjetAgile3.setType("EXPOSE");
         noteGestionProjetAgile3.setInscription(inscriptionEtudiant3Saved);
         noteGestionProjetAgile3.setMetaMatiere(metaMatiereGestionProjetAgileSaved);
-        Note noteGestionProjetAgile3Saved = noteRepository.save(noteGestionProjetAgile3);
+        noteRepository.save(noteGestionProjetAgile3);
 
         Note noteProgrammationFonctionnelle1 = new Note();
         noteProgrammationFonctionnelle1.setNoteAttribuee(15.5F);
@@ -516,7 +516,7 @@ public class DataLoader implements CommandLineRunner {
         noteProgrammationFonctionnelle1.setType("PROJET");
         noteProgrammationFonctionnelle1.setInscription(inscriptionEtudiant1Saved);
         noteProgrammationFonctionnelle1.setMetaMatiere(metaMatiereProgFonctionnelleSaved);
-        Note noteProgrammationFonctionnelle1Saved = noteRepository.save(noteProgrammationFonctionnelle1);
+        noteRepository.save(noteProgrammationFonctionnelle1);
 
         Note noteProgrammationFonctionnelle2 = new Note();
         noteProgrammationFonctionnelle2.setNoteAttribuee(12.5F);
@@ -525,7 +525,7 @@ public class DataLoader implements CommandLineRunner {
         noteProgrammationFonctionnelle2.setType("PROJET");
         noteProgrammationFonctionnelle2.setInscription(inscriptionEtudiant2Saved);
         noteProgrammationFonctionnelle2.setMetaMatiere(metaMatiereProgFonctionnelleSaved);
-        Note noteProgrammationFonctionnelle2Saved = noteRepository.save(noteProgrammationFonctionnelle2);
+        noteRepository.save(noteProgrammationFonctionnelle2);
 
         Note noteProgrammationFonctionnelle3 = new Note();
         noteProgrammationFonctionnelle3.setNoteAttribuee(17.0F);
@@ -534,7 +534,7 @@ public class DataLoader implements CommandLineRunner {
         noteProgrammationFonctionnelle3.setType("PROJET");
         noteProgrammationFonctionnelle3.setInscription(inscriptionEtudiant3Saved);
         noteProgrammationFonctionnelle3.setMetaMatiere(metaMatiereProgFonctionnelleSaved);
-        Note noteProgrammationFonctionnelle3Saved = noteRepository.save(noteProgrammationFonctionnelle3);
+        noteRepository.save(noteProgrammationFonctionnelle3);
 
         Note noteProgParComposant1 = new Note();
         noteProgParComposant1.setNoteAttribuee(15.5F);
@@ -543,7 +543,7 @@ public class DataLoader implements CommandLineRunner {
         noteProgParComposant1.setType("PROJET");
         noteProgParComposant1.setInscription(inscriptionEtudiant1Saved);
         noteProgParComposant1.setMetaMatiere(metaMatiereProgParComposantSaved);
-        Note noteProgParComposant1Saved = noteRepository.save(noteProgParComposant1);
+        noteRepository.save(noteProgParComposant1);
 
         Note noteProgParComposant2 = new Note();
         noteProgParComposant2.setNoteAttribuee(12.5F);
@@ -552,7 +552,7 @@ public class DataLoader implements CommandLineRunner {
         noteProgParComposant2.setType("PROJET");
         noteProgParComposant2.setInscription(inscriptionEtudiant2Saved);
         noteProgParComposant2.setMetaMatiere(metaMatiereProgParComposantSaved);
-        Note noteProgParComposant2Saved = noteRepository.save(noteProgParComposant2);
+        noteRepository.save(noteProgParComposant2);
 
         Note noteProgParComposant3 = new Note();
         noteProgParComposant3.setNoteAttribuee(17.0F);
@@ -561,7 +561,7 @@ public class DataLoader implements CommandLineRunner {
         noteProgParComposant3.setType("PROJET");
         noteProgParComposant3.setInscription(inscriptionEtudiant3Saved);
         noteProgParComposant3.setMetaMatiere(metaMatiereProgParComposantSaved);
-        Note noteProgParComposant3Saved = noteRepository.save(noteProgParComposant3);
+        noteRepository.save(noteProgParComposant3);
 
         Note noteUxDesign1 = new Note();
         noteUxDesign1.setNoteAttribuee(15.5F);
@@ -570,7 +570,7 @@ public class DataLoader implements CommandLineRunner {
         noteUxDesign1.setType("PROJET");
         noteUxDesign1.setInscription(inscriptionEtudiant1Saved);
         noteUxDesign1.setMetaMatiere(metaMatiereUxDesignSaved);
-        Note noteUxDesign1Saved = noteRepository.save(noteUxDesign1);
+        noteRepository.save(noteUxDesign1);
 
         Note noteUxDesign2 = new Note();
         noteUxDesign2.setNoteAttribuee(12.5F);
@@ -579,7 +579,7 @@ public class DataLoader implements CommandLineRunner {
         noteUxDesign2.setType("PROJET");
         noteUxDesign2.setInscription(inscriptionEtudiant2Saved);
         noteUxDesign2.setMetaMatiere(metaMatiereUxDesignSaved);
-        Note noteUxDesign2Saved = noteRepository.save(noteUxDesign2);
+        noteRepository.save(noteUxDesign2);
 
         Note noteUxDesign3 = new Note();
         noteUxDesign3.setNoteAttribuee(17.0F);
@@ -588,7 +588,7 @@ public class DataLoader implements CommandLineRunner {
         noteUxDesign3.setType("PROJET");
         noteUxDesign3.setInscription(inscriptionEtudiant3Saved);
         noteUxDesign3.setMetaMatiere(metaMatiereUxDesignSaved);
-        Note noteUxDesign3Saved = noteRepository.save(noteUxDesign3);
+        noteRepository.save(noteUxDesign3);
 
         Note noteAcLab1 = new Note();
         noteAcLab1.setNoteAttribuee(20.0F);
@@ -597,7 +597,7 @@ public class DataLoader implements CommandLineRunner {
         noteAcLab1.setType("PROJET");
         noteAcLab1.setInscription(inscriptionEtudiant1Saved);
         noteAcLab1.setMetaMatiere(metaMatiereAcLabSaved);
-        Note noteAcLab1Saved = noteRepository.save(noteAcLab1);
+        noteRepository.save(noteAcLab1);
 
         Note noteAcLab2 = new Note();
         noteAcLab2.setNoteAttribuee(20.0F);
@@ -606,7 +606,7 @@ public class DataLoader implements CommandLineRunner {
         noteAcLab2.setType("PROJET");
         noteAcLab2.setInscription(inscriptionEtudiant2Saved);
         noteAcLab2.setMetaMatiere(metaMatiereAcLabSaved);
-        Note noteAcLab2Saved = noteRepository.save(noteAcLab2);
+        noteRepository.save(noteAcLab2);
 
         Note noteAcLab3 = new Note();
         noteAcLab3.setNoteAttribuee(20.0F);
@@ -615,7 +615,7 @@ public class DataLoader implements CommandLineRunner {
         noteAcLab3.setType("PROJET");
         noteAcLab3.setInscription(inscriptionEtudiant3Saved);
         noteAcLab3.setMetaMatiere(metaMatiereAcLabSaved);
-        Note noteAcLab3Saved = noteRepository.save(noteAcLab3);
+        noteRepository.save(noteAcLab3);
 
         Note noteDroitDonnees1 = new Note();
         noteDroitDonnees1.setNoteAttribuee(14.0F);
@@ -624,7 +624,7 @@ public class DataLoader implements CommandLineRunner {
         noteDroitDonnees1.setType("PROJET");
         noteDroitDonnees1.setInscription(inscriptionEtudiant1Saved);
         noteDroitDonnees1.setMetaMatiere(metaMatiereDroitDonneesSaved);
-        Note noteDroitDonnees1Saved = noteRepository.save(noteDroitDonnees1);
+        noteRepository.save(noteDroitDonnees1);
 
         Note noteDroitDonnees2 = new Note();
         noteDroitDonnees2.setNoteAttribuee(13.0F);
@@ -633,7 +633,7 @@ public class DataLoader implements CommandLineRunner {
         noteDroitDonnees2.setType("PROJET");
         noteDroitDonnees2.setInscription(inscriptionEtudiant2Saved);
         noteDroitDonnees2.setMetaMatiere(metaMatiereDroitDonneesSaved);
-        Note noteDroitDonnees2Saved = noteRepository.save(noteDroitDonnees2);
+        noteRepository.save(noteDroitDonnees2);
 
         Note noteDroitDonnees3 = new Note();
         noteDroitDonnees3.setNoteAttribuee(12.0F);
@@ -642,7 +642,7 @@ public class DataLoader implements CommandLineRunner {
         noteDroitDonnees3.setType("PROJET");
         noteDroitDonnees3.setInscription(inscriptionEtudiant3Saved);
         noteDroitDonnees3.setMetaMatiere(metaMatiereDroitDonneesSaved);
-        Note noteDroitDonnees3Saved = noteRepository.save(noteDroitDonnees3);
+        noteRepository.save(noteDroitDonnees3);
 
         Note noteAnglais1 = new Note();
         noteAnglais1.setNoteAttribuee(14.0F);
@@ -651,7 +651,7 @@ public class DataLoader implements CommandLineRunner {
         noteAnglais1.setType("EXAM");
         noteAnglais1.setInscription(inscriptionEtudiant1Saved);
         noteAnglais1.setMetaMatiere(metaMatiereAnglaisSaved);
-        Note noteAnglais1Saved = noteRepository.save(noteAnglais1);
+        noteRepository.save(noteAnglais1);
 
         Note noteAnglais2 = new Note();
         noteAnglais2.setNoteAttribuee(13.0F);
@@ -660,7 +660,7 @@ public class DataLoader implements CommandLineRunner {
         noteAnglais2.setType("EXAM");
         noteAnglais2.setInscription(inscriptionEtudiant2Saved);
         noteAnglais2.setMetaMatiere(metaMatiereAnglaisSaved);
-        Note noteAnglais2Saved = noteRepository.save(noteAnglais2);
+        noteRepository.save(noteAnglais2);
 
         Note noteAnglais3 = new Note();
         noteAnglais3.setNoteAttribuee(12.0F);
@@ -669,7 +669,7 @@ public class DataLoader implements CommandLineRunner {
         noteAnglais3.setType("EXAM");
         noteAnglais3.setInscription(inscriptionEtudiant3Saved);
         noteAnglais3.setMetaMatiere(metaMatiereAnglaisSaved);
-        Note noteAnglais3Saved = noteRepository.save(noteAnglais3);
+        noteRepository.save(noteAnglais3);
 
         Note noteTechnoEntreprise1 = new Note();
         noteTechnoEntreprise1.setNoteAttribuee(14.0F);
@@ -678,7 +678,7 @@ public class DataLoader implements CommandLineRunner {
         noteTechnoEntreprise1.setType("EXAM");
         noteTechnoEntreprise1.setInscription(inscriptionEtudiant1Saved);
         noteTechnoEntreprise1.setMetaMatiere(metaMatiereTechnoEntrepriseSaved);
-        Note noteTechnoEntreprise1Saved = noteRepository.save(noteTechnoEntreprise1);
+        noteRepository.save(noteTechnoEntreprise1);
 
         Note noteTechnoEntreprise2 = new Note();
         noteTechnoEntreprise2.setNoteAttribuee(13.0F);
@@ -687,7 +687,7 @@ public class DataLoader implements CommandLineRunner {
         noteTechnoEntreprise2.setType("EXAM");
         noteTechnoEntreprise2.setInscription(inscriptionEtudiant2Saved);
         noteTechnoEntreprise2.setMetaMatiere(metaMatiereTechnoEntrepriseSaved);
-        Note noteTechnoEntreprise2Saved = noteRepository.save(noteTechnoEntreprise2);
+        noteRepository.save(noteTechnoEntreprise2);
 
         Note noteTechnoEntreprise3 = new Note();
         noteTechnoEntreprise3.setNoteAttribuee(12.0F);
@@ -696,7 +696,7 @@ public class DataLoader implements CommandLineRunner {
         noteTechnoEntreprise3.setType("EXAM");
         noteTechnoEntreprise3.setInscription(inscriptionEtudiant3Saved);
         noteTechnoEntreprise3.setMetaMatiere(metaMatiereTechnoEntrepriseSaved);
-        Note noteTechnoEntreprise3Saved = noteRepository.save(noteTechnoEntreprise3);
+        noteRepository.save(noteTechnoEntreprise3);
 
         Enseignant enseignantCyberSecurite = new Enseignant();
         enseignantCyberSecurite.setNom("Sierra");
@@ -722,7 +722,7 @@ public class DataLoader implements CommandLineRunner {
         enseignantIa.getMatieres().add(metaMatiereIaSaved);
         enseignantIa.setUsername(enseignantIa.getEmailUniv());
         enseignantIa.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
-        Enseignant enseignantIaSaved = enseignantRepository.save(enseignantIa);
+        enseignantRepository.save(enseignantIa);
 
         Enseignant enseignantDevOps = new Enseignant();
         enseignantDevOps.setNom("Beaussart");
@@ -735,7 +735,7 @@ public class DataLoader implements CommandLineRunner {
         enseignantDevOps.getMatieres().add(metaMatiereDevOpsSaved);
         enseignantDevOps.setUsername(enseignantDevOps.getEmailUniv());
         enseignantDevOps.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
-        Enseignant enseignantDevOpsSaved = enseignantRepository.save(enseignantDevOps);
+        enseignantRepository.save(enseignantDevOps);
 
         Enseignant enseignantGestionProjetAgile = new Enseignant();
         enseignantGestionProjetAgile.setNom("Tondeur");
@@ -748,7 +748,7 @@ public class DataLoader implements CommandLineRunner {
         enseignantGestionProjetAgile.getMatieres().add(metaMatiereDroitDonneesSaved);
         enseignantGestionProjetAgile.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         enseignantGestionProjetAgile.setUsername(enseignantGestionProjetAgile.getEmailUniv());
-        Enseignant enseignantGestionProjetAgileSaved = enseignantRepository.save(enseignantGestionProjetAgile);
+        enseignantRepository.save(enseignantGestionProjetAgile);
 
         Enseignant enseignantProgFonctionnelle = new Enseignant();
         enseignantProgFonctionnelle.setNom("Samuel");
@@ -761,7 +761,7 @@ public class DataLoader implements CommandLineRunner {
         enseignantProgFonctionnelle.getMatieres().add(metaMatiereProgFonctionnelleSaved);
         enseignantProgFonctionnelle.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         enseignantProgFonctionnelle.setUsername(enseignantProgFonctionnelle.getEmailUniv());
-        Enseignant enseignantProgFonctionnelleSaved = enseignantRepository.save(enseignantProgFonctionnelle);
+        enseignantRepository.save(enseignantProgFonctionnelle);
 
         Enseignant enseignantProgParComposant = new Enseignant();
         enseignantProgParComposant.setNom("Six");
@@ -774,7 +774,7 @@ public class DataLoader implements CommandLineRunner {
         enseignantProgParComposant.getMatieres().add(metaMatiereProgParComposantSaved);
         enseignantProgParComposant.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         enseignantProgParComposant.setUsername(enseignantProgParComposant.getEmailUniv());
-        Enseignant enseignantProgParComposantSaved = enseignantRepository.save(enseignantProgParComposant);
+        enseignantRepository.save(enseignantProgParComposant);
 
         Enseignant enseignantUxDesign = new Enseignant();
         enseignantUxDesign.setNom("Polito");
@@ -787,7 +787,7 @@ public class DataLoader implements CommandLineRunner {
         enseignantUxDesign.getMatieres().add(metaMatiereUxDesignSaved);
         enseignantUxDesign.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         enseignantUxDesign.setUsername(enseignantUxDesign.getEmailUniv());
-        Enseignant enseignantUxDesignSaved = enseignantRepository.save(enseignantUxDesign);
+        enseignantRepository.save(enseignantUxDesign);
 
         Enseignant enseignantDroitDonnees = new Enseignant();
         enseignantDroitDonnees.setNom("Nicholls");
@@ -800,7 +800,7 @@ public class DataLoader implements CommandLineRunner {
         enseignantDroitDonnees.getMatieres().add(metaMatiereDroitDonneesSaved);
         enseignantDroitDonnees.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         enseignantDroitDonnees.setUsername(enseignantDroitDonnees.getEmailUniv());
-        Enseignant enseignantDroitDonneesSaved = enseignantRepository.save(enseignantDroitDonnees);
+        enseignantRepository.save(enseignantDroitDonnees);
 
         Enseignant enseignantAnglais1 = new Enseignant();
         enseignantAnglais1.setNom("Ciubaciuc");
@@ -813,7 +813,7 @@ public class DataLoader implements CommandLineRunner {
         enseignantAnglais1.getMatieres().add(metaMatiereAnglaisSaved);
         enseignantAnglais1.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         enseignantAnglais1.setUsername(enseignantAnglais1.getEmailUniv());
-        Enseignant enseignantAnglais1Saved = enseignantRepository.save(enseignantAnglais1);
+        enseignantRepository.save(enseignantAnglais1);
 
         Enseignant enseignantAnglais2 = new Enseignant();
         enseignantAnglais2.setNom("Tapscott");
@@ -826,12 +826,12 @@ public class DataLoader implements CommandLineRunner {
         enseignantAnglais2.getMatieres().add(metaMatiereAnglaisSaved);
         enseignantAnglais2.setPassword(passwordEncoder.encode("L@Cath0l1ll€"));
         enseignantAnglais2.setUsername(enseignantAnglais2.getEmailUniv());
-        Enseignant enseignantAnglais2Saved = enseignantRepository.save(enseignantAnglais2);
+        enseignantRepository.save(enseignantAnglais2);
 
         responsableSaved.setMatieres(new HashSet<>());
         responsableSaved.getMatieres().add(metaMatiereAcLabSaved);
         responsableSaved.getMatieres().add(metaMatiereTechnoEntrepriseSaved);
-        responsableSaved = responsableFormationRepository.save(responsableSaved);
+        responsableFormationRepository.save(responsableSaved);
 
         Session sessionCyberSecurite1 = new Session();
         sessionCyberSecurite1.setDateHeure( Timestamp.valueOf("2020-10-25 10:00:00.000"));
@@ -864,55 +864,55 @@ public class DataLoader implements CommandLineRunner {
         presenceSession1Etudiant1.setIdSession(sessionCyberSecurite1Saved.getIdSession());
         presenceSession1Etudiant1.setIdEtudiant(etudiant1saved.getIdPersonne());
         presenceSession1Etudiant1.setPresent(true);
-        PresenceSession presenceSession1Etudiant1Saved = presenceSessionRepository.save(presenceSession1Etudiant1);
+        presenceSessionRepository.save(presenceSession1Etudiant1);
 
         PresenceSession presenceSession2Etudiant1 = new PresenceSession();
         presenceSession2Etudiant1.setIdSession(sessionCyberSecurite2Saved.getIdSession());
         presenceSession2Etudiant1.setIdEtudiant(etudiant1saved.getIdPersonne());
         presenceSession2Etudiant1.setPresent(true);
-        PresenceSession presenceSession2Etudiant1Saved = presenceSessionRepository.save(presenceSession2Etudiant1);
+        presenceSessionRepository.save(presenceSession2Etudiant1);
 
         PresenceSession presenceSession3Etudiant1 = new PresenceSession();
         presenceSession3Etudiant1.setIdSession(sessionCyberSecurite3Saved.getIdSession());
         presenceSession3Etudiant1.setIdEtudiant(etudiant1saved.getIdPersonne());
         presenceSession3Etudiant1.setPresent(true);
-        PresenceSession presenceSession3Etudiant1Saved = presenceSessionRepository.save(presenceSession3Etudiant1);
+        presenceSessionRepository.save(presenceSession3Etudiant1);
 
         PresenceSession presenceSession1Etudiant2 = new PresenceSession();
         presenceSession1Etudiant2.setIdSession(sessionCyberSecurite1Saved.getIdSession());
         presenceSession1Etudiant2.setIdEtudiant(etudiant2saved.getIdPersonne());
         presenceSession1Etudiant2.setPresent(true);
-        PresenceSession presenceSession1Etudiant2Saved = presenceSessionRepository.save(presenceSession1Etudiant2);
+        presenceSessionRepository.save(presenceSession1Etudiant2);
 
         PresenceSession presenceSession2Etudiant2 = new PresenceSession();
         presenceSession2Etudiant2.setIdSession(sessionCyberSecurite2Saved.getIdSession());
         presenceSession2Etudiant2.setIdEtudiant(etudiant2saved.getIdPersonne());
         presenceSession2Etudiant2.setPresent(false);
-        PresenceSession presenceSession2Etudiant2Saved = presenceSessionRepository.save(presenceSession2Etudiant2);
+        presenceSessionRepository.save(presenceSession2Etudiant2);
 
         PresenceSession presenceSession3Etudiant2 = new PresenceSession();
         presenceSession3Etudiant2.setIdSession(sessionCyberSecurite3Saved.getIdSession());
         presenceSession3Etudiant2.setIdEtudiant(etudiant2saved.getIdPersonne());
         presenceSession3Etudiant2.setPresent(true);
-        PresenceSession presenceSession3Etudiant2Saved = presenceSessionRepository.save(presenceSession3Etudiant2);
+        presenceSessionRepository.save(presenceSession3Etudiant2);
 
         PresenceSession presenceSession1Etudiant3 = new PresenceSession();
         presenceSession1Etudiant3.setIdSession(sessionCyberSecurite1Saved.getIdSession());
         presenceSession1Etudiant3.setIdEtudiant(etudiant3saved.getIdPersonne());
         presenceSession1Etudiant3.setPresent(false);
-        PresenceSession presenceSession1Etudiant3Saved = presenceSessionRepository.save(presenceSession1Etudiant3);
+        presenceSessionRepository.save(presenceSession1Etudiant3);
 
         PresenceSession presenceSession2Etudiant3 = new PresenceSession();
         presenceSession2Etudiant3.setIdSession(sessionCyberSecurite2Saved.getIdSession());
         presenceSession2Etudiant3.setIdEtudiant(etudiant3saved.getIdPersonne());
         presenceSession2Etudiant3.setPresent(true);
-        PresenceSession presenceSession2Etudiant3Saved = presenceSessionRepository.save(presenceSession2Etudiant3);
+        presenceSessionRepository.save(presenceSession2Etudiant3);
 
         PresenceSession presenceSession3Etudiant3 = new PresenceSession();
         presenceSession3Etudiant3.setIdSession(sessionCyberSecurite3Saved.getIdSession());
         presenceSession3Etudiant3.setIdEtudiant(etudiant3saved.getIdPersonne());
         presenceSession3Etudiant3.setPresent(true);
-        PresenceSession presenceSession3Etudiant3Saved = presenceSessionRepository.save(presenceSession3Etudiant3);
+        presenceSessionRepository.save(presenceSession3Etudiant3);
 
         LOG.info("Données chargées");
     }
