@@ -39,9 +39,20 @@ public class NoteController {
         }
     }
 
-    @GetMapping("/{noteId}")
+    @GetMapping("/etudiant/{etudiantId}")
     @ApiOperation(value = "Retourne le tuteur sélectionné par l'ID passé en paramètre.")
-    public NoteDTO findByTuteurID(@PathVariable("noteId") int noteId){
+    public List<NoteDTO> findNotesByEtudiantId(@PathVariable("etudiantId") Long etudiantId){
+        LOG.debug("IN");
+        try {
+            return this.noteService.findNotesByEtudiantID(etudiantId);
+        }catch (NoSuchElementException e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/{noteId}")
+    @ApiOperation(value = "Retourne la note sélectionné par l'ID passé en paramètre.")
+    public NoteDTO findByNoteID(@PathVariable("noteId") int noteId){
         LOG.debug("IN");
         try{
             return this.noteService.findNoteByNoteID(noteId);

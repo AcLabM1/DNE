@@ -39,6 +39,7 @@ public class DataLoader implements CommandLineRunner {
     private final SessionRepository sessionRepository;
     private final NoteRepository noteRepository;
     private final InscriptionRepository inscriptionRepository;
+
     private final MetaMatiereRepository metaMatiereRepository;
 
     public DataLoader(AdministratifRepository administratifRepository, DiplomeRepository diplomeRepository, EtudiantRepository etudiantRepository, MatiereRepository matiereRepository, PromotionRepository promotionRepository, ResponsableFormationRepository responsableFormationRepository, TuteurRepository tuteurRepository, UeRepository ueRepository, SessionRepository sessionRepository, NoteRepository noteRepository, InscriptionRepository inscriptionRepository, MetaMatiereRepository metaMatiereRepository) {
@@ -412,4 +413,5 @@ public class DataLoader implements CommandLineRunner {
 
         LOG.info("Données chargées");
     }
+
 }
