@@ -1,11 +1,8 @@
 package com.aclab.dne.services;
 
 import com.aclab.dne.converter.InscriptionConverter;
-import com.aclab.dne.converter.NoteConverter;
 import com.aclab.dne.dto.InscriptionDTO;
-import com.aclab.dne.dto.NoteDTO;
 import com.aclab.dne.model.Inscription;
-import com.aclab.dne.model.InscriptionId;
 import com.aclab.dne.repositories.InscriptionRepository;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.IterableUtils;

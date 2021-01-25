@@ -1,9 +1,7 @@
 package com.aclab.dne.controllers;
 
 import com.aclab.dne.configuration.SwaggerConfig;
-import com.aclab.dne.dto.TuteurDTO;
 import com.aclab.dne.dto.UeDTO;
-import com.aclab.dne.model.Ue;
 import com.aclab.dne.services.UeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

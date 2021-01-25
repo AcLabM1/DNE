@@ -1,7 +1,6 @@
 package com.aclab.dne.services;
 
 import com.aclab.dne.converter.NoteConverter;
-import com.aclab.dne.converter.TuteurConverter;
 import com.aclab.dne.dto.NoteDTO;
 import com.aclab.dne.exception.CustomException;
 import com.aclab.dne.model.Inscription;

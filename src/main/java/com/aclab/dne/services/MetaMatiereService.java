@@ -1,12 +1,8 @@
 package com.aclab.dne.services;
 
-import com.aclab.dne.converter.InscriptionConverter;
 import com.aclab.dne.converter.MetaMatiereConverter;
-import com.aclab.dne.dto.InscriptionDTO;
 import com.aclab.dne.dto.MetaMatiereDTO;
-import com.aclab.dne.model.Inscription;
 import com.aclab.dne.model.MetaMatiere;
-import com.aclab.dne.repositories.InscriptionRepository;
 import com.aclab.dne.repositories.MetaMatiereRepository;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.IterableUtils;
@@ -15,7 +11,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @Transactional
 @AllArgsConstructor

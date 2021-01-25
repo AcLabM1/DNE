@@ -1,7 +1,6 @@
 package com.aclab.dne.controllers;
 
 import com.aclab.dne.configuration.SwaggerConfig;
-import com.aclab.dne.dto.EtudiantDTO;
 import com.aclab.dne.dto.InscriptionDTO;
 import com.aclab.dne.services.InscriptionService;
 import io.swagger.annotations.Api;

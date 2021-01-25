@@ -1,12 +1,8 @@
 package com.aclab.dne.services;
 
-import com.aclab.dne.converter.TuteurConverter;
 import com.aclab.dne.converter.UeConverter;
-import com.aclab.dne.dto.TuteurDTO;
 import com.aclab.dne.dto.UeDTO;
-import com.aclab.dne.model.Tuteur;
 import com.aclab.dne.model.Ue;
-import com.aclab.dne.repositories.TuteurRepository;
 import com.aclab.dne.repositories.UeRepository;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.IterableUtils;

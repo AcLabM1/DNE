@@ -1,7 +1,5 @@
 package com.aclab.dne.controllers;
 
-import com.aclab.dne.dto.InscriptionDTO;
-import com.aclab.dne.dto.NoteDTO;
 import com.aclab.dne.dto.PresenceSessionDTO;
 import com.aclab.dne.services.PresenceSessionService;
 import io.swagger.annotations.ApiOperation;

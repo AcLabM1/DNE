@@ -1,11 +1,7 @@
 package com.aclab.dne.services;
 
 import com.aclab.dne.converter.PresenceSessionConverter;
-import com.aclab.dne.dto.InscriptionDTO;
-import com.aclab.dne.dto.MetaMatiereDTO;
 import com.aclab.dne.dto.PresenceSessionDTO;
-import com.aclab.dne.model.Inscription;
-import com.aclab.dne.model.MetaMatiere;
 import com.aclab.dne.model.PresenceSession;
 import com.aclab.dne.repositories.EtudiantRepository;
 import com.aclab.dne.repositories.PresenceSessionRepository;
@@ -14,7 +10,9 @@ import org.apache.commons.collections4.IterableUtils;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 @Transactional
 @AllArgsConstructor
