@@ -42,5 +42,4 @@ public class EtudiantService {
     public EtudiantDTO createEtudiant(EtudiantDTO newEtudiantDTO){
         return etudiantConverter.entityToDto((etudiantRepository.save(this.etudiantConverter.dtoToEntity(newEtudiantDTO))));
     }
-
 }

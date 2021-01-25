@@ -22,7 +22,11 @@ public class Session implements Serializable {
     private int duree;
     private String salle;
 
-    @ManyToMany(mappedBy = "sessions")
+    @ManyToMany
+    @JoinTable(
+            name = "ENSEIGNANT_SESSION",
+            joinColumns = @JoinColumn(name = "id_session"),
+            inverseJoinColumns = @JoinColumn(name = "id_enseignant"))
     private Set<Enseignant> enseignants;
 
     @ManyToOne
