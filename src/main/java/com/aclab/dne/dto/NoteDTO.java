@@ -15,7 +15,9 @@ public class NoteDTO {
     private Inscription inscription;
     private MetaMatiere metaMatiere;
 
-    public NoteDTO(){};
+    public NoteDTO(){
+
+    }
 
     public NoteDTO(Long idNote, Float note, Date date, int coef, String type, Inscription inscription, MetaMatiere metaMatiere) {
         this.idNote = idNote;
