@@ -5,6 +5,7 @@ import com.aclab.dne.dto.InscriptionDTO;
 import com.aclab.dne.dto.MetaMatiereDTO;
 import com.aclab.dne.services.MetaMatiereService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,7 @@ public class MetaMatiereController {
     }
 
     @GetMapping
+    @ApiOperation(value = "Retourne toutes les méta-matières.")
     public List<MetaMatiereDTO> findAll() {
         LOG.debug("IN");
         try {

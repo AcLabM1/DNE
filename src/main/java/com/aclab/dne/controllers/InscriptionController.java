@@ -32,6 +32,7 @@ public class InscriptionController {
 
 
     @GetMapping
+    @ApiOperation(value = "Retourne la liste de toutes les inscriptions.")
     public List<InscriptionDTO> findAll() {
         LOG.debug("IN");
         try {
