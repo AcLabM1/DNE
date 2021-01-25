@@ -1,10 +1,7 @@
 package com.aclab.dne.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +11,7 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Entity
 public class Promotion implements Serializable {
 
@@ -25,7 +23,7 @@ public class Promotion implements Serializable {
     @ManyToMany
     @JoinTable(name = "promotion_diplome",
     joinColumns = @JoinColumn(name = "id_promotion"),
-    inverseJoinColumns = @JoinColumn(name = "ud_diplome"))
+    inverseJoinColumns = @JoinColumn(name = "id_diplome"))
     @JsonIgnoreProperties("promotions")
     private Set<Diplome> diplomes;
 }

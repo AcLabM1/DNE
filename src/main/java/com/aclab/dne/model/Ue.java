@@ -12,11 +12,14 @@ import java.util.Set;
 public class Ue implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUE;
+    private int idUe;
 
     private String intitule;
 
-    @ManyToMany(mappedBy = "ues")
+    @ManyToMany
+    @JoinTable(name = "matiere_ue",
+            joinColumns = @JoinColumn(name = "id_ue"),
+            inverseJoinColumns = @JoinColumn(name = "id_matiere"))
     @JsonIgnoreProperties("ues")
     private Set<Matiere> matieres;
 
