@@ -11,6 +11,10 @@ workflows:
           context: DNE
           requires:
             - build
+      - sonar:
+          requires:
+            - build
+          context: SonarCloud
 
 
 jobs:
@@ -56,4 +60,11 @@ jobs:
             - dne-api-{{ checksum "pom.xml" }}
       # build and push docker image to docker hub
       - run: mvn compile jib:build -Djib.to.auth.username=$DOCKER_HUB_USER_ID -Djib.to.auth.password=$DOCKERHUB_PASSWORD
-
+  sonar:
+    docker:
+      - image: 'circleci/openjdk:11-jdk'
+    steps:
+      - checkout
+      - run:
+          name: Analyze on SonarCloud
+          command: mvn verify sonar:sonar

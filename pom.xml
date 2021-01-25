@@ -18,6 +18,9 @@
             <java.version>11</java.version>
             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
             <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+            <sonar.projectKey>AcLabM1_DNE-API</sonar.projectKey>
+            <sonar.organization>aclabm1</sonar.organization>
+            <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         </properties>
 
         <dependencies>
@@ -108,7 +111,6 @@
                 <artifactId>json</artifactId>
                 <version>20180130</version>
             </dependency>
-
         </dependencies>
 
         <build>
