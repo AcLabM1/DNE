@@ -1,5 +1,7 @@
 package com.aclab.dne.dto;
 
+import com.aclab.dne.model.MetaMatiere;
+
 import java.sql.Timestamp;
 
 public class SessionDTO {
@@ -8,15 +10,25 @@ public class SessionDTO {
     private Timestamp dateHeure;
     private int duree;
     private String salle;
+    private MetaMatiere metaMatiere;
+
+    public MetaMatiere getMetaMatiere() {
+        return metaMatiere;
+    }
+
+    public void setMetaMatiere(MetaMatiere metaMatiere) {
+        this.metaMatiere = metaMatiere;
+    }
 
     public SessionDTO() {
         super();
     }
 
-    public SessionDTO(Timestamp dateHeure, int duree, String salle) {
+    public SessionDTO(Timestamp dateHeure, int duree, String salle, MetaMatiere metaMatiere) {
         this.dateHeure = dateHeure;
         this.duree = duree;
         this.salle = salle;
+        this.metaMatiere = metaMatiere;
     }
 
     public Long getIdSession() {
