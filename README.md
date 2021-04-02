@@ -14,6 +14,7 @@ En passant par votre IDE préféré
 
 `mvn spring-boot:run`
 
+
 ## Utilisation
 
 - Un swagger est disponible sur http://localhost:8080/swagger-ui.html et vous permettra de tester chaque endpoint implémenté. Pour des demandes supplémentaires, merci de nous créer des issues.
