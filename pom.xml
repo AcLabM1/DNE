@@ -138,9 +138,6 @@
                             </tags>
                         </to>
                         <container>
-                            <labels>
-                                <key1>com.centurylinklabs.watchtower.enable=true</key1>
-                            </labels>
                             <ports>
                                 <port>8080</port>
                             </ports>
